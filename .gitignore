@@ -1,0 +1,11 @@
+.vs/
+.idea/
+x64/
+x86/
+build-debug/
+build-release/
+asteroids-build-debug/
+asteroids-build-release/
+cmake-build-debug/
+cmake-build-release/
+CMakeLists.txt.user
