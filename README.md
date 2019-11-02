@@ -26,4 +26,4 @@ Linkedin: [https://www.linkedin.com/in/slawektuleja/](https://www.linkedin.com/i
 
 #### License
 
-You can use this software freely in any project free or commercial however except all files placed in 'resources' folder
+You can use this software freely in any free or commercial project however except all files placed in 'resources' folder
