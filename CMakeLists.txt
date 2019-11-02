@@ -3,7 +3,7 @@ project(asteroids)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/Cmake_module")
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/CMake_module")
 
 find_package(SDL2 REQUIRED)
 find_package(SDL2_image REQUIRED)
