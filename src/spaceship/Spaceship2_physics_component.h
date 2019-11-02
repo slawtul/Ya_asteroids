@@ -2,7 +2,7 @@
 
 #include <cmath>
 
-#include "Constants.h"
+#include "init/Constants.h"
 #include "Game_object.h"
 
 struct Spaceship2_physics_component: Physics_component

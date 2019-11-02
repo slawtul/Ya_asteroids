@@ -14,29 +14,28 @@
 #include "scenes/Control_spaceships_scene.h"
 #include "scenes/Two_spaceships_scene.h"
 
+#include "init/Init_SDL2.h"
 #include "text/Render_text.h"
 #include "debug_info/Frames_debug_info.h"
 #include "debug_info/Objects_debug_info.h"
+#include "debug_info/Graphics_debug_info.h"
 
 int main(int argc, char *argv[])
 {
-    // Initialization
-    SDL_LogSetAllPriority(SDL_LOG_PRIORITY_DEBUG);
     SDL_LogInfo(0, "Program parameters: argc %d", argc);
     SDL_LogInfo(0, "Program parameters: argv %s", *argv);
 
-    init_SDL2(SDL_INIT_EVERYTHING);
+    Init_SDL2::init_SDL2(SDL_INIT_EVERYTHING);
     IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG);
     TTF_Init();
 
-    // Create window, renderer, textures
-    const auto window = create_window(
+    const auto window = Init_SDL2::create_window(
         "YA Asteroids", 1920, 1080, SDL_WINDOW_FULLSCREEN_DESKTOP | SDL_WINDOW_ALLOW_HIGHDPI
     );
-    const auto renderer = create_renderer(
+    const auto renderer = Init_SDL2::create_renderer(
         window, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC
     );
-    log_screen_size(renderer);
+    Graphics_debug_info::log_screen_size(renderer);
 
     Texture_shelf tex_shelf;
     tex_shelf.add_initial_images(renderer);
@@ -78,14 +77,12 @@ int main(int argc, char *argv[])
         frames_debug_info.current_time = SDL_GetTicks();
         #endif
 
-        // -----------------------------
         {
-            if (is_ESC_key_pressed()) {
+            if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_ESCAPE]) {
                 break;
             }
             Destroy_asteroids_scene::update(event, graphics, game_objects, bullet);
         }
-        // -----------------------------
 
         #ifdef DEBUG
         frames_debug_info.render_frames_per_second(font, white, graphics.renderer);

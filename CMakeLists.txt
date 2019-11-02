@@ -38,26 +38,24 @@ add_executable(asteroids
         src/scenes/Two_spaceships_scene.h
         src/scenes/Scene.h
         src/shared/Game_object.h
-        src/shared/Constants.h
+        src/init/Constants.h
         src/shared/Graphics.h
         src/shared/Graphics_component.h
         src/shared/Input_component.h
         src/shared/Object_name.h
         src/shared/Physics_component.h
-        src/shared/Space.h
-        src/shared/Object_position.h
         src/spaceship/Spaceship1_graphics_component.h
         src/spaceship/Spaceship1_input_component.h
         src/spaceship/Spaceship1_physics_component.h
         src/spaceship/Spaceship2_graphics_component.h
         src/spaceship/Spaceship2_input_component.h
         src/spaceship/Spaceship2_physics_component.h
-        src/Init_SDL2.h
+        src/init/Init_SDL2.h
         src/text/Render_text.h
         src/shared/Game_object_utils.h
         src/debug_info/Frames_debug_info.h
         src/debug_info/Objects_debug_info.h
-        )
+        src/debug_info/Graphics_debug_info.h)
 
 target_link_libraries(asteroids ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY} ${SDL2_TTF_LIBRARY})
 target_compile_options(asteroids PUBLIC -Wall -Wextra -Werror)
