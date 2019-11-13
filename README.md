@@ -1,6 +1,8 @@
 
 # YA_asteroids
 
+![s1](screenshots/s1.png)
+
 ## How to launch on local machine
 
 0. Install cmake
