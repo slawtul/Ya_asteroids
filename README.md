@@ -17,7 +17,7 @@
 - [x] Bullets
 - [ ] Collisions
 - [x] Debug info
-- [ ] Extra weapon
+- [ ] Extra weapons
 - [ ] Extra effects  
 
 ### Run from console
