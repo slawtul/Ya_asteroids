@@ -26,12 +26,6 @@
 - [ ] Extra weapons
 - [ ] Extra effects  
 
-### Run from console
-
-```bash
-C:\Workspace\asteroids\debug>cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug && make -j 4 && asteroids.exe
-```
-
 #### Author
 
 Linkedin: [https://www.linkedin.com/in/slawektuleja/](https://www.linkedin.com/in/slawektuleja/)
