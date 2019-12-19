@@ -1,8 +1,8 @@
 #pragma once
 
 #include <string>
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_ttf.h>
+#include <SDL.h>
+#include <SDL_ttf.h>
 
 void render_text(SDL_Rect &rect, TTF_Font *font, SDL_Color color, SDL_Renderer *renderer,
                  const std::string &text_to_render)

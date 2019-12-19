@@ -30,10 +30,10 @@ int main(int argc, char *argv[])
     TTF_Init();
 
     const auto window = Init_SDL2::create_window(
-        "YA Asteroids", 1920, 1080, SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI
+            "YA Asteroids", 1920, 1080, SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI
     );
     const auto renderer = Init_SDL2::create_renderer(
-        window, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC
+            window, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC
     );
     Graphics_debug_info::log_screen_size(renderer);
 

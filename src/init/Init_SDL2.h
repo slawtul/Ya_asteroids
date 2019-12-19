@@ -1,7 +1,7 @@
 #pragma once
 
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
+#include <SDL.h>
+#include <SDL_image.h>
 
 struct Init_SDL2
 {
@@ -17,7 +17,7 @@ struct Init_SDL2
     static SDL_Window *create_window(const char *title, int screen_width, int screen_height, const Uint32 flags)
     {
         const auto window = SDL_CreateWindow(
-            title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, screen_width, screen_height, flags
+                title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, screen_width, screen_height, flags
         );
         if (window == nullptr) {
             SDL_Log("Unable to create a window %s", SDL_GetError());

@@ -1,7 +1,7 @@
 #pragma once
 
 #include <vector>
-#include <SDL2/SDL.h>
+#include <SDL.h>
 #include "Graphics.h"
 #include "Game_object.h"
 #include "Game_object_utils.h"
@@ -15,8 +15,8 @@ struct Destroy_asteroids_scene
         SDL_SetRenderDrawColor(graphics.renderer, 0, 0, 0, 255);
         SDL_RenderClear(graphics.renderer);
         SDL_RenderCopy(
-            graphics.renderer, graphics.texture_shelf.get_texture("background_01_static"),
-            nullptr, nullptr
+                graphics.renderer, graphics.texture_shelf.get_texture("background_01_static"),
+                nullptr, nullptr
         );
         SDL_PollEvent(&event);
 
@@ -32,11 +32,11 @@ struct Destroy_asteroids_scene
         }
 
         auto not_active = std::remove_if(
-            game_objects.begin(), game_objects.end(),
-            [&](const Game_object &obj)
-            {
-                return !obj.meta.is_active;
-            }
+                game_objects.begin(), game_objects.end(),
+                [&](const Game_object &obj)
+                {
+                    return !obj.meta.is_active;
+                }
         );
         game_objects.erase(not_active, game_objects.end());
     }

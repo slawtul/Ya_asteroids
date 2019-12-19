@@ -1,8 +1,8 @@
 #pragma once
 
 #include <string>
-#include <SDL2/SDL_image.h>
-#include <SDL2/SDL_ttf.h>
+#include <SDL_image.h>
+#include <SDL_ttf.h>
 #include <text/Render_text.h>
 
 struct Objects_debug_info
