@@ -30,10 +30,10 @@ int main(int argc, char *argv[])
     TTF_Init();
 
     const auto window = Init_SDL2::create_window(
-            "YA Asteroids", 1920, 1080, SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI
+        "YA Asteroids", 1920, 1080, SDL_WINDOW_FULLSCREEN_DESKTOP | SDL_WINDOW_ALLOW_HIGHDPI
     );
     const auto renderer = Init_SDL2::create_renderer(
-            window, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC
+        window, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC
     );
     Graphics_debug_info::log_screen_size(renderer);
 
@@ -41,23 +41,9 @@ int main(int argc, char *argv[])
     tex_shelf.add_initial_images(renderer);
     auto graphics = Graphics{renderer, tex_shelf};
 
-    // Create spaceship 1
-    Spaceship1_input_component sp1_input;
-    Spaceship1_physics_component sp1_physics;
-    Spaceship1_graphics_component sp1_gfx;
-    auto spaceship1 = create_spaceship1(sp1_input, sp1_physics, sp1_gfx);
-
-    // Create spaceship 2
-    Spaceship2_input_component sp2_input;
-    Spaceship2_physics_component sp2_physics;
-    Spaceship2_graphics_component sp2_gfx;
-    auto spaceship2 = create_spaceship2(sp2_input, sp2_physics, sp2_gfx);
-
-    // Create bullet
-    Bullet_input_component bullet_input;
-    Bullet_physics_component bullet_physics;
-    Bullet_graphics_component bullet_gfx;
-    auto bullet = create_bullet(bullet_input, bullet_physics, bullet_gfx);
+    auto spaceship1 = Game_object_utils::create_spaceship1();
+    auto spaceship2 = Game_object_utils::create_spaceship2();
+    auto bullet = Game_object_utils::create_bullet();
 
     // Add spaceships
     auto game_objects = std::vector<Game_object>{spaceship1, spaceship2};
