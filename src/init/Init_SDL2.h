@@ -14,7 +14,8 @@ struct Init_SDL2
         }
     }
 
-    static SDL_Window *create_window(const char *title, int screen_width, int screen_height, const Uint32 flags)
+    static SDL_Window *create_window(const char *title, int screen_width, int screen_height,
+                                     const Uint32 flags)
     {
         const auto window = SDL_CreateWindow(
             title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, screen_width, screen_height, flags
