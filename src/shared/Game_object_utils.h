@@ -1,16 +1,26 @@
 #pragma once
 
+#include <memory>
 #include "Game_object.h"
+#include "Spaceship1_input_component.h"
+#include "Spaceship1_physics_component.h"
+#include "Spaceship1_graphics_component.h"
+#include "Spaceship2_input_component.h"
+#include "Spaceship2_physics_component.h"
+#include "Spaceship2_graphics_component.h"
+#include "Bullet_input_component.h"
+#include "Bullet_physics_component.h"
+#include "Bullet_graphics_component.h"
 
 struct Game_object_utils
 {
     static Game_object create_spaceship1()
     {
-        auto input = new Spaceship1_input_component();
-        auto physics = new Spaceship1_physics_component();
-        auto gfx = new Spaceship1_graphics_component();
+        auto input = std::make_unique<Spaceship1_input_component>();
+        auto physics = std::make_unique<Spaceship1_physics_component>();
+        auto gfx = std::make_unique<Spaceship1_graphics_component>();
 
-        Game_object go{input, physics, gfx};
+        auto go = Game_object(std::move(input), std::move(physics), std::move(gfx));
         go.meta.name = Object_name::SPACESHIP1;
         go.motion.max_speed = 12.0;
         go.rect = {0, 0, 64, 64};
@@ -19,11 +29,11 @@ struct Game_object_utils
 
     static Game_object create_spaceship2()
     {
-        auto input = new Spaceship2_input_component();
-        auto physics = new Spaceship2_physics_component();
-        auto gfx = new Spaceship2_graphics_component();
+        auto input = std::make_unique<Spaceship2_input_component>();
+        auto physics = std::make_unique<Spaceship2_physics_component>();
+        auto gfx = std::make_unique<Spaceship2_graphics_component>();
 
-        Game_object go{input, physics, gfx};
+        auto go = Game_object(std::move(input), std::move(physics), std::move(gfx));
         go.meta.name = Object_name::SPACESHIP2;
         go.motion.max_speed = 12.0;
         go.rect = {256, 1000, 64, 64};
@@ -32,11 +42,11 @@ struct Game_object_utils
 
     static Game_object create_bullet()
     {
-        auto input = new Bullet_input_component();
-        auto physics = new Bullet_physics_component();
-        auto gfx = new Bullet_graphics_component();
+        auto input = std::make_unique<Bullet_input_component>();
+        auto physics = std::make_unique<Bullet_physics_component>();
+        auto gfx = std::make_unique<Bullet_graphics_component>();
 
-        Game_object go{input, physics, gfx};
+        auto go = Game_object(std::move(input), std::move(physics), std::move(gfx));
         go.meta.name = Object_name::BULLET;
         go.motion.acceleration = 32;
         go.rect = {0, 0, 4, 20};

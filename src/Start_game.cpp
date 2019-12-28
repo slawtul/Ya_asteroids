@@ -1,21 +1,7 @@
-#include "spaceship/Spaceship1_input_component.h"
-#include "spaceship/Spaceship1_physics_component.h"
-#include "spaceship/Spaceship1_graphics_component.h"
-#include "spaceship/Spaceship2_input_component.h"
-#include "spaceship/Spaceship2_physics_component.h"
-#include "spaceship/Spaceship2_graphics_component.h"
-
-#include "bullets/Bullet_input_component.h"
-#include "bullets/Bullet_graphics_component.h"
-#include "bullets/Bullet_physics_component.h"
-
-#include "scenes/Destroy_asteroids_scene.h"
-#include "scenes/Avoid_asteroids_scene.h"
-#include "scenes/Control_spaceships_scene.h"
-#include "scenes/Two_spaceships_scene.h"
-
 #include "init/Init_SDL2.h"
 #include "text/Render_text.h"
+#include "spaceship/Spaceship1_input_component.h"
+#include "scenes/Destroy_asteroids_scene.h"
 #include "debug_info/Frames_debug_info.h"
 #include "debug_info/Objects_debug_info.h"
 #include "debug_info/Graphics_debug_info.h"
@@ -43,10 +29,11 @@ int main(int argc, char *argv[])
 
     auto spaceship1 = Game_object_utils::create_spaceship1();
     auto spaceship2 = Game_object_utils::create_spaceship2();
-    auto bullet = Game_object_utils::create_bullet();
 
     // Add spaceships
-    auto game_objects = std::vector<Game_object>{spaceship1, spaceship2};
+    auto game_objects = std::vector<Game_object>();
+    game_objects.emplace_back(std::move(spaceship1));
+    game_objects.emplace_back(std::move(spaceship2));
 
     #ifdef DEBUG
     const auto font = TTF_OpenFont("./resources/terminus.ttf", 16);
@@ -67,7 +54,7 @@ int main(int argc, char *argv[])
             if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_ESCAPE]) {
                 break;
             }
-            Destroy_asteroids_scene::update(event, graphics, game_objects, bullet);
+            Destroy_asteroids_scene::update(event, graphics, game_objects);
         }
 
         #ifdef DEBUG

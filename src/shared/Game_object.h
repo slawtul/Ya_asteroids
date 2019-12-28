@@ -28,9 +28,9 @@ struct Motion
 
 struct Game_object
 {
-    Input_component *input_comp{nullptr};
-    Physics_component *physics_comp{nullptr};
-    Graphics_component *graphics_comp{nullptr};
+    std::unique_ptr<Input_component> input{nullptr};
+    std::unique_ptr<Physics_component> physics{nullptr};
+    std::unique_ptr<Graphics_component> graphics{nullptr};
 
     Meta meta{};
     Motion motion{};
@@ -38,17 +38,19 @@ struct Game_object
 
     Game_object() = default;
 
-    Game_object(Input_component *input, Physics_component *physics, Graphics_component *graphics)
-        : input_comp{input}, physics_comp{physics}, graphics_comp{graphics}
+    Game_object(std::unique_ptr<Input_component> input_,
+                std::unique_ptr<Physics_component> physics_,
+                std::unique_ptr<Graphics_component> graphics_)
+        : input{std::move(input_)},
+          physics{std::move(physics_)},
+          graphics{std::move(graphics_)}
     {
     }
 
-    ~Game_object() = default;
-
-    void update(Graphics &graphics)
+    void update(Graphics &graphics_)
     {
-        input_comp->update(*this);
-        physics_comp->update(*this);
-        graphics_comp->update(*this, graphics);
+        input->update(*this);
+        physics->update(*this);
+        graphics->update(*this, graphics_);
     }
 };

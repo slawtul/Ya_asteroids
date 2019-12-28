@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <algorithm>
+#include <memory>
 #include <SDL.h>
 #include "Graphics.h"
 #include "Game_object.h"
@@ -10,8 +11,7 @@
 
 struct Destroy_asteroids_scene
 {
-    static void update(SDL_Event &event, Graphics &graphics, std::vector<Game_object> &game_objects,
-                       Game_object &bullet)
+    static void update(SDL_Event &event, Graphics &graphics, std::vector<Game_object> &game_objects)
     {
         SDL_SetRenderDrawColor(graphics.renderer, 0, 0, 0, 255);
         SDL_RenderClear(graphics.renderer);
@@ -22,10 +22,16 @@ struct Destroy_asteroids_scene
         SDL_PollEvent(&event);
 
         if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_RETURN]) {
-            game_objects.emplace_back(Game_object_utils::fire_bullet(bullet, game_objects[0]));
+            auto bullet = Game_object_utils::create_bullet();
+            game_objects.emplace_back(
+                std::move(Game_object_utils::fire_bullet(bullet, game_objects[0]))
+            );
         }
         if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_SPACE]) {
-            game_objects.emplace_back(Game_object_utils::fire_bullet(bullet, game_objects[1]));
+            auto bullet = Game_object_utils::create_bullet();
+            game_objects.emplace_back(
+                std::move(Game_object_utils::fire_bullet(bullet, game_objects[1]))
+            );
         }
 
         for (auto &game_obj : game_objects) {
