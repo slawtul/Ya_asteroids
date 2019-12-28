@@ -39,7 +39,8 @@ struct Frames_debug_info
     void render_frames_per_second(TTF_Font *font, SDL_Color color, SDL_Renderer *renderer)
     {
         auto rect = SDL_Rect{20, 24, 120, 16};
-        render_text(
+        Render_text rt;
+        rt.render_text(
             rect, font, color, renderer, "Avg_fps: " + std::to_string(calc_frames_per_second())
         );
     }
@@ -47,7 +48,8 @@ struct Frames_debug_info
     void render_min_frames(TTF_Font *font, SDL_Color color, SDL_Renderer *renderer)
     {
         auto rect = SDL_Rect{20, 40, 120, 16};
-        render_text(
+        Render_text rt;
+        rt.render_text(
             rect, font, color, renderer, "Min_fps: " + std::to_string(calc_min_frames_per_second())
         );
     }

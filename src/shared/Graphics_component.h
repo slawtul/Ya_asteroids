@@ -21,8 +21,9 @@ struct Graphics_component
     }
 
     // If object crosses screen edge it appears on the opposite edge
-    static std::pair<int, int> calc_position_if_edge_screen_reached(int rect_x, int rect_y, int rect_w,
-                                                                    int rect_h, const Graphics &graphics)
+    static std::pair<int, int> calc_position_if_edge_screen_reached(
+        int rect_x, int rect_y, int rect_w, int rect_h, const Graphics &graphics
+    )
     {
         int screen_width, screen_height;
         SDL_GetRendererOutputSize(graphics.renderer, &screen_width, &screen_height);

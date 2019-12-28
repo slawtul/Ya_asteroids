@@ -14,7 +14,7 @@
 
 struct Game_object_utils
 {
-    static Game_object create_spaceship1()
+    Game_object create_spaceship1()
     {
         auto input = std::make_unique<Spaceship1_input_component>();
         auto physics = std::make_unique<Spaceship1_physics_component>();
@@ -27,7 +27,7 @@ struct Game_object_utils
         return go;
     }
 
-    static Game_object create_spaceship2()
+    Game_object create_spaceship2()
     {
         auto input = std::make_unique<Spaceship2_input_component>();
         auto physics = std::make_unique<Spaceship2_physics_component>();
@@ -40,7 +40,7 @@ struct Game_object_utils
         return go;
     }
 
-    static Game_object create_bullet()
+    Game_object create_bullet()
     {
         auto input = std::make_unique<Bullet_input_component>();
         auto physics = std::make_unique<Bullet_physics_component>();
@@ -53,7 +53,7 @@ struct Game_object_utils
         return go;
     }
 
-    static Game_object &fire_bullet(Game_object &bullet, const Game_object &spaceship)
+    Game_object &fire_bullet(Game_object &bullet, const Game_object &spaceship)
     {
         bullet.rect.x = spaceship.rect.x + (spaceship.rect.w - bullet.rect.w) / 2;
         bullet.rect.y = spaceship.rect.y + (spaceship.rect.h - bullet.rect.h) / 2;

@@ -30,7 +30,6 @@ add_executable(asteroids
         src/bullets/Bullet_graphics_component.h
         src/bullets/Bullet_input_component.h
         src/bullets/Bullet_physics_component.h
-        src/images/Load_image.h
         src/images/Texture_shelf.h
         src/scenes/Avoid_asteroids_scene.h
         src/scenes/Control_spaceships_scene.h

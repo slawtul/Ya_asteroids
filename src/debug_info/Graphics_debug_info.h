@@ -4,7 +4,7 @@
 
 struct Graphics_debug_info
 {
-    static void log_screen_size(SDL_Renderer *renderer)
+    void log_screen_size(SDL_Renderer *renderer)
     {
         int screen_width, screen_height;
         int result = SDL_GetRendererOutputSize(renderer, &screen_width, &screen_height);

@@ -5,7 +5,7 @@
 
 struct Init_SDL2
 {
-    static void init_SDL2(const Uint32 flags)
+    void init_SDL2(const Uint32 flags)
     {
         SDL_LogSetAllPriority(SDL_LOG_PRIORITY_DEBUG);
         if (SDL_Init(flags) != 0) {
@@ -14,8 +14,7 @@ struct Init_SDL2
         }
     }
 
-    static SDL_Window *create_window(const char *title, int screen_width, int screen_height,
-                                     const Uint32 flags)
+    SDL_Window *create_window(const char *title, int screen_width, int screen_height, const Uint32 flags)
     {
         const auto window = SDL_CreateWindow(
             title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, screen_width, screen_height, flags
@@ -27,7 +26,7 @@ struct Init_SDL2
         return window;
     }
 
-    static SDL_Renderer *create_renderer(SDL_Window *window, Uint32 flags)
+    SDL_Renderer *create_renderer(SDL_Window *window, Uint32 flags)
     {
         const auto renderer = SDL_CreateRenderer(window, -1, flags);
         if (renderer == nullptr) {
@@ -37,7 +36,7 @@ struct Init_SDL2
         return renderer;
     }
 
-    static SDL_Surface *load_image(const char *file)
+    SDL_Surface *load_image(const char *file)
     {
         const auto surface = IMG_Load(file);
         if (surface == nullptr) {
