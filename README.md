@@ -10,13 +10,13 @@
     * Choose i686
 2. Download SDL2-devel-x.x.x-mingw.tar.gz from [https://www.libsdl.org/download-2.0.php](https://www.libsdl.org/download-2.0.php)
     * Copy \[bin, include, lib, share\] folders from 'SDL2-x.x.x/i686-w64-mingw32' folder to main MinGW folder (ex. C:\Opt\mingw-w64\mingw32)
-    * Do not copy these folders to C:\Opt\mingw-w64\mingw32\i686-w64-mingw32\ subfolder
+    * Do not copy above folders to C:\Opt\mingw-w64\mingw32\i686-w64-mingw32\ subfolder
 3. Download SDL2_image-devel-2.0.5-mingw.tar.gz from [https://www.libsdl.org/projects/SDL_image](https://www.libsdl.org/projects/SDL_image)
     * Copy \[bin, include, lib\] folders from 'SDL2_image-x.x.x/i686-w64-mingw32' folder to main MinGW folder (ex. C:\Opt\mingw-w64\mingw32)
-    * Do not copy these folders to C:\Opt\mingw-w64\mingw32\i686-w64-mingw32\ subfolder
+    * Do not copy above folders to C:\Opt\mingw-w64\mingw32\i686-w64-mingw32\ subfolder
 4. Download SDL2_ttf-devel-x.x.x-mingw.tar.gz from [https://www.libsdl.org/projects/SDL_ttf](https://www.libsdl.org/projects/SDL_ttf)
     * Copy \[bin, include, lib\] folders from 'SDL2_ttf-x.x.x/i686-w64-mingw32' folder to main MinGW folder (ex. C:\Opt\mingw-w64\mingw32)
-    * Do not copy these folders to C:\Opt\mingw-w64\mingw32\i686-w64-mingw32\ subfolder
+    * Do not copy above folders to C:\Opt\mingw-w64\mingw32\i686-w64-mingw32\ subfolder
 5. Configure make and CMake and run it
 
 
