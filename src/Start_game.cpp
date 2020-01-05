@@ -80,7 +80,8 @@ int main(int argc, char *argv[])
     SDL_DestroyWindow(window);
 
     #ifdef DEBUG
-    SDL_LogInfo(0, "Max objects qty: %d", static_cast<int>(odi.calc_max_objects_on_screen()));
+    SDL_LogInfo(0, "Max objects qty: %d", static_cast<int>(odi.max_objects_on_screen));
+    SDL_LogInfo(0, "Avg FPS: %.2f", fdi.frames_per_second);
     SDL_LogInfo(0, "Stop game");
     #endif
 
