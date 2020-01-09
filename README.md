@@ -5,6 +5,7 @@
 
 ## How to launch on local machine
 
+### Windows 10
 0. Install CMake [https://cmake.org/download/](https://cmake.org/download/)
 1. Install MinGW [mingw-w64-install.exe](http://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/installer/mingw-w64-install.exe/download)
     * Choose i686
@@ -19,8 +20,13 @@
     * Do not copy above folders to C:\Opt\mingw-w64\mingw32\i686-w64-mingw32\ subfolder
 5. Configure make and CMake and run it
 
+### Fedora
+```bash
+sudo dnf install SDL2-devel SDL2_image-devel SDL2_ttf-devel
+```
+---
 
-### Current status
+#### Current status
 
 - [x] Spaceships (spaceship 1 keys: W, A, D, SPACE and spaceship 2 keys: UP, LEFT, RIGHT, ENTER)
 - [x] Bullets
