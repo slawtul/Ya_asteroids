@@ -7,10 +7,10 @@ struct Spaceship1_input_component: Input_component
     void update(Game_object &obj) override
     {
         if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_RIGHT]) {
-            obj.motion.angle += 8.0;
+            obj.motion.angle += 4.0;
         }
         if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_LEFT]) {
-            obj.motion.angle -= 8.0;
+            obj.motion.angle -= 4.0;
         }
         if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_UP]) {
             obj.motion.acceleration = 0.6;
