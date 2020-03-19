@@ -22,7 +22,7 @@ struct Game_object_utils
 
         auto go = Game_object(std::move(input), std::move(physics), std::move(gfx));
         go.meta.name = Object_name::SPACESHIP1;
-        go.motion.max_speed = 12.0;
+        go.motion.max_speed = 8.0;
         go.rect = {0, 0, 64, 64};
         return go;
     }
@@ -35,7 +35,7 @@ struct Game_object_utils
 
         auto go = Game_object(std::move(input), std::move(physics), std::move(gfx));
         go.meta.name = Object_name::SPACESHIP2;
-        go.motion.max_speed = 12.0;
+        go.motion.max_speed = 8.0;
         go.rect = {256, 1000, 64, 64};
         return go;
     }

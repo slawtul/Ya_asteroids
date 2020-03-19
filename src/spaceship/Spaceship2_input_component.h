@@ -14,11 +14,11 @@ struct Spaceship2_input_component: Input_component
         }
         if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_W]) {
             obj.motion.acceleration = 0.6;
-            obj.motion.max_speed = 16.0;
+            obj.motion.max_speed = 8.0;
         }
         else {
             obj.motion.acceleration = 0.2;
-            obj.motion.max_speed = 12.0;
+            obj.motion.max_speed = 6.0;
         }
     }
 };
