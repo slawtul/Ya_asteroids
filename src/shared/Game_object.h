@@ -36,8 +36,6 @@ struct Game_object
     Motion motion{};
     SDL_Rect rect{};
 
-    Game_object() = default;
-
     Game_object(
         std::unique_ptr<Input_component> input_,
         std::unique_ptr<Physics_component> physics_,

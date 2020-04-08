@@ -7,9 +7,9 @@
 
 struct Texture_shelf
 {
-    std::map<std::string, SDL_Texture *> shelf{};
+    std::map<std::string_view, SDL_Texture *> shelf{};
 
-    SDL_Texture *get_texture(const std::string &texture_name)
+    SDL_Texture *get_texture(const std::string_view &texture_name)
     {
         return shelf[texture_name];
     }
