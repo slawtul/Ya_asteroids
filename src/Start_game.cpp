@@ -72,19 +72,19 @@ int main(int argc, char *argv[])
     }
     // End: game loop
 
-    // Free memory
-    game_objects.clear();
-    graphics.texture_shelf.destroy_textures();
-    SDL_FreeSurface(SDL_GetWindowSurface(window));
-    SDL_DestroyRenderer(graphics.renderer);
-    SDL_DestroyWindow(window);
-
     #ifdef DEBUG
     SDL_LogInfo(0, "Max objects qty: %d", static_cast<int>(odi.max_objects_on_screen));
     SDL_LogInfo(0, "Avg FPS: %.2f", fdi.frames_per_second);
     SDL_LogInfo(0, "Stop game");
     TTF_CloseFont(font);
     #endif
+
+    // Free memory
+    game_objects.clear();
+    graphics.texture_shelf.destroy_textures();
+    SDL_FreeSurface(SDL_GetWindowSurface(window));
+    SDL_DestroyRenderer(graphics.renderer);
+    SDL_DestroyWindow(window);
 
     IMG_Quit();
     SDL_Quit();
