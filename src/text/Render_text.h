@@ -6,10 +6,8 @@
 
 struct Render_text
 {
-    void render_text(
-        SDL_Rect &rect, TTF_Font *font, SDL_Color color, SDL_Renderer *renderer,
-        const std::string &text_to_render
-    )
+    void render_text(SDL_Rect &rect, TTF_Font *font, SDL_Color color, SDL_Renderer *renderer,
+                     const std::string &text_to_render)
     {
         const auto surface = TTF_RenderText_Solid(font, text_to_render.c_str(), color);
         const auto texture = SDL_CreateTextureFromSurface(renderer, surface);

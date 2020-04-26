@@ -22,15 +22,15 @@ struct Objects_debug_info
     {
         auto rect = SDL_Rect{20, 56, 120, 16};
         Render_text rt;
-        rt.render_text(rect, font, color, renderer, "Obj_qty: " + std::to_string(objects_on_screen));
+        rt.render_text(rect, font, color, renderer,
+                       "Obj_qty: " + std::to_string(objects_on_screen));
     }
 
     void render_max_obj_quantity(TTF_Font *font, SDL_Color color, SDL_Renderer *renderer)
     {
         auto rect = SDL_Rect{20, 72, 120, 16};
         Render_text rt;
-        rt.render_text(
-            rect, font, color, renderer, "Max_qty: " + std::to_string(calc_max_objects_on_screen())
-        );
+        rt.render_text(rect, font, color, renderer,
+                       "Max_qty: " + std::to_string(calc_max_objects_on_screen()));
     }
 };
