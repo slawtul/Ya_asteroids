@@ -9,6 +9,11 @@ struct Bullet_graphics_component: Graphics_component
         obj.rect.x += static_cast<int>(obj.motion.dx);
         obj.rect.y += static_cast<int>(obj.motion.dy);
 
+        if (off_screen(obj.rect.x, obj.rect.y, graphics)) {
+            obj.meta.is_active = false;
+            return;
+        }
+
         auto[x, y] = calc_position_if_edge_screen_reached(
             obj.rect.x, obj.rect.y, obj.rect.w, obj.rect.h, graphics
         );

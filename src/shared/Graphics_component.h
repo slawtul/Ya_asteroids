@@ -12,7 +12,8 @@ struct Graphics_component
 
     virtual void update(Game_object &obj, Graphics &graphics) = 0;
 
-    static bool off_screen(int rect_x, int rect_y, const Graphics &graphics)
+    static bool
+    off_screen(int rect_x, int rect_y, const Graphics &graphics)
     {
         int screen_width, screen_height;
         SDL_GetRendererOutputSize(graphics.renderer, &screen_width, &screen_height);
