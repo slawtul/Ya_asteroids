@@ -37,6 +37,8 @@ add_executable(asteroids
         src/scenes/Two_spaceships_scene.h
         src/scenes/Scene.h
         src/shared/Game_object.h
+        src/shared/Game_object_meta.h
+        src/shared/Game_object_motion.h
         src/init/Constants.h
         src/shared/Graphics.h
         src/shared/Graphics_component.h
