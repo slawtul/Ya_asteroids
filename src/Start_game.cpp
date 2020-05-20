@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
         scene.update(event, graphics, game_objects);
 
         #ifdef DEBUG
-        fdi.render_frames_per_second(font, white, graphics.renderer);
+        fdi.render_frames_per_sec(font, white, graphics.renderer);
         fdi.render_min_frames(font, white, graphics.renderer);
         odi.objects_on_screen = game_objects.size();
         odi.render_max_obj_quantity(font, white, graphics.renderer);
@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
 
     #ifdef DEBUG
     SDL_LogInfo(0, "Max objects qty: %d", static_cast<int>(odi.max_objects_on_screen));
-    SDL_LogInfo(0, "Avg FPS: %.2f", fdi.frames_per_second);
+    SDL_LogInfo(0, "Avg FPS: %.2f", fdi.frames_per_sec);
     SDL_LogInfo(0, "Stop game");
     TTF_CloseFont(font);
     #endif
