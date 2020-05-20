@@ -49,7 +49,7 @@ add_executable(asteroids
         src/spaceship/Spaceship2_graphics_component.h
         src/spaceship/Spaceship2_input_component.h
         src/spaceship/Spaceship2_physics_component.h
-        src/init/Init_SDL2.h
+        src/init/SDL2_lib.h
         src/text/Render_text.h
         src/shared/Game_object_utils.h
         src/debug_info/Frames_debug_info.h

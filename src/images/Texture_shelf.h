@@ -2,7 +2,8 @@
 
 #include <map>
 #include <SDL.h>
-#include <init/Init_SDL2.h>
+#include <SDL_image.h>
+#include <init/SDL2_lib.h>
 #include "shared/Graphics.h"
 
 struct Texture_shelf
@@ -16,8 +17,7 @@ struct Texture_shelf
 
     void add_image(SDL_Renderer *renderer, const char *texture_name, const char *file)
     {
-        Init_SDL2 SDL2;
-        auto surface = SDL2.load_image(file);
+        auto surface = load_image(file);
         auto texture = SDL_CreateTextureFromSurface(renderer, surface);
         SDL_FreeSurface(surface);
         shelf[texture_name] = texture;
@@ -40,5 +40,15 @@ struct Texture_shelf
             SDL_DestroyTexture(texture);
         }
         SDL_LogInfo(0, "Destroy all textures");
+    }
+
+    SDL_Surface *load_image(const char *file) const
+    {
+        const auto surface = IMG_Load(file);
+        if (surface == nullptr) {
+            SDL_Log("Unable to load image %s", file);
+            SDL_Quit();
+        }
+        return surface;
     }
 };

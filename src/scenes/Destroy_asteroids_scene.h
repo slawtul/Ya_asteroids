@@ -7,7 +7,7 @@
 #include "Graphics.h"
 #include "Game_object.h"
 #include "Game_object_utils.h"
-#include "init/Init_SDL2.h"
+#include "init/SDL2_lib.h"
 
 struct Destroy_asteroids_scene
 {

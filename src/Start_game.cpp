@@ -1,4 +1,4 @@
-#include "init/Init_SDL2.h"
+#include "init/SDL2_lib.h"
 #include "text/Render_text.h"
 #include "spaceship/Spaceship1_input_component.h"
 #include "scenes/Destroy_asteroids_scene.h"
@@ -13,8 +13,8 @@ int main(int argc, char *argv[])
     SDL_LogInfo(0, "Program parameters: argc %d", argc);
     SDL_LogInfo(0, "Program parameters: argv %s", *argv);
 
-    Init_SDL2 SDL2;
-    SDL2.init_SDL2(SDL_INIT_VIDEO);
+    SDL2_lib SDL2;
+    SDL2.init(SDL_INIT_VIDEO);
     IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG);
     TTF_Init();
 
@@ -63,9 +63,9 @@ int main(int argc, char *argv[])
         #ifdef DEBUG
         fdi.render_frames_per_sec(font, white, graphics.renderer);
         fdi.render_min_frames(font, white, graphics.renderer);
-        odi.objects_on_screen = game_objects.size();
-        odi.render_max_obj_quantity(font, white, graphics.renderer);
-        odi.render_obj_quantity(font, white, graphics.renderer);
+        odi.objs_on_screen = game_objects.size();
+        odi.render_max_obj_qty(font, white, graphics.renderer);
+        odi.render_obj_qty(font, white, graphics.renderer);
         #endif
 
         // Render all
@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
     // End: game loop
 
     #ifdef DEBUG
-    SDL_LogInfo(0, "Max objects qty: %d", static_cast<int>(odi.max_objects_on_screen));
+    SDL_LogInfo(0, "Max objects qty: %d", static_cast<int>(odi.max_objs_on_screen));
     SDL_LogInfo(0, "Avg FPS: %.2f", fdi.frames_per_sec);
     SDL_LogInfo(0, "Stop game");
     TTF_CloseFont(font);

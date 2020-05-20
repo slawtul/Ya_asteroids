@@ -1,11 +1,10 @@
 #pragma once
 
 #include <SDL.h>
-#include <SDL_image.h>
 
-struct Init_SDL2
+struct SDL2_lib
 {
-    void init_SDL2(const Uint32 flags)
+    void init(const Uint32 flags)
     {
         SDL_LogSetAllPriority(SDL_LOG_PRIORITY_DEBUG);
         if (SDL_Init(flags) != 0) {
@@ -36,13 +35,4 @@ struct Init_SDL2
         return renderer;
     }
 
-    SDL_Surface *load_image(const char *file)
-    {
-        const auto surface = IMG_Load(file);
-        if (surface == nullptr) {
-            SDL_Log("Unable to load image %s", file);
-            SDL_Quit();
-        }
-        return surface;
-    }
 };
