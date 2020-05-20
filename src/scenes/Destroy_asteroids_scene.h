@@ -34,11 +34,11 @@ struct Destroy_asteroids_scene
             game_obj.update(graphics);
         }
 
-        auto not_active = std::remove_if(game_objects.begin(), game_objects.end(),
-                                         [&](const Game_object &obj)
-                                         {
-                                             return !obj.meta.is_active;
-                                         }
+        auto not_active = std::remove_if(
+            game_objects.begin(), game_objects.end(), [&](const Game_object &obj)
+            {
+                return !obj.meta.is_active;
+            }
         );
         game_objects.erase(not_active, game_objects.end());
     }

@@ -20,8 +20,9 @@ struct Bullet_graphics_component: Graphics_component
         obj.rect.x = x;
         obj.rect.y = y;
 
-        SDL_RenderCopyEx(graphics.renderer, graphics.texture_shelf.get_texture("bullet_short_single"),
-                         nullptr, &obj.rect, obj.motion.angle + 90, nullptr, SDL_FLIP_NONE
+        SDL_RenderCopyEx(
+            graphics.renderer, graphics.texture_shelf.get_texture("bullet_short_single"),
+            nullptr, &obj.rect, obj.motion.angle + 90, nullptr, SDL_FLIP_NONE
         );
     }
 };
