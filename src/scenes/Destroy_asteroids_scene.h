@@ -15,8 +15,10 @@ struct Destroy_asteroids_scene
     {
         SDL_SetRenderDrawColor(graphics.renderer, 0, 0, 0, 255);
         SDL_RenderClear(graphics.renderer);
-        SDL_RenderCopy(graphics.renderer, graphics.texture_shelf.get_texture("background_01_static"),
-                       nullptr, nullptr);
+        SDL_RenderCopy(
+            graphics.renderer, graphics.texture_shelf.get_texture("background_01_static"),
+            nullptr, nullptr
+        );
         SDL_PollEvent(&event);
 
         if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_RETURN]) {
@@ -42,4 +44,5 @@ struct Destroy_asteroids_scene
         );
         game_objects.erase(not_active, game_objects.end());
     }
+
 };

@@ -6,9 +6,9 @@
 
 struct Frames_debug_info
 {
-    Uint32 current_time{0};
-    Uint32 last_time{0};
-    Uint32 frame_delta_time{0};
+    uint32_t current_time{0};
+    uint32_t last_time{0};
+    uint32_t frame_delta_time{0};
 
     double frame_time{0.0};
     double frames_per_sec{0.0};

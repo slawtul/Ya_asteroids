@@ -15,13 +15,14 @@ struct Texture_shelf
         return shelf[texture_name];
     }
 
-    void add_image(SDL_Renderer *renderer, const char *texture_name, const char *file)
+    void add_image(SDL_Renderer *renderer, const std::string_view &texture_name,
+                   const std::string_view &file)
     {
         auto surface = load_image(file);
         auto texture = SDL_CreateTextureFromSurface(renderer, surface);
         SDL_FreeSurface(surface);
         shelf[texture_name] = texture;
-        SDL_LogInfo(0, "Create texture for %s", file);
+        SDL_LogInfo(0, "Create texture for %s", std::string(file).c_str());
     }
 
     void add_initial_images(SDL_Renderer *renderer)
@@ -42,11 +43,11 @@ struct Texture_shelf
         SDL_LogInfo(0, "Destroy all textures");
     }
 
-    SDL_Surface *load_image(const char *file) const
+    SDL_Surface *load_image(const std::string_view &file) const
     {
-        const auto surface = IMG_Load(file);
+        const auto surface = IMG_Load(std::string(file).c_str());
         if (surface == nullptr) {
-            SDL_Log("Unable to load image %s", file);
+            SDL_Log("Unable to load image %s", std::string(file).c_str());
             SDL_Quit();
         }
         return surface;

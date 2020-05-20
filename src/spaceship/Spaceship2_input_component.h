@@ -21,4 +21,5 @@ struct Spaceship2_input_component: Input_component
             obj.motion.max_speed = 6.0;
         }
     }
+
 };

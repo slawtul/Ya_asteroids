@@ -51,4 +51,5 @@ struct Game_object
         physics->update(*this);
         graphics->update(*this, graphics_);
     }
+
 };

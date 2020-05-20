@@ -7,10 +7,10 @@
 
 struct Objects_debug_info
 {
-    size_t objs_on_screen{0};
-    size_t max_objs_on_screen{0};
+    uint8_t objs_on_screen{0};
+    uint8_t max_objs_on_screen{0};
 
-    size_t count_objs()
+    uint8_t count_objs()
     {
         if (objs_on_screen > max_objs_on_screen) {
             max_objs_on_screen = objs_on_screen;
@@ -35,4 +35,5 @@ struct Objects_debug_info
             rect, font, color, renderer, "Max_qty: " + std::to_string(count_objs())
         );
     }
+
 };
