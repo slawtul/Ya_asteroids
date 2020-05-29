@@ -18,7 +18,7 @@ struct Objects_debug_info
         return max_objs_on_screen;
     }
 
-    void render_obj_qty(TTF_Font *font, SDL_Color color, SDL_Renderer *renderer)
+    void render_obj_qty(TTF_Font *font, SDL_Color color, SDL_Renderer *renderer) const
     {
         auto rect = SDL_Rect{20, 56, 120, 16};
         Render_text rt;
