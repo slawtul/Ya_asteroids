@@ -45,8 +45,7 @@ struct Game_object_utils
         auto go = Game_object(
             std::make_unique<Bullet_input_component>(),
             std::make_unique<Bullet_physics_component>(),
-            std::make_unique<Bullet_graphics_component>()
-        );
+            std::make_unique<Bullet_graphics_component>());
         go.meta.name = Object_name::BULLET;
         go.motion.acceleration = 32;
         go.rect = {0, 0, 4, 20};

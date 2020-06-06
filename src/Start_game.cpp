@@ -19,11 +19,12 @@ int main(int argc, char *argv[])
     TTF_Init();
 
     const auto window = SDL2.create_window(
-        "YA Asteroids", 1920, 1080, SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI
-    );
+        "YA Asteroids", 1920, 1080,
+        SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI);
+
     const auto renderer = SDL2.create_renderer(
-        window, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC
-    );
+        window,
+        SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
     Graphics_debug_info gdi;
     gdi.log_screen_size(renderer);
@@ -39,46 +40,48 @@ int main(int argc, char *argv[])
     game_objects.emplace_back(std::move(sp1));
     game_objects.emplace_back(std::move(sp2));
 
-    #ifdef DEBUG
+#ifdef DEBUG
     const auto font = TTF_OpenFont("./resources/terminus.ttf", 16);
     const auto white = SDL_Color{255, 255, 255, 127};
     Frames_debug_info fdi;
     Objects_debug_info odi;
-    #endif
+#endif
 
     // Start: game loop
     Destroy_asteroids_scene scene;
     SDL_Event event;
-    while (true) {
+    while (true)
+    {
 
-        #ifdef DEBUG
+#ifdef DEBUG
         fdi.current_time = SDL_GetTicks();
-        #endif
+#endif
 
-        if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_ESCAPE]) {
+        if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_ESCAPE])
+        {
             break;
         }
         scene.update(event, graphics, game_objects);
 
-        #ifdef DEBUG
+#ifdef DEBUG
         fdi.render_frames_per_sec(font, white, graphics.renderer);
         fdi.render_min_frames(font, white, graphics.renderer);
         odi.objs_on_screen = game_objects.size();
         odi.render_max_obj_qty(font, white, graphics.renderer);
         odi.render_obj_qty(font, white, graphics.renderer);
-        #endif
+#endif
 
         // Render all
         SDL_RenderPresent(graphics.renderer);
     }
     // End: game loop
 
-    #ifdef DEBUG
+#ifdef DEBUG
     SDL_LogInfo(0, "Max objects qty: %d", static_cast<int>(odi.max_objs_on_screen));
     SDL_LogInfo(0, "Avg FPS: %.2f", fdi.frames_per_sec);
     SDL_LogInfo(0, "Stop game");
     TTF_CloseFont(font);
-    #endif
+#endif
 
     // Free memory
     game_objects.clear();

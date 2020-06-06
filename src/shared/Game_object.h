@@ -9,7 +9,6 @@
 #include "Game_object_motion.h"
 #include "Game_object_meta.h"
 
-
 struct Game_object
 {
     std::unique_ptr<Input_component> input{nullptr};
@@ -20,9 +19,10 @@ struct Game_object
     Game_object_motion motion{};
     SDL_Rect rect{};
 
-    Game_object(std::unique_ptr<Input_component> input_,
-                std::unique_ptr<Physics_component> physics_,
-                std::unique_ptr<Graphics_component> graphics_)
+    Game_object(
+        std::unique_ptr<Input_component> input_,
+        std::unique_ptr<Physics_component> physics_,
+        std::unique_ptr<Graphics_component> graphics_)
         : input{std::move(input_)},
           physics{std::move(physics_)},
           graphics{std::move(graphics_)}
@@ -35,5 +35,4 @@ struct Game_object
         physics->update(*this);
         graphics->update(*this, graphics_);
     }
-
 };

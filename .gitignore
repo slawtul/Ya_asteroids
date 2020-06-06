@@ -2,6 +2,7 @@
 .idea/
 x64/
 x86/
+build/
 build-debug/
 build-release/
 asteroids-build-debug/
