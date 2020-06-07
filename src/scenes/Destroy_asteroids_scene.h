@@ -39,7 +39,8 @@ struct Destroy_asteroids_scene
                 std::move(gou.fire_bullet(bullet, game_objects[1])));
         }
 
-        // reverse iterator
+        // reverse iterator used
+        // bullets should be placed under starships
         for (auto it = game_objects.rbegin(); it != game_objects.rend(); ++it)
         {
             it->update(graphics);

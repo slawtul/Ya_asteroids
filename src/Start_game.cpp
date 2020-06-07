@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
     Objects_debug_info odi;
 #endif
 
-    // Start: game loop
+    // start: game loop
     Destroy_asteroids_scene scene;
     SDL_Event event;
     while (true)
@@ -71,10 +71,10 @@ int main(int argc, char *argv[])
         odi.render_obj_qty(font, white, graphics.renderer);
 #endif
 
-        // Render all
+        // render all
         SDL_RenderPresent(graphics.renderer);
     }
-    // End: game loop
+    // end: game loop
 
 #ifdef DEBUG
     SDL_LogInfo(0, "Max objects qty: %d", static_cast<int>(odi.max_objs_on_screen));
@@ -83,7 +83,7 @@ int main(int argc, char *argv[])
     TTF_CloseFont(font);
 #endif
 
-    // Free memory
+    // free memory
     game_objects.clear();
     graphics.texture_shelf.destroy_textures();
     SDL_FreeSurface(SDL_GetWindowSurface(window));
