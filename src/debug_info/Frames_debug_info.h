@@ -52,7 +52,7 @@ struct Frames_debug_info
     {
         auto rect = SDL_Rect{20, 24, 120, 16};
         Render_text rt;
-        rt.render_text(
+        rt.render(
             rect, font, color, renderer,
             "Avg_fps: " + std::to_string(calc_frames_per_sec()));
     }
@@ -64,7 +64,7 @@ struct Frames_debug_info
     {
         auto rect = SDL_Rect{20, 40, 120, 16};
         Render_text rt;
-        rt.render_text(
+        rt.render(
             rect, font, color, renderer,
             "Min_fps: " + std::to_string(calc_min_frames_per_sec()));
     }

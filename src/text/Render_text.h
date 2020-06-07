@@ -6,7 +6,7 @@
 
 struct Render_text
 {
-    void render_text(
+    void render(
         SDL_Rect &rect,
         TTF_Font *font,
         SDL_Color color,

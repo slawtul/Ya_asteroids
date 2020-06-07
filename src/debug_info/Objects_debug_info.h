@@ -26,7 +26,7 @@ struct Objects_debug_info
     {
         auto rect = SDL_Rect{20, 56, 120, 16};
         Render_text rt;
-        rt.render_text(
+        rt.render(
             rect, font, color, renderer,
             "Obj_qty: " + std::to_string(objs_on_screen));
     }
@@ -38,7 +38,7 @@ struct Objects_debug_info
     {
         auto rect = SDL_Rect{20, 72, 120, 16};
         Render_text rt;
-        rt.render_text(
+        rt.render(
             rect, font, color, renderer,
             "Max_qty: " + std::to_string(count_objs()));
     }
