@@ -39,9 +39,10 @@ struct Destroy_asteroids_scene
                 std::move(gou.fire_bullet(bullet, game_objects[1])));
         }
 
-        for (auto &game_obj : game_objects)
+        // reverse iterator
+        for (auto it = game_objects.rbegin(); it != game_objects.rend(); ++it)
         {
-            game_obj.update(graphics);
+            it->update(graphics);
         }
 
         auto not_active = std::remove_if(
