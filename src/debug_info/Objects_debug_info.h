@@ -7,10 +7,10 @@
 
 struct Objects_debug_info
 {
-    uint8_t objs_on_screen{0};
-    uint8_t max_objs_on_screen{0};
+    uint16_t objs_on_screen{0};
+    uint16_t max_objs_on_screen{0};
 
-    uint8_t count_objs()
+    uint16_t count_objs()
     {
         if (objs_on_screen > max_objs_on_screen)
         {
