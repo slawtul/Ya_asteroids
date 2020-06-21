@@ -37,6 +37,7 @@ int main(int argc, char *argv[])
     auto sp1 = gou.create_spaceship1();
     auto sp2 = gou.create_spaceship2();
     auto game_objects = std::vector<Game_object>();
+    game_objects.reserve(400);
     game_objects.emplace_back(std::move(sp1));
     game_objects.emplace_back(std::move(sp2));
 
