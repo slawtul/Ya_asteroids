@@ -58,6 +58,7 @@ add_executable(asteroids
         src/debug_info/Objects_debug_info.h
         src/debug_info/Graphics_debug_info.h)
 
+add_compile_options(-Wall -Wextra -Wpedantic -Werror)
 target_link_libraries(asteroids ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY} ${SDL2_TTF_LIBRARY})
 target_compile_options(asteroids PUBLIC -Wall -Wextra -Werror)
 
