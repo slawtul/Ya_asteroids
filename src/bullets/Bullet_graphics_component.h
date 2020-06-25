@@ -18,6 +18,9 @@ struct Bullet_graphics_component : Graphics_component
         SDL_RenderCopyEx(
             graphics.renderer,
             graphics.texture_shelf.get_texture("bullet_short_single"),
-            nullptr, &obj.rect, obj.motion.angle + 90, nullptr, SDL_FLIP_NONE);
+            nullptr,
+            &obj.rect,
+            obj.motion.angle + 90,
+            nullptr, SDL_FLIP_NONE);
     }
 };

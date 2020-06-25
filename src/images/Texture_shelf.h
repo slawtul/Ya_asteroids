@@ -29,8 +29,14 @@ struct Texture_shelf
 
     void add_initial_images(SDL_Renderer *renderer)
     {
-        add_image(renderer, "background_01_static", "resources/background_01_static.jpg");
-        add_image(renderer, "bullet_short_single", "resources/bullet_short_single.png");
+        add_image(
+            renderer,
+            "background_01_static",
+            "resources/background_01_static.jpg");
+        add_image(
+            renderer,
+            "bullet_short_single",
+            "resources/bullet_short_single.png");
         add_image(renderer, "DKO-api-X1", "resources/DKO-api-X1.png");
         add_image(renderer, "CX16-X1", "resources/CX16-X1.png");
         add_image(renderer, "WO84-wu-X1", "resources/WO84-wu-X1.png");

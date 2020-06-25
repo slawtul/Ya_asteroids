@@ -21,7 +21,8 @@ struct Destroy_asteroids_scene
         SDL_RenderCopy(
             graphics.renderer,
             graphics.texture_shelf.get_texture("background_01_static"),
-            nullptr, nullptr);
+            nullptr,
+            nullptr);
 
         SDL_PollEvent(&event);
         if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_RETURN])

@@ -21,8 +21,12 @@ struct SDL2_lib
         const uint32_t flags)
     {
         const auto window = SDL_CreateWindow(
-            title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-            screen_width, screen_height, flags);
+            title,
+            SDL_WINDOWPOS_CENTERED,
+            SDL_WINDOWPOS_CENTERED,
+            screen_width,
+            screen_height,
+            flags);
         if (window == nullptr)
         {
             SDL_Log("Unable to create a window %s", SDL_GetError());
