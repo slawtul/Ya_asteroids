@@ -21,6 +21,7 @@ struct Bullet_graphics_component : Graphics_component
             nullptr,
             &obj.rect,
             obj.motion.angle + 90,
-            nullptr, SDL_FLIP_NONE);
+            nullptr,
+            SDL_FLIP_NONE);
     }
 };
