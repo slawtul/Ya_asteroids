@@ -15,10 +15,12 @@ struct Objects_debug_info
     void render_obj_qty(
         TTF_Font *font,
         SDL_Color color,
-        SDL_Renderer *renderer) const;
+        SDL_Renderer *renderer
+    ) const;
 
     void render_max_obj_qty(
         TTF_Font *font,
         SDL_Color color,
-        SDL_Renderer *renderer);
+        SDL_Renderer *renderer
+    );
 };

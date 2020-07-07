@@ -12,7 +12,8 @@ uint16_t Objects_debug_info::count_objs()
 void Objects_debug_info::render_obj_qty(
     TTF_Font *font,
     SDL_Color color,
-    SDL_Renderer *renderer) const
+    SDL_Renderer *renderer
+) const
 {
     auto rect = SDL_Rect{20, 56, 120, 16};
     Render_text rt;
@@ -27,7 +28,8 @@ void Objects_debug_info::render_obj_qty(
 void Objects_debug_info::render_max_obj_qty(
     TTF_Font *font,
     SDL_Color color,
-    SDL_Renderer *renderer)
+    SDL_Renderer *renderer
+)
 {
     auto rect = SDL_Rect{20, 72, 120, 16};
     Render_text rt;

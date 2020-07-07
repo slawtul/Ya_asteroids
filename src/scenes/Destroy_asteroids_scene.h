@@ -14,7 +14,8 @@ struct Destroy_asteroids_scene
     void update(
         SDL_Event &event,
         Graphics &graphics,
-        std::vector<Game_object> &game_objects)
+        std::vector<Game_object> &game_objects
+    )
     {
         SDL_SetRenderDrawColor(graphics.renderer, 0, 0, 0, 255);
         SDL_RenderClear(graphics.renderer);
@@ -22,7 +23,8 @@ struct Destroy_asteroids_scene
             graphics.renderer,
             graphics.texture_shelf.get_texture("background_01_static"),
             nullptr,
-            nullptr);
+            nullptr
+        );
 
         SDL_PollEvent(&event);
         if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_RETURN])
@@ -48,9 +50,11 @@ struct Destroy_asteroids_scene
         }
 
         auto not_active = std::remove_if(
-            game_objects.begin(), game_objects.end(), [&](const Game_object &obj) {
+            game_objects.begin(), game_objects.end(), [&](const Game_object &obj)
+            {
                 return !obj.meta.is_active;
-            });
+            }
+        );
         game_objects.erase(not_active, game_objects.end());
     }
 };

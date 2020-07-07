@@ -15,16 +15,18 @@ struct Graphics_component
     static bool off_screen(
         int rect_x,
         int rect_y,
-        const Graphics &graphics)
+        const Graphics &graphics
+    )
     {
         int screen_width, screen_height;
         SDL_GetRendererOutputSize(
             graphics.renderer,
             &screen_width,
-            &screen_height);
+            &screen_height
+        );
 
         return (rect_x < 0 || rect_y < 0) ||
-               (rect_x > screen_width || rect_y > screen_height);
+            (rect_x > screen_width || rect_y > screen_height);
     }
 
     // If object crosses screen edge it appears on the opposite edge
@@ -33,13 +35,15 @@ struct Graphics_component
         int rect_y,
         int rect_w,
         int rect_h,
-        const Graphics &graphics)
+        const Graphics &graphics
+    )
     {
         int screen_width, screen_height;
         SDL_GetRendererOutputSize(
             graphics.renderer,
             &screen_width,
-            &screen_height);
+            &screen_height
+        );
 
         if (rect_x > screen_width)
         {

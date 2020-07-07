@@ -2,7 +2,7 @@
 
 #include "Game_object.h"
 
-struct Spaceship1_input_component : Input_component
+struct Spaceship1_input_component: Input_component
 {
     void update(Game_object &obj) override
     {
