@@ -30,6 +30,9 @@ add_executable(asteroids
         src/bullets/Bullet_graphics_component.h
         src/bullets/Bullet_input_component.h
         src/bullets/Bullet_physics_component.h
+        src/bullets/Bullet_graphics_component.cpp
+        src/bullets/Bullet_input_component.cpp
+        src/bullets/Bullet_physics_component.cpp
         src/images/Texture_shelf.h
         src/scenes/Avoid_asteroids_scene.h
         src/scenes/Control_spaceships_scene.h
@@ -55,8 +58,12 @@ add_executable(asteroids
         src/text/Render_text.h
         src/shared/Game_object_utils.h
         src/debug_info/Frames_debug_info.h
+        src/debug_info/Graphics_debug_info.h
         src/debug_info/Objects_debug_info.h
-        src/debug_info/Graphics_debug_info.h src/debug_info/Frames_debug_info.cpp src/debug_info/Graphics_debug_info.cpp src/debug_info/Objects_debug_info.cpp)
+        src/debug_info/Frames_debug_info.cpp
+        src/debug_info/Graphics_debug_info.cpp
+        src/debug_info/Objects_debug_info.cpp
+        )
 
 add_compile_options(-Wall -Wextra -Wpedantic -Werror)
 target_link_libraries(asteroids ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY} ${SDL2_TTF_LIBRARY})
