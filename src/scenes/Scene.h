@@ -2,9 +2,9 @@
 
 struct Scene
 {
-    Scene() = default;
+  Scene() = default;
 
-    virtual ~Scene() = default;
+  virtual ~Scene() = default;
 
-    virtual void update() = 0;
+  virtual void update() = 0;
 };

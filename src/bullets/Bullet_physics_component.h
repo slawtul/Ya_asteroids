@@ -7,5 +7,5 @@
 
 struct Bullet_physics_component: Physics_component
 {
-    void update(Game_object &obj) override;
+  void update(Game_object &obj) override;
 };
