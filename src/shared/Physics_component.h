@@ -1,7 +1,5 @@
 #pragma once
 
-#include <cmath>
-
 struct Game_object;
 
 struct Physics_component
@@ -12,8 +10,5 @@ struct Physics_component
 
     virtual void update(Game_object &obj) = 0;
 
-    static double current_speed(double dx, double dy)
-    {
-        return std::sqrt(dx * dx + dy * dy);
-    }
+    double current_speed(double dx, double dy);
 };

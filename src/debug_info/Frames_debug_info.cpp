@@ -1,3 +1,4 @@
+#include <string>
 #include "Frames_debug_info.h"
 
 double Frames_debug_info::calc_frame_delta_time()

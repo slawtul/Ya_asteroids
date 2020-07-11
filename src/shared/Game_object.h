@@ -27,13 +27,7 @@ struct Game_object
         : input{std::move(input_)},
           physics{std::move(physics_)},
           graphics{std::move(graphics_)}
-    {
-    }
+    {}
 
-    void update(Graphics &graphics_)
-    {
-        input->update(*this);
-        physics->update(*this);
-        graphics->update(*this, graphics_);
-    }
+    void update(Graphics &graphics_);
 };

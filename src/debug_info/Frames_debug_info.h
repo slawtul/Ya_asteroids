@@ -1,6 +1,5 @@
 #pragma once
 
-#include <string>
 #include <SDL_ttf.h>
 #include "text/Render_text.h"
 
