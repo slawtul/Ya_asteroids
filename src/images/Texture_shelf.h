@@ -1,10 +1,9 @@
 #pragma once
 
+#include <string>
 #include <map>
 #include <SDL.h>
 #include <SDL_image.h>
-#include <init/SDL2_lib.h>
-#include "shared/Graphics.h"
 
 struct Texture_shelf
 {

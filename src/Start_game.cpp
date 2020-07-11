@@ -3,6 +3,7 @@
 #include "scenes/Destroy_asteroids_scene.h"
 #include "spaceship/Spaceship1_input_component.h"
 #include "text/Render_text.h"
+#include "shared/Game_object_utils.h"
 #ifdef DEBUG
 #include "debug_info/Frames_debug_info.h"
 #include "debug_info/Objects_debug_info.h"
