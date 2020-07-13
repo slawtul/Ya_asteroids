@@ -3,7 +3,6 @@
 #include "Game_object.h"
 
 struct Game_object_utils {
-
   Game_object create_spaceship1();
 
   Game_object create_spaceship2();
