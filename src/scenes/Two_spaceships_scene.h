@@ -1,5 +1,4 @@
 #pragma once
 
-struct Two_spaceships_scene
-{
+struct Two_spaceships_scene {
 };

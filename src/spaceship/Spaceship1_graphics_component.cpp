@@ -5,7 +5,7 @@ void Spaceship1_graphics_component::update(Game_object &obj,
   obj.rect.x += static_cast<int>(obj.motion.dx);
   obj.rect.y += static_cast<int>(obj.motion.dy);
 
-  auto [x, y] = calc_position_if_edge_screen_reached(
+  auto[x, y] = calc_position_if_edge_screen_reached(
       obj.rect.x, obj.rect.y, obj.rect.w, obj.rect.h, graphics);
 
   obj.rect.x = x;
