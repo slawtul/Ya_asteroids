@@ -1,6 +1,6 @@
 #pragma once
 
-#include "images/Texture_shelf.h"
+#include "../images/Texture_shelf.h"
 #include <SDL.h>
 
 struct Graphics {

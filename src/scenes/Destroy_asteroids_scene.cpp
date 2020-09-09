@@ -1,7 +1,6 @@
 #include "Destroy_asteroids_scene.h"
 #include "Game_object_utils.h"
 #include <algorithm>
-#include <memory>
 
 void Destroy_asteroids_scene::update(SDL_Event &event, Graphics &graphics,
                                      std::vector<Game_object> &game_objects) {
@@ -31,8 +30,9 @@ void Destroy_asteroids_scene::update(SDL_Event &event, Graphics &graphics,
     it->update(graphics);
   }
 
-  auto not_active = std::remove_if(
-      game_objects.begin(), game_objects.end(),
-      [&](const Game_object &obj) { return !obj.meta.is_active; });
+  auto not_active = std::remove_if(game_objects.begin(), game_objects.end(),
+                                   [&](const Game_object &obj) {
+                                     return !obj.meta.is_active;
+                                   });
   game_objects.erase(not_active, game_objects.end());
 }

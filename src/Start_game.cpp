@@ -2,11 +2,13 @@
 #include "init/SDL2_lib.h"
 #include "scenes/Destroy_asteroids_scene.h"
 #include "shared/Game_object_utils.h"
-#include "spaceship/Spaceship1_input_component.h"
 #include "text/Render_text.h"
+
 #ifdef DEBUG
+
 #include "debug_info/Frames_debug_info.h"
 #include "debug_info/Objects_debug_info.h"
+
 #endif
 
 int main(int argc, char *argv[]) {
@@ -18,12 +20,13 @@ int main(int argc, char *argv[]) {
   IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG);
   TTF_Init();
 
-  const auto window =
-      SDL2.create_window("YA Asteroids", 1920, 1080,
-                         SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI);
+  const auto window = SDL2.create_window("YA Asteroids", 1920, 1080,
+                                         SDL_WINDOW_RESIZABLE |
+                                         SDL_WINDOW_ALLOW_HIGHDPI);
 
-  const auto renderer = SDL2.create_renderer(
-      window, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+  const auto renderer = SDL2.create_renderer(window,
+                                             SDL_RENDERER_ACCELERATED |
+                                             SDL_RENDERER_PRESENTVSYNC);
 
   Graphics_debug_info gdi;
   gdi.log_screen_size(renderer);

@@ -13,7 +13,9 @@ struct Frames_debug_info {
   double min_fps{0};
 
   double calc_frames_per_sec();
+
   double calc_frame_delta_time();
+
   double calc_min_frames_per_sec();
 
   void render_frames_per_sec(TTF_Font *font, SDL_Color color,
