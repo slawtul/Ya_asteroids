@@ -10,7 +10,7 @@ void bullet_graphics_component::update(game_object &obj, graphics &graphics) {
   }
 
   SDL_RenderCopyEx(graphics.renderer,
-                   graphics.texture_shelf.get_texture("bullet_short_single"),
+                   graphics.tex_shelf.get_texture("bullet_short_single"),
                    nullptr, &obj.rect, obj.motion.angle + 90, nullptr,
                    SDL_FLIP_NONE);
 }

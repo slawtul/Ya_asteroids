@@ -87,7 +87,7 @@ int main(int argc, char *argv[]) {
 
   // free memory
   game_objects.clear();
-  gfx.texture_shelf.destroy_textures();
+  gfx.tex_shelf.destroy_textures();
   SDL_FreeSurface(SDL_GetWindowSurface(window));
   SDL_DestroyRenderer(gfx.renderer);
   SDL_DestroyWindow(window);

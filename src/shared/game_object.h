@@ -12,7 +12,7 @@
 struct game_object {
   std::unique_ptr<input_component> input{nullptr};
   std::unique_ptr<physics_component> physics{nullptr};
-  std::unique_ptr<graphics_component> graphics{nullptr};
+  std::unique_ptr<graphics_component> gfx{nullptr};
 
   game_object_meta meta{};
   game_object_motion motion{};
@@ -22,7 +22,7 @@ struct game_object {
               std::unique_ptr<physics_component> physics_,
               std::unique_ptr<graphics_component> graphics_)
       : input{std::move(input_)}, physics{std::move(physics_)},
-        graphics{std::move(graphics_)} {}
+        gfx{std::move(graphics_)} {}
 
   void update(graphics &graphics_);
 };

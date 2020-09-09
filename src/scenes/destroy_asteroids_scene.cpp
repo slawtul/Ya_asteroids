@@ -2,13 +2,13 @@
 #include "game_object_utils.h"
 #include <algorithm>
 
-void destroy_asteroids_scene::update(SDL_Event &event, graphics &graphics,
+void destroy_asteroids_scene::update(SDL_Event &event, graphics &gfx,
                                      std::vector<game_object> &game_objects) {
-  SDL_SetRenderDrawColor(graphics.renderer, 0, 0, 0, 255);
-  SDL_RenderClear(graphics.renderer);
-  SDL_RenderCopy(graphics.renderer,
-                 graphics.texture_shelf.get_texture("background_01_static"),
-                 nullptr, nullptr);
+  SDL_SetRenderDrawColor(gfx.renderer, 0, 0, 0, 255);
+  SDL_RenderClear(gfx.renderer);
+  SDL_RenderCopy(gfx.renderer,
+                 gfx.tex_shelf.get_texture("background_01_static"), nullptr,
+                 nullptr);
 
   SDL_PollEvent(&event);
   if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_RETURN]) {
@@ -27,7 +27,7 @@ void destroy_asteroids_scene::update(SDL_Event &event, graphics &graphics,
   // reverse iterator used
   // bullets should be placed under starships
   for (auto it = game_objects.rbegin(); it != game_objects.rend(); ++it) {
-    it->update(graphics);
+    it->update(gfx);
   }
 
   auto not_active = std::remove_if(game_objects.begin(), game_objects.end(),

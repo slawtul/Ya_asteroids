@@ -12,6 +12,6 @@ void spaceship2_graphics_component::update(game_object &obj,
   obj.rect.y = y;
 
   SDL_RenderCopyEx(graphics.renderer,
-                   graphics.texture_shelf.get_texture("CX16-X1"), nullptr,
+                   graphics.tex_shelf.get_texture("CX16-X1"), nullptr,
                    &obj.rect, obj.motion.angle + 90, nullptr, SDL_FLIP_NONE);
 }
