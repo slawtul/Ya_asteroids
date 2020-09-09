@@ -26,51 +26,51 @@ configure_file(resources/terminus.ttf ./resources/terminus.ttf COPYONLY)
 configure_file(resources/explosion.png ./resources/explosion.png COPYONLY)
 
 add_executable(asteroids
-        src/Start_game.cpp
-        src/bullets/Bullet_graphics_component.h
-        src/bullets/Bullet_input_component.h
-        src/bullets/Bullet_physics_component.h
-        src/bullets/Bullet_graphics_component.cpp
-        src/bullets/Bullet_input_component.cpp
-        src/bullets/Bullet_physics_component.cpp
-        src/images/Texture_shelf.h
-        src/scenes/Avoid_asteroids_scene.h
-        src/scenes/Control_spaceships_scene.h
-        src/scenes/Destroy_asteroids_scene.h
-        src/scenes/Two_spaceships_scene.h
-        src/scenes/Scene.h
-        src/shared/Game_object.h
-        src/shared/Game_object_meta.h
-        src/shared/Game_object_motion.h
-        src/init/Constants.h
-        src/shared/Graphics.h
-        src/shared/Graphics_component.h
-        src/shared/Input_component.h
-        src/shared/Object_name.h
-        src/shared/Physics_component.h
-        src/spaceship/Spaceship1_graphics_component.h
-        src/spaceship/Spaceship1_input_component.h
-        src/spaceship/Spaceship1_physics_component.h
-        src/spaceship/Spaceship2_graphics_component.h
-        src/spaceship/Spaceship2_input_component.h
-        src/spaceship/Spaceship2_physics_component.h
-        src/init/SDL2_lib.h
-        src/text/Render_text.h
-        src/shared/Game_object_utils.h
-        src/debug_info/Frames_debug_info.h
-        src/debug_info/Graphics_debug_info.h
-        src/debug_info/Objects_debug_info.h
-        src/debug_info/Frames_debug_info.cpp
-        src/debug_info/Graphics_debug_info.cpp
-        src/debug_info/Objects_debug_info.cpp
-        src/images/Texture_shelf.cpp
-        src/init/SDL2_lib.cpp
-        src/scenes/Destroy_asteroids_scene.cpp
-        src/shared/Game_object.cpp
-        src/shared/Game_object_utils.cpp
-        src/shared/Graphics_component.cpp
-        src/shared/Physics_component.cpp
-        src/text/Render_text.cpp src/spaceship/Spaceship1_graphics_component.cpp src/spaceship/Spaceship2_graphics_component.cpp src/spaceship/Spaceship1_input_component.cpp)
+        src/start_game.cpp
+        src/bullets/bullet_graphics_component.h
+        src/bullets/bullet_input_component.h
+        src/bullets/bullet_physics_component.h
+        src/bullets/bullet_graphics_component.cpp
+        src/bullets/bullet_input_component.cpp
+        src/bullets/bullet_physics_component.cpp
+        src/images/texture_shelf.h
+        src/scenes/avoid_asteroids_scene.h
+        src/scenes/control_spaceships_scene.h
+        src/scenes/destroy_asteroids_scene.h
+        src/scenes/two_spaceships_scene.h
+        src/scenes/scene.h
+        src/shared/game_object.h
+        src/shared/game_object_meta.h
+        src/shared/game_object_motion.h
+        src/init/constants.h
+        src/shared/graphics.h
+        src/shared/graphics_component.h
+        src/shared/input_component.h
+        src/shared/object_name.h
+        src/shared/physics_component.h
+        src/spaceship/spaceship1_graphics_component.h
+        src/spaceship/spaceship1_input_component.h
+        src/spaceship/spaceship1_physics_component.h
+        src/spaceship/spaceship2_graphics_component.h
+        src/spaceship/spaceship2_input_component.h
+        src/spaceship/spaceship2_physics_component.h
+        src/init/sdl2_lib.h
+        src/text/render_text.h
+        src/shared/game_object_utils.h
+        src/debug_info/frames_debug_info.h
+        src/debug_info/graphics_debug_info.h
+        src/debug_info/objects_debug_info.h
+        src/debug_info/frames_debug_info.cpp
+        src/debug_info/graphics_debug_info.cpp
+        src/debug_info/objects_debug_info.cpp
+        src/images/texture_shelf.cpp
+        src/init/sdl2_lib.cpp
+        src/scenes/destroy_asteroids_scene.cpp
+        src/shared/game_object.cpp
+        src/shared/game_object_utils.cpp
+        src/shared/graphics_component.cpp
+        src/shared/physics_component.cpp
+        src/text/render_text.cpp src/spaceship/spaceship1_graphics_component.cpp src/spaceship/spaceship2_graphics_component.cpp src/spaceship/spaceship1_input_component.cpp)
 
 add_compile_options(-Wall -Wextra -Wpedantic -Werror)
 target_link_libraries(asteroids ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY} ${SDL2_TTF_LIBRARY})
