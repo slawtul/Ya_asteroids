@@ -6,6 +6,7 @@
 #include "init/constants.h"
 
 struct spaceship2_physics_component : physics_component {
+
   void update(game_object &obj) override {
     obj.motion.dx += std::cos(obj.motion.angle * constants::DEG_TO_RAD) *
                      obj.motion.acceleration;
