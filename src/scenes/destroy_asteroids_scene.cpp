@@ -4,6 +4,7 @@
 
 void destroy_asteroids_scene::update(SDL_Event &event, graphics &gfx,
                                      std::vector<game_object> &game_objects) {
+
   SDL_SetRenderDrawColor(gfx.renderer, 0, 0, 0, 255);
   SDL_RenderClear(gfx.renderer);
   SDL_RenderCopy(gfx.renderer,
