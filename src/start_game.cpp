@@ -20,13 +20,14 @@ int main(int argc, char *argv[]) {
   IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG);
   TTF_Init();
 
-  const auto window = sdl2.create_window("YA Asteroids", 1920, 1080,
-                                         SDL_WINDOW_RESIZABLE |
-                                         SDL_WINDOW_ALLOW_HIGHDPI);
+  const auto window = sdl2.create_window(
+      "YA Asteroids", 1920, 1080,
+      SDL_WINDOW_RESIZABLE |
+      SDL_WINDOW_ALLOW_HIGHDPI);
 
-  const auto renderer = sdl2.create_renderer(window,
-                                             SDL_RENDERER_ACCELERATED |
-                                             SDL_RENDERER_PRESENTVSYNC);
+  const auto renderer = sdl2.create_renderer(
+      window,
+      SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
   Graphics_debug_info gdi;
   gdi.log_screen_size(renderer);
