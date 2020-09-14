@@ -3,7 +3,8 @@
 
 #include "game_object.h"
 
-struct bullet_physics_component : physics_component {
+struct bullet_physics_comp : physics_comp {
+
   void update(game_object &obj) override;
 };
 

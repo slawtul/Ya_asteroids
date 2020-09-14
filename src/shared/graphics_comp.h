@@ -4,10 +4,10 @@
 
 struct game_object;
 
-struct graphics_component {
-  graphics_component() = default;
+struct graphics_comp {
+  graphics_comp() = default;
 
-  virtual ~graphics_component() = default;
+  virtual ~graphics_comp() = default;
 
   virtual void update(game_object &obj, graphics &gfx) = 0;
 

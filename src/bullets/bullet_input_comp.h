@@ -2,6 +2,7 @@
 
 #include "game_object.h"
 
-struct bullet_input_component : input_component {
+struct bullet_input_comp : input_comp {
+
   void update(game_object &obj) override;
 };

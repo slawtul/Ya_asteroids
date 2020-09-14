@@ -1,19 +1,19 @@
 #include "game_object_utils.h"
-#include "bullet_graphics_component.h"
-#include "bullet_input_component.h"
-#include "bullet_physics_component.h"
-#include "spaceship1_graphics_component.h"
-#include "spaceship1_input_component.h"
-#include "spaceship1_physics_component.h"
-#include "spaceship2_graphics_component.h"
+#include "bullet_graphics_comp.h"
+#include "bullet_input_comp.h"
+#include "bullet_physics_comp.h"
+#include "spaceship1_graphics_comp.h"
+#include "spaceship1_input_comp.h"
+#include "spaceship1_physics_comp.h"
+#include "spaceship2_graphics_comp.h"
 #include "spaceship2_input_component.h"
 #include "spaceship2_physics_component.h"
 
 game_object game_object_utils::create_spaceship1() {
   auto go = game_object(
-      std::make_unique<spaceship1_input_component>(),
-      std::make_unique<spaceship1_physics_component>(),
-      std::make_unique<spaceship1_graphics_component>());
+      std::make_unique<spaceship1_input_comp>(),
+      std::make_unique<spaceship1_physics_comp>(),
+      std::make_unique<spaceship1_graphics_comp>());
   go.meta.name = object_name::SPACESHIP1;
   go.motion.max_speed = 8.0;
   go.rect = {0, 0, 64, 64};
@@ -24,7 +24,7 @@ game_object game_object_utils::create_spaceship2() {
   auto go = game_object(
       std::make_unique<spaceship2_input_component>(),
       std::make_unique<spaceship2_physics_component>(),
-      std::make_unique<spaceship2_graphics_component>());
+      std::make_unique<spaceship2_graphics_comp>());
   go.meta.name = object_name::SPACESHIP2;
   go.motion.max_speed = 8.0;
   go.rect = {256, 1000, 64, 64};
@@ -33,9 +33,9 @@ game_object game_object_utils::create_spaceship2() {
 
 game_object game_object_utils::create_bullet() {
   auto go = game_object(
-      std::make_unique<bullet_input_component>(),
-      std::make_unique<bullet_physics_component>(),
-      std::make_unique<bullet_graphics_component>());
+      std::make_unique<bullet_input_comp>(),
+      std::make_unique<bullet_physics_comp>(),
+      std::make_unique<bullet_graphics_comp>());
   go.meta.name = object_name::BULLET;
   go.motion.acceleration = 32;
   go.rect = {0, 0, 4, 20};

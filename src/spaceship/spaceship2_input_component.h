@@ -2,7 +2,8 @@
 
 #include "game_object.h"
 
-struct spaceship2_input_component : input_component {
+struct spaceship2_input_component : input_comp {
+
   void update(game_object &obj) override {
     if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_D]) {
       obj.motion.angle += 4.0;

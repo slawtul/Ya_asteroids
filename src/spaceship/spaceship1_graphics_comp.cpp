@@ -1,7 +1,6 @@
-#include "spaceship2_graphics_component.h"
+#include "spaceship1_graphics_comp.h"
 
-void spaceship2_graphics_component::update(game_object &obj,
-                                           graphics &graphics) {
+void spaceship1_graphics_comp::update(game_object &obj, graphics &graphics) {
   obj.rect.x += static_cast<int>(obj.motion.dx);
   obj.rect.y += static_cast<int>(obj.motion.dy);
 
@@ -12,6 +11,6 @@ void spaceship2_graphics_component::update(game_object &obj,
   obj.rect.y = y;
 
   SDL_RenderCopyEx(graphics.renderer,
-                   graphics.tex_shelf.get_texture("CX16-X1"), nullptr,
+                   graphics.tex_shelf.get_texture("WO84-wu-X1"), nullptr,
                    &obj.rect, obj.motion.angle + 90, nullptr, SDL_FLIP_NONE);
 }

@@ -1,7 +1,7 @@
-#include "spaceship1_input_component.h"
+#include "spaceship1_input_comp.h"
 #include "SDL.h"
 
-void spaceship1_input_component::update(game_object &obj) {
+void spaceship1_input_comp::update(game_object &obj) {
   if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_RIGHT]) {
     obj.motion.angle += 4.0;
   }

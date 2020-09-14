@@ -2,10 +2,10 @@
 
 struct game_object;
 
-struct physics_component {
-  physics_component() = default;
+struct physics_comp {
+  physics_comp() = default;
 
-  virtual ~physics_component() = default;
+  virtual ~physics_comp() = default;
 
   virtual void update(game_object &obj) = 0;
 
