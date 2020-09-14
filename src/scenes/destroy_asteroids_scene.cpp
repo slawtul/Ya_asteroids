@@ -16,17 +16,18 @@ void destroy_asteroids_scene::update(SDL_Event &event, graphics &gfx,
     game_object_utils gou;
     auto bullet = gou.create_bullet();
     game_objects.emplace_back(
-        std::move(gou.fire_bullet(bullet, game_objects[0])));
+        std::move(gou.fire_bullet(bullet, game_objects[0]))); // [0] spaceship 1
   }
   if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_SPACE]) {
     game_object_utils gou;
     auto bullet = gou.create_bullet();
     game_objects.emplace_back(
-        std::move(gou.fire_bullet(bullet, game_objects[1])));
+        std::move(gou.fire_bullet(bullet, game_objects[1]))); // [1] spaceship 2
   }
 
-  // reverse iterator used
-  // bullets should be placed under starships
+  // main loop which call update() method on each game object
+  //
+  // reverse iterator used cause bullets should be placed under starships
   for (auto it = game_objects.rbegin(); it != game_objects.rend(); ++it) {
     it->update(gfx);
   }
