@@ -1,4 +1,5 @@
 .vs/
+.vscode/
 .idea/
 x64/
 x86/
@@ -12,3 +13,4 @@ cmake-build-release/
 CMake_build_debug/
 CMake_build_release/
 CMakeLists.txt.user
+tags
