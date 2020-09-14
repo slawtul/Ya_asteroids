@@ -10,11 +10,10 @@
 #include "spaceship2_physics_component.h"
 
 game_object game_object_utils::create_spaceship1() {
-  auto input = std::make_unique<spaceship1_input_component>();
-  auto physics = std::make_unique<spaceship1_physics_component>();
-  auto gfx = std::make_unique<spaceship1_graphics_component>();
-
-  auto go = game_object(std::move(input), std::move(physics), std::move(gfx));
+  auto go = game_object(
+      std::make_unique<spaceship1_input_component>(),
+      std::make_unique<spaceship1_physics_component>(),
+      std::make_unique<spaceship1_graphics_component>());
   go.meta.name = object_name::SPACESHIP1;
   go.motion.max_speed = 8.0;
   go.rect = {0, 0, 64, 64};
@@ -22,11 +21,10 @@ game_object game_object_utils::create_spaceship1() {
 }
 
 game_object game_object_utils::create_spaceship2() {
-  auto input = std::make_unique<spaceship2_input_component>();
-  auto physics = std::make_unique<spaceship2_physics_component>();
-  auto gfx = std::make_unique<spaceship2_graphics_component>();
-
-  auto go = game_object(std::move(input), std::move(physics), std::move(gfx));
+  auto go = game_object(
+      std::make_unique<spaceship2_input_component>(),
+      std::make_unique<spaceship2_physics_component>(),
+      std::make_unique<spaceship2_graphics_component>());
   go.meta.name = object_name::SPACESHIP2;
   go.motion.max_speed = 8.0;
   go.rect = {256, 1000, 64, 64};
@@ -34,9 +32,10 @@ game_object game_object_utils::create_spaceship2() {
 }
 
 game_object game_object_utils::create_bullet() {
-  auto go = game_object(std::make_unique<bullet_input_component>(),
-                        std::make_unique<bullet_physics_component>(),
-                        std::make_unique<bullet_graphics_component>());
+  auto go = game_object(
+      std::make_unique<bullet_input_component>(),
+      std::make_unique<bullet_physics_component>(),
+      std::make_unique<bullet_graphics_component>());
   go.meta.name = object_name::BULLET;
   go.motion.acceleration = 32;
   go.rect = {0, 0, 4, 20};
