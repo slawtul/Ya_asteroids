@@ -26,7 +26,7 @@ void destroy_asteroids_scene::update(SDL_Event &event, graphics &gfx,
   }
 
   // main loop which call update() method on each game object
-  //
+  // ---
   // reverse iterator used cause bullets should be placed under starships
   for (auto it = game_objects.rbegin(); it != game_objects.rend(); ++it) {
     it->update(gfx);
