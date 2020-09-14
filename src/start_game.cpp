@@ -33,16 +33,14 @@ int main(int argc, char *argv[]) {
   gdi.log_screen_size(renderer);
 
   texture_shelf ts;
-  ts.add_initial_images(renderer);
+  ts.add_init_images(renderer);
   auto gfx = graphics{renderer, ts};
 
-  game_object_utils gou;
-  auto sp1 = gou.create_spaceship1();
-  auto sp2 = gou.create_spaceship2();
   auto game_objects = std::vector<game_object>();
   game_objects.reserve(400);
-  game_objects.emplace_back(std::move(sp1));
-  game_objects.emplace_back(std::move(sp2));
+  game_object_utils gou;
+  game_objects.emplace_back(gou.create_spaceship1());
+  game_objects.emplace_back(gou.create_spaceship2());
 
 #ifdef DEBUG
   const auto font = TTF_OpenFont("./resources/terminus.ttf", 16);
