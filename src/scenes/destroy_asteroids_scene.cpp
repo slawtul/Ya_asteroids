@@ -32,7 +32,7 @@ void destroy_asteroids_scene::update(SDL_Event &event, graphics &gfx,
     it->update(gfx);
   }
 
-  auto not_active = std::remove_if(
+  const auto not_active = std::remove_if(
       game_objects.begin(), game_objects.end(),
       [&](const game_object &item_) {
         return !item_.meta.is_active;
