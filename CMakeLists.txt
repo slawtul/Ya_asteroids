@@ -54,7 +54,7 @@ add_executable(asteroids
         src/spaceship/spaceship2_graphics_component.h
         src/spaceship/spaceship2_input_component.h
         src/spaceship/spaceship2_physics_component.h
-        src/init/sdl2_lib.h
+        src/init/sdl2_util.h
         src/text/render_text.h
         src/shared/game_object_utils.h
         src/debug_info/frames_debug_info.h
@@ -64,7 +64,7 @@ add_executable(asteroids
         src/debug_info/graphics_debug_info.cpp
         src/debug_info/objects_debug_info.cpp
         src/images/texture_shelf.cpp
-        src/init/sdl2_lib.cpp
+        src/init/sdl2_util.cpp
         src/scenes/destroy_asteroids_scene.cpp
         src/shared/game_object.cpp
         src/shared/game_object_utils.cpp

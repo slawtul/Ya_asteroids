@@ -1,5 +1,5 @@
 #include "debug_info/graphics_debug_info.h"
-#include "init/sdl2_lib.h"
+#include "init/sdl2_util.h"
 #include "scenes/destroy_asteroids_scene.h"
 #include "shared/game_object_utils.h"
 #include "text/render_text.h"
@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
   SDL_LogInfo(0, "Program parameters: argc %d", argc);
   SDL_LogInfo(0, "Program parameters: argv %s", *argv);
 
-  sdl2_lib sdl2;
+  sdl2_util sdl2;
   sdl2.init(SDL_INIT_VIDEO);
   IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG);
   TTF_Init();
@@ -78,8 +78,7 @@ int main(int argc, char *argv[]) {
   // end: game loop
 
 #ifdef DEBUG
-  SDL_LogInfo(0, "Max objects qty: %d",
-              static_cast<int>(odi.max_objs_on_screen));
+  SDL_LogInfo(0, "Max objects qty: %d", static_cast<int>(odi.max_objs_on_screen));
   SDL_LogInfo(0, "Avg FPS: %.2f", fdi.frames_per_sec);
   SDL_LogInfo(0, "Stop game");
   TTF_CloseFont(font);
