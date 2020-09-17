@@ -70,7 +70,10 @@ add_executable(asteroids
         src/shared/game_object_utils.cpp
         src/shared/graphics_comp.cpp
         src/shared/physics_comp.cpp
-        src/text/render_text.cpp src/spaceship/spaceship1_graphics_comp.cpp src/spaceship/spaceship2_graphics_comp.cpp src/spaceship/spaceship1_input_comp.cpp)
+        src/text/render_text.cpp
+        src/spaceship/spaceship1_graphics_comp.cpp
+        src/spaceship/spaceship2_graphics_comp.cpp
+        src/spaceship/spaceship1_input_comp.cpp)
 
 add_compile_options(-Wall -Wextra -Wpedantic -Werror)
 target_link_libraries(asteroids ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY} ${SDL2_TTF_LIBRARY})
