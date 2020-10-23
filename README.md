@@ -44,3 +44,21 @@ Linkedin: [https://www.linkedin.com/in/slawektuleja/](https://www.linkedin.com/i
 #### License
 
 You can use this software freely in any free or commercial project except files placed in 'resources' folder
+
+
+#### Performance on
+    
+    Operating System: Fedora 32
+    Processors: 16 × AMD Ryzen 7 3700X 8-Core Processor
+    Memory: 32 GiB of RAM
+    Monitor: LG, screen resolution 4K
+    Graphics card: AMD Radeon RX 5700 XT
+
+    # Using runtime inheritance
+    1. Avg ~60 FPS with 9700 objects on the screen
+    2. Avg ~2700 FPS with 2 objects on the screen
+    
+    # Without runtime inheritance
+    1. Avg ~60 FPS with ... objects on the screen
+    2. Avg ~... FPS with 2 objects on the screen
+        
