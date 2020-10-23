@@ -1,11 +1,12 @@
 #include "spaceship2_graphics_comp.h"
 
-void spaceship2_graphics_comp::update(game_object &obj, graphics &graphics) {
+void spaceship2_graphics_comp::update(game_object &obj, graphics &graphics)
+{
   obj.rect.x += static_cast<int>(obj.motion.dx);
   obj.rect.y += static_cast<int>(obj.motion.dy);
 
   auto[x, y] = calc_position_if_edge_screen_reached(
-      obj.rect.x, obj.rect.y, obj.rect.w, obj.rect.h, graphics);
+    obj.rect.x, obj.rect.y, obj.rect.w, obj.rect.h, graphics);
 
   obj.rect.x = x;
   obj.rect.y = y;

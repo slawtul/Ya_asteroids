@@ -3,8 +3,8 @@
 
 #include "game_object.h"
 
-struct spaceship2_graphics_comp : graphics_comp {
-
+struct spaceship2_graphics_comp: graphics_comp
+{
   void update(game_object &obj, graphics &graphics) override;
 };
 

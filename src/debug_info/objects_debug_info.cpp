@@ -1,6 +1,7 @@
 #include "objects_debug_info.h"
 
-uint16_t objects_debug_info::count_objs() {
+uint16_t objects_debug_info::count_objs()
+{
   if (objs_on_screen > max_objs_on_screen) {
     max_objs_on_screen = objs_on_screen;
   }
@@ -8,7 +9,8 @@ uint16_t objects_debug_info::count_objs() {
 }
 
 void objects_debug_info::render_obj_qty(TTF_Font *font, SDL_Color color,
-                                        SDL_Renderer *renderer) const {
+                                        SDL_Renderer *renderer) const
+{
   auto rect = SDL_Rect{20, 56, 120, 16};
   render_text rt;
   rt.render(rect, font, color, renderer,
@@ -16,7 +18,8 @@ void objects_debug_info::render_obj_qty(TTF_Font *font, SDL_Color color,
 }
 
 void objects_debug_info::render_max_obj_qty(TTF_Font *font, SDL_Color color,
-                                            SDL_Renderer *renderer) {
+                                            SDL_Renderer *renderer)
+{
   auto rect = SDL_Rect{20, 72, 120, 16};
   render_text rt;
   rt.render(rect, font, color, renderer,

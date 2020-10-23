@@ -1,6 +1,6 @@
 #pragma once
 
-struct constants {
-
+struct constants
+{
   static constexpr double DEG_TO_RAD{0.017453};
 };

@@ -3,8 +3,8 @@
 
 #include "game_object.h"
 
-struct spaceship1_input_comp : input_comp {
-
+struct spaceship1_input_comp: input_comp
+{
   void update(game_object &obj) override;
 };
 

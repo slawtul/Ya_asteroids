@@ -5,13 +5,12 @@
 #include "text/render_text.h"
 
 #ifdef DEBUG
-
 #include "debug_info/frames_debug_info.h"
 #include "debug_info/objects_debug_info.h"
-
 #endif
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
   SDL_LogInfo(0, "Program parameters: argc %d", argc);
   SDL_LogInfo(0, "Program parameters: argv %s", *argv);
 
@@ -21,13 +20,13 @@ int main(int argc, char *argv[]) {
   TTF_Init();
 
   const auto window = sdl2.create_window(
-      "YA Asteroids", 1920, 1080,
-      SDL_WINDOW_RESIZABLE |
+    "YA Asteroids", 1920, 1080,
+    SDL_WINDOW_RESIZABLE |
       SDL_WINDOW_ALLOW_HIGHDPI);
 
   const auto renderer = sdl2.create_renderer(
-      window,
-      SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+    window,
+    SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
   Graphics_debug_info gdi;
   gdi.log_screen_size(renderer);

@@ -1,7 +1,8 @@
 #include "graphics_debug_info.h"
 
-void Graphics_debug_info::log_screen_size(SDL_Renderer *renderer) {
-  int width, height;
+void Graphics_debug_info::log_screen_size(SDL_Renderer *renderer)
+{
+  int width{}, height{};
   int result = SDL_GetRendererOutputSize(renderer, &width, &height);
   if (result != 0) {
     SDL_Log("Unable to get render output size %s", SDL_GetError());

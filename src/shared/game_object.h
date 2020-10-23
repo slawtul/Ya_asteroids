@@ -9,7 +9,8 @@
 #include "input_comp.h"
 #include "physics_comp.h"
 
-struct game_object {
+struct game_object
+{
   std::unique_ptr<input_comp> input{};
   std::unique_ptr<physics_comp> physics{};
   std::unique_ptr<graphics_comp> gfx{};
@@ -22,8 +23,9 @@ struct game_object {
               std::unique_ptr<physics_comp> physics_,
               std::unique_ptr<graphics_comp> graphics_)
 
-      : input{std::move(input_)}, physics{std::move(physics_)},
-        gfx{std::move(graphics_)} {}
+    : input{std::move(input_)}, physics{std::move(physics_)},
+      gfx{std::move(graphics_)}
+  {}
 
   void update(graphics &graphics_);
 };

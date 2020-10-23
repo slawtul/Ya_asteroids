@@ -2,7 +2,8 @@
 
 #include "object_name.h"
 
-struct game_object_meta {
+struct game_object_meta
+{
   object_name name{object_name::NONE};
 
   // You can do physics and gfx calculations on 'active' object only

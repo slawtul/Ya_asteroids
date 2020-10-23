@@ -1,6 +1,7 @@
 #include "sdl2_util.h"
 
-void sdl2_util::init(const uint32_t flags) {
+void sdl2_util::init(const uint32_t flags)
+{
   SDL_LogSetAllPriority(SDL_LOG_PRIORITY_DEBUG);
   if (SDL_Init(flags) != 0) {
     SDL_Log("Unable to initialize SDL2 %s", SDL_GetError());
@@ -9,7 +10,8 @@ void sdl2_util::init(const uint32_t flags) {
 }
 
 SDL_Window *sdl2_util::create_window(const char *title, int screen_width,
-                                     int screen_height, uint32_t flags) {
+                                     int screen_height, uint32_t flags)
+{
   const auto window = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED,
                                        SDL_WINDOWPOS_CENTERED, screen_width,
                                        screen_height, flags);
@@ -20,7 +22,8 @@ SDL_Window *sdl2_util::create_window(const char *title, int screen_width,
   return window;
 }
 
-SDL_Renderer *sdl2_util::create_renderer(SDL_Window *window, uint32_t flags) {
+SDL_Renderer *sdl2_util::create_renderer(SDL_Window *window, uint32_t flags)
+{
   const auto renderer = SDL_CreateRenderer(window, -1, flags);
   if (renderer == nullptr) {
     SDL_Log("Unable to create renderer_ %s", SDL_GetError());
