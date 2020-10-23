@@ -6,8 +6,8 @@
 #include <text/render_text.h>
 
 struct objects_debug_info {
-  uint16_t objs_on_screen{0};
-  uint16_t max_objs_on_screen{0};
+  uint16_t objs_on_screen{};
+  uint16_t max_objs_on_screen{};
 
   uint16_t count_objs();
 

@@ -4,13 +4,13 @@
 #include <SDL_ttf.h>
 
 struct frames_debug_info {
-  uint32_t current_time{0};
-  uint32_t last_time{0};
-  uint32_t frame_delta_time{0};
+  uint32_t current_time{};
+  uint32_t last_time{};
+  uint32_t frame_delta_time{};
 
-  double frame_time{0.0};
-  double frames_per_sec{0.0};
-  double min_fps{0};
+  double frame_time{};
+  double frames_per_sec{};
+  double min_fps{};
 
   double calc_frames_per_sec();
 
