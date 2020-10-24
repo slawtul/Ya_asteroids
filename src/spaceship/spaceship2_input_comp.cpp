@@ -1,7 +1,7 @@
-#include "spaceship1_input_comp.h"
+#include "spaceship2_input_comp.h"
 #include "SDL.h"
 
-void spaceship1_input_comp::update()
+void spaceship2_input_comp::update()
 {
   if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_RIGHT]) {
     go.motion.angle += 4.0;
@@ -18,7 +18,6 @@ void spaceship1_input_comp::update()
     go.motion.max_speed = 6.0;
   }
 }
-
-spaceship1_input_comp::spaceship1_input_comp(const game_object &go)
+spaceship2_input_comp::spaceship2_input_comp(const game_object &go)
   : go(go)
 {}

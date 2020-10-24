@@ -1,3 +1,4 @@
+#include <variant>
 #include "debug_info/graphics_debug_info.h"
 #include "init/sdl2_util.h"
 #include "scenes/destroy_asteroids_scene.h"
@@ -20,10 +21,13 @@ int main(int argc, char *argv[])
   TTF_Init();
 
   const auto window = sdl2.create_window(
-    "YA Asteroids", 1920, 1080, SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI);
+    "YA Asteroids",
+    1920,
+    1080,
+    SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI);
 
   const auto renderer = sdl2.create_renderer(
-    window, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+    window, SDL_RENDERER_ACCELERATED);
 
   Graphics_debug_info gdi;
   gdi.log_screen_size(renderer);
@@ -32,11 +36,9 @@ int main(int argc, char *argv[])
   ts.add_init_images(renderer);
   auto gfx = graphics{renderer, ts};
 
-  auto game_objects = std::vector<game_object>();
-  game_objects.reserve(400);
-  game_object_utils gou;
-  game_objects.emplace_back(gou.create_spaceship1());
-  game_objects.emplace_back(gou.create_spaceship2());
+  std::vector<input_var> goi;
+  std::vector<physics_var> gop;
+  std::vector<gfx_var> gog;
 
 #ifdef DEBUG
   const auto font = TTF_OpenFont("./resources/terminus.ttf", 16);
@@ -57,12 +59,12 @@ int main(int argc, char *argv[])
     if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_ESCAPE]) {
       break;
     }
-    scene.update(event, gfx, game_objects);
+    scene.update(event, gfx, goi, gop, gog);
 
 #ifdef DEBUG
     fdi.render_frames_per_sec(font, white, gfx.renderer);
     fdi.render_min_frames(font, white, gfx.renderer);
-    odi.objs_on_screen = game_objects.size();
+    odi.objs_on_screen = gog.size();
     odi.render_max_obj_qty(font, white, gfx.renderer);
     odi.render_obj_qty(font, white, gfx.renderer);
 #endif
@@ -73,14 +75,18 @@ int main(int argc, char *argv[])
   // end: game loop
 
 #ifdef DEBUG
-  SDL_LogInfo(0, "Max objects qty: %d", static_cast<int>(odi.max_objs_on_screen));
+  SDL_LogInfo(0,
+              "Max objects qty: %d",
+              static_cast<int>(odi.max_objs_on_screen));
   SDL_LogInfo(0, "Avg FPS: %.2f", fdi.frames_per_sec);
   SDL_LogInfo(0, "Stop game");
   TTF_CloseFont(font);
 #endif
 
   // free memory
-  game_objects.clear();
+  goi.clear();
+  gop.clear();
+  gog.clear();
   gfx.tex_shelf.destroy_textures();
   SDL_FreeSurface(SDL_GetWindowSurface(window));
   SDL_DestroyRenderer(gfx.renderer);

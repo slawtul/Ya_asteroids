@@ -51,9 +51,10 @@ add_executable(asteroids
         src/spaceship/spaceship1_graphics_comp.h
         src/spaceship/spaceship1_input_comp.h
         src/spaceship/spaceship1_physics_comp.h
+        src/spaceship/spaceship1_physics_comp.cpp
         src/spaceship/spaceship2_graphics_comp.h
-        src/spaceship/spaceship2_input_component.h
-        src/spaceship/spaceship2_physics_component.h
+        src/spaceship/spaceship2_input_comp.h
+        src/spaceship/spaceship2_physics_comp.cpp
         src/init/sdl2_util.h
         src/text/render_text.h
         src/shared/game_object_utils.h
@@ -73,7 +74,9 @@ add_executable(asteroids
         src/text/render_text.cpp
         src/spaceship/spaceship1_graphics_comp.cpp
         src/spaceship/spaceship2_graphics_comp.cpp
-        src/spaceship/spaceship1_input_comp.cpp)
+        src/spaceship/spaceship1_input_comp.cpp
+        src/spaceship/spaceship2_input_comp.cpp
+        )
 
 add_compile_options(-Wall -Wextra -Wpedantic -Werror)
 target_link_libraries(asteroids ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY} ${SDL2_TTF_LIBRARY})

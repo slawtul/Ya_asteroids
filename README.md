@@ -56,9 +56,9 @@ You can use this software freely in any free or commercial project except files 
 
     # Using runtime inheritance
     1. Avg ~60 FPS with 9700 objects on the screen
-    2. Avg ~2700 FPS with 2 objects on the screen
+    2. Avg ~2700 FPS with 3 objects on the screen
     
     # Without runtime inheritance
-    1. Avg ~60 FPS with ... objects on the screen
-    2. Avg ~... FPS with 2 objects on the screen
+    1. Avg ~60 FPS with 8229 objects on the screen
+    2. Avg ~2700 FPS with 3 objects on the screen
         

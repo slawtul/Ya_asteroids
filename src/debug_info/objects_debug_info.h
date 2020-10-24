@@ -11,6 +11,9 @@ struct objects_debug_info
   uint16_t max_objs_on_screen{};
 
   uint16_t count_objs();
-  void render_obj_qty(TTF_Font *font, SDL_Color color, SDL_Renderer *renderer) const;
-  void render_max_obj_qty(TTF_Font *font, SDL_Color color, SDL_Renderer *renderer);
+  void render_obj_qty(TTF_Font *font,
+                      SDL_Color color,
+                      SDL_Renderer *renderer) const;
+  void
+  render_max_obj_qty(TTF_Font *font, SDL_Color color, SDL_Renderer *renderer);
 };

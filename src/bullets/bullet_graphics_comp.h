@@ -2,7 +2,12 @@
 
 #include "game_object.h"
 
-struct bullet_graphics_comp: graphics_comp
+struct bullet_graphics_comp
 {
-  void update(game_object &obj, graphics &graphics) override;
+  void update();
+
+  bullet_graphics_comp(game_object &go, const graphics &gfx);
+
+  game_object go;
+  graphics gfx;
 };

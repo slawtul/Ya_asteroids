@@ -1,23 +1,18 @@
-#pragma once
+#ifndef SPACESHIP1_PHYSICS_COMPONENT_H
+#define SPACESHIP1_PHYSICS_COMPONENT_H
 
 #include <cmath>
 
 #include "game_object.h"
 #include "init/constants.h"
+#include "physics_comp.h"
 
-struct spaceship1_physics_comp: physics_comp
+struct spaceship1_physics_comp
 {
-  void update(game_object &obj) override
-  {
-    obj.motion.dx += std::cos(obj.motion.angle * constants::DEG_TO_RAD) *
-      obj.motion.acceleration;
-    obj.motion.dy += std::sin(obj.motion.angle * constants::DEG_TO_RAD) *
-      obj.motion.acceleration;
+  void update();
 
-    if (double speed = current_speed(obj.motion.dx, obj.motion.dy);
-      speed > obj.motion.max_speed) {
-      obj.motion.dx *= obj.motion.max_speed / speed;
-      obj.motion.dy *= obj.motion.max_speed / speed;
-    }
-  }
+  game_object go;
+  spaceship1_physics_comp(const game_object &go);
 };
+
+#endif

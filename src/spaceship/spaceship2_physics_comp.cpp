@@ -1,8 +1,11 @@
-#include "bullet_physics_comp.h"
-#include <init/constants.h>
-#include "physics_comp.h"
+#include <cmath>
 
-void bullet_physics_comp::update()
+#include "game_object.h"
+#include "init/constants.h"
+#include "physics_comp.h"
+#include "spaceship2_physics_comp.h"
+
+void spaceship2_physics_comp::update()
 {
   go.motion.dx += std::cos(go.motion.angle * constants::DEG_TO_RAD) *
     go.motion.acceleration;
@@ -15,6 +18,8 @@ void bullet_physics_comp::update()
     go.motion.dy *= go.motion.max_speed / speed;
   }
 }
-bullet_physics_comp::bullet_physics_comp(const game_object &go)
+
+spaceship2_physics_comp::spaceship2_physics_comp(const game_object &go)
   : go(go)
 {}
+
