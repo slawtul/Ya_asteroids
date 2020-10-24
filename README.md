@@ -32,7 +32,7 @@ sudo dnf install SDL2-devel SDL2_image-devel SDL2_ttf-devel
 
 - [x] Spaceships (spaceship 1 keys: W, A, D, SPACE and spaceship 2 keys: UP, LEFT, RIGHT, ENTER)
 - [x] Bullets
-- [x] Collisions
+- [ ] Collisions
 - [x] Debug info
 - [ ] Extra weapons
 - [ ] Extra effects
