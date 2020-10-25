@@ -5,7 +5,7 @@
 
 struct bullet_input : input_comp
 {
-		void update(game_object& obj) override;
+    void update(game_object& obj) override;
 };
 
 #endif // BULLET_INPUT_H

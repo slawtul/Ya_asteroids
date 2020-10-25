@@ -4,7 +4,7 @@
 
 struct avoid_asteroids_scene : scene
 {
-		void update() override
-		{
-		}
+    void update() override
+    {
+    }
 };

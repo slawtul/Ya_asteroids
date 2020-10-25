@@ -2,7 +2,7 @@
 
 void game_object::update(graphics& graphics_)
 {
-		input->update(*this);
-		physics->update(*this);
-		gfx->update(*this, graphics_);
+    input->update(*this);
+    physics->update(*this);
+    gfx->update(*this, graphics_);
 }
