@@ -1,4 +1,5 @@
-#pragma once
+#ifndef OBJECTS_DEBUG_INFO_H
+#define OBJECTS_DEBUG_INFO_H
 
 #include <SDL_image.h>
 #include <SDL_ttf.h>
@@ -17,3 +18,5 @@ struct objects_debug_info
   void
   render_max_obj_qty(TTF_Font *font, SDL_Color color, SDL_Renderer *renderer);
 };
+
+#endif // OBJECTS_DEBUG_INFO_H

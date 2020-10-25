@@ -5,7 +5,7 @@
 #include "game_object.h"
 #include "init/constants.h"
 
-struct spaceship1_physics_comp: physics_comp
+struct spaceship1_physics: physics_comp
 {
   void update(game_object &obj) override
   {

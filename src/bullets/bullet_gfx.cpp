@@ -1,6 +1,6 @@
-#include "bullet_graphics_comp.h"
+#include "bullet_gfx.h"
 
-void bullet_graphics_comp::update(game_object &obj, graphics &graphics)
+void bullet_gfx::update(game_object &obj, graphics &graphics)
 {
   obj.rect.x += static_cast<int>(obj.motion.dx);
   obj.rect.y += static_cast<int>(obj.motion.dy);

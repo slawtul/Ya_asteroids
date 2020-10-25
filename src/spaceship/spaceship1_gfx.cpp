@@ -1,6 +1,6 @@
-#include "spaceship1_graphics_comp.h"
+#include "spaceship1_gfx.h"
 
-void spaceship1_graphics_comp::update(game_object &obj, graphics &graphics)
+void spaceship1_gfx::update(game_object &obj, graphics &graphics)
 {
   obj.rect.x += static_cast<int>(obj.motion.dx);
   obj.rect.y += static_cast<int>(obj.motion.dy);

@@ -1,8 +1,8 @@
-#include "graphics_comp.h"
+#include "gfx_comp.h"
 
 bool
-graphics_comp::off_screen(int rect_x, int rect_y,
-                          const graphics &graphics)
+gfx_comp::off_screen(int rect_x, int rect_y,
+                     const graphics &graphics)
 {
   int screen_width, screen_height;
   SDL_GetRendererOutputSize(graphics.renderer, &screen_width, &screen_height);
@@ -12,11 +12,11 @@ graphics_comp::off_screen(int rect_x, int rect_y,
 }
 
 std::pair<int, int>
-graphics_comp::calc_position_if_edge_screen_reached(int rect_x,
-                                                    int rect_y,
-                                                    int rect_w,
-                                                    int rect_h,
-                                                    const graphics &graphics)
+gfx_comp::calc_position_if_edge_screen_reached(int rect_x,
+                                               int rect_y,
+                                               int rect_w,
+                                               int rect_h,
+                                               const graphics &graphics)
 {
   int screen_width, screen_height;
   SDL_GetRendererOutputSize(graphics.renderer, &screen_width, &screen_height);

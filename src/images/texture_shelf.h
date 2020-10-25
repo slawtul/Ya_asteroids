@@ -1,4 +1,5 @@
-#pragma once
+#ifndef TEXTURE_SHELF_H
+#define TEXTURE_SHELF_H
 
 #include <SDL.h>
 #include <SDL_image.h>
@@ -16,3 +17,5 @@ struct texture_shelf
   void destroy_textures();
   SDL_Surface *load_image(const std::string_view &file) const;
 };
+
+#endif // TEXTURE_SHELF_H

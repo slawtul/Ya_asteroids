@@ -1,7 +1,7 @@
-#include "bullet_physics_comp.h"
+#include "bullet_physics.h"
 #include <init/constants.h>
 
-void bullet_physics_comp::update(game_object &obj)
+void bullet_physics::update(game_object &obj)
 {
   obj.motion.dx += std::cos(obj.motion.angle * constants::DEG_TO_RAD) *
     obj.motion.acceleration;

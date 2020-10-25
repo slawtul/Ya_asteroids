@@ -1,4 +1,5 @@
-#pragma once
+#ifndef FRAMES_DEBUG_INFO_H
+#define FRAMES_DEBUG_INFO_H
 
 #include "text/render_text.h"
 #include <SDL_ttf.h>
@@ -22,3 +23,5 @@ struct frames_debug_info
   void
   render_min_frames(TTF_Font *font, SDL_Color color, SDL_Renderer *renderer);
 };
+
+#endif // FRAMES_DEBUG_INFO_H

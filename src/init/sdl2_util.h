@@ -1,4 +1,5 @@
-#pragma once
+#ifndef SDL2_UTIL_H
+#define SDL2_UTIL_H
 
 #include <SDL.h>
 
@@ -11,3 +12,5 @@ struct sdl2_util
                             uint32_t flags);
   SDL_Renderer *create_renderer(SDL_Window *window, uint32_t flags);
 };
+
+#endif // SDL2_UTIL_H

@@ -4,10 +4,10 @@
 
 struct game_object;
 
-struct graphics_comp
+struct gfx_comp
 {
-  graphics_comp() = default;
-  virtual ~graphics_comp() = default;
+  gfx_comp() = default;
+  virtual ~gfx_comp() = default;
   virtual void update(game_object &obj, graphics &gfx) = 0;
   static bool off_screen(int rect_x, int rect_y, const graphics &gfx);
 
