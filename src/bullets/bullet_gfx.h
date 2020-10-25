@@ -3,9 +3,9 @@
 
 #include "game_object.h"
 
-struct bullet_gfx: gfx_comp
+struct bullet_gfx : gfx_comp
 {
-  void update(game_object &obj, graphics &graphics) override;
+		void update(game_object& obj, graphics& graphics) override;
 };
 
 #endif // BULLET_GFX_H

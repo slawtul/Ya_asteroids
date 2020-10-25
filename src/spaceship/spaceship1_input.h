@@ -3,9 +3,9 @@
 
 #include "game_object.h"
 
-struct spaceship1_input: input_comp
+struct spaceship1_input : input_comp
 {
-  void update(game_object &obj) override;
+		void update(game_object& obj) override;
 };
 
 #endif // SPACESHIP1_INPUT_COMPONENT_H
