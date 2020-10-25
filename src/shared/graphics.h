@@ -5,6 +5,6 @@
 
 struct graphics
 {
-  SDL_Renderer *renderer{nullptr};
+  SDL_Renderer *renderer;
   texture_shelf tex_shelf;
 };

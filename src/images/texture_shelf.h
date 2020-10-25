@@ -7,7 +7,7 @@
 
 struct texture_shelf
 {
-  std::map<std::string_view, SDL_Texture *> shelf{};
+  std::map<std::string_view, SDL_Texture *> shelf;
 
   SDL_Texture *get_texture(const std::string_view &texture_name);
   void add_image(SDL_Renderer *renderer, const std::string_view &texture_name,

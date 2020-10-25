@@ -11,13 +11,13 @@
 
 struct game_object
 {
-  std::unique_ptr<input_comp> input{};
-  std::unique_ptr<physics_comp> physics{};
-  std::unique_ptr<graphics_comp> gfx{};
+  std::unique_ptr<input_comp> input;
+  std::unique_ptr<physics_comp> physics;
+  std::unique_ptr<graphics_comp> gfx;
 
-  game_object_meta meta{};
-  game_object_motion motion{};
-  SDL_Rect rect{};
+  game_object_meta meta;
+  game_object_motion motion;
+  SDL_Rect rect;
 
   game_object(std::unique_ptr<input_comp> input_,
               std::unique_ptr<physics_comp> physics_,
