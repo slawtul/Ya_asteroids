@@ -45,7 +45,8 @@ game_object game_object_utils::create_bullet()
     return go;
 }
 
-game_object& game_object_utils::fire_bullet(game_object& bullet,
+game_object& game_object_utils::fire_bullet(
+  game_object& bullet,
   const game_object& spaceship)
 {
     bullet.rect.x = spaceship.rect.x + (spaceship.rect.w - bullet.rect.w) / 2;

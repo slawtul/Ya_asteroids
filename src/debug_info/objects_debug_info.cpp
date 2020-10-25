@@ -9,7 +9,9 @@ uint16_t objects_debug_info::count_objs()
     return max_objs_on_screen;
 }
 
-void objects_debug_info::render_obj_qty(TTF_Font* font, SDL_Color color,
+void objects_debug_info::render_obj_qty(
+  TTF_Font* font,
+  SDL_Color color,
   SDL_Renderer* renderer) const
 {
     auto rect = SDL_Rect{ 20, 56, 120, 16 };
@@ -18,7 +20,9 @@ void objects_debug_info::render_obj_qty(TTF_Font* font, SDL_Color color,
       "Obj_qty: " + std::to_string(objs_on_screen));
 }
 
-void objects_debug_info::render_max_obj_qty(TTF_Font* font, SDL_Color color,
+void objects_debug_info::render_max_obj_qty(
+  TTF_Font* font,
+  SDL_Color color,
   SDL_Renderer* renderer)
 {
     auto rect = SDL_Rect{ 20, 72, 120, 16 };

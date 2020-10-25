@@ -12,7 +12,10 @@ struct gfx_comp
     static bool off_screen(int rect_x, int rect_y, const graphics& gfx);
 
     // If object crosses screen edge it appears on the opposite edge
-    static std::pair<int, int>
-    calc_position_if_edge_screen_reached(int rect_x, int rect_y, int rect_w,
-      int rect_h, const graphics& gfx);
+    static std::pair<int, int> recalculate_position(
+      int rect_x,
+      int rect_y,
+      int rect_w,
+      int rect_h,
+      const graphics& graphics);
 };

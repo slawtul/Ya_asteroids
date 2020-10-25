@@ -8,13 +8,14 @@ void destroy_asteroids_scene::update(SDL_Event& event, graphics& gfx,
     SDL_SetRenderDrawColor(gfx.renderer, 0, 0, 0, 255);
     SDL_RenderClear(gfx.renderer);
     SDL_RenderCopy(gfx.renderer,
-      gfx.tex_shelf.get_texture("background_01_static"), nullptr,
+      gfx.tex_shelf.get_texture("background_01_static"),
+      nullptr,
       nullptr);
 
     SDL_PollEvent(&event);
     if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_RETURN])
     {
-        game_object_utils gou;
+        game_object_utils gou{};
         auto bullet = gou.create_bullet();
         game_objects.emplace_back(
           std::move(gou

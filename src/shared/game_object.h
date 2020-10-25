@@ -19,7 +19,8 @@ struct game_object
     game_object_motion motion;
     SDL_Rect rect;
 
-    game_object(std::unique_ptr<input_comp> input_,
+    game_object(
+      std::unique_ptr<input_comp> input_,
       std::unique_ptr<physics_comp> physics_,
       std::unique_ptr<gfx_comp> graphics_)
       : input{ std::move(input_) }, physics{ std::move(physics_) },

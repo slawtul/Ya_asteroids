@@ -19,13 +19,15 @@ int main(int argc, char* argv[])
     IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG);
     TTF_Init();
 
-    const auto window = sdl2.create_window("YA Asteroids",
+    const auto window = sdl2.create_window(
+      "YA Asteroids",
       1920,
       1080,
       SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI);
 
     const auto renderer = sdl2.create_renderer(
-      window, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+      window,
+      SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
     graphics_debug_info gdi{};
     gdi.log_screen_size(renderer);
@@ -35,7 +37,7 @@ int main(int argc, char* argv[])
     graphics gfx{ renderer, ts };
 
     std::vector<game_object> game_objects;
-    game_objects.reserve(400);
+    game_objects.reserve(600);
     game_object_utils gou{};
     game_objects.emplace_back(gou.create_spaceship1());
     game_objects.emplace_back(gou.create_spaceship2());
@@ -76,7 +78,8 @@ int main(int argc, char* argv[])
     // end: game loop
 
     #ifdef DEBUG
-    SDL_LogInfo(0,
+    SDL_LogInfo(
+      0,
       "Max objects qty: %d",
       static_cast<int>(odi.max_objs_on_screen));
     SDL_LogInfo(0, "Avg FPS: %.2f", fdi.frames_per_sec);

@@ -3,8 +3,8 @@
 
 void bullet_physics::update(game_object& obj)
 {
-    obj.motion.dx += std::cos(obj.motion.angle * constants::DEG_TO_RAD) *
-      obj.motion.acceleration;
+    obj.motion.dx += std::cos(obj.motion.angle * constants::DEG_TO_RAD)
+      * obj.motion.acceleration;
     obj.motion.dy += std::sin(obj.motion.angle * constants::DEG_TO_RAD) *
       obj.motion.acceleration;
 
