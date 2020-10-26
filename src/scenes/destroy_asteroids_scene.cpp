@@ -24,7 +24,7 @@ void destroy_asteroids_scene::update(SDL_Event &event, graphics &gfx,
     }
     if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_SPACE])
     {
-        game_object_utils gou;
+        game_object_utils gou{};
         auto bullet = gou.create_bullet();
         game_objects.emplace_back(
             std::move(gou

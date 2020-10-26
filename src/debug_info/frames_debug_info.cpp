@@ -38,7 +38,7 @@ void frames_debug_info::render_min_frames(
     SDL_Renderer *renderer)
 {
     auto rect = SDL_Rect{ 20, 40, 120, 16 };
-    render_text rt;
+    render_text rt{};
     rt.render(
         rect,
         font,
@@ -53,7 +53,7 @@ void frames_debug_info::render_frames_per_sec(
     SDL_Renderer *renderer)
 {
     auto rect = SDL_Rect{ 20, 24, 120, 16 };
-    render_text rt;
+    render_text rt{};
     rt.render(
         rect,
         font,
