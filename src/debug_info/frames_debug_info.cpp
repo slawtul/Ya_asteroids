@@ -33,9 +33,9 @@ double frames_debug_info::calc_frames_per_sec()
 }
 
 void frames_debug_info::render_min_frames(
-    TTF_Font* font,
+    TTF_Font *font,
     SDL_Color color,
-    SDL_Renderer* renderer)
+    SDL_Renderer *renderer)
 {
     auto rect = SDL_Rect{ 20, 40, 120, 16 };
     render_text rt;
@@ -48,9 +48,9 @@ void frames_debug_info::render_min_frames(
 }
 
 void frames_debug_info::render_frames_per_sec(
-    TTF_Font* font,
+    TTF_Font *font,
     SDL_Color color,
-    SDL_Renderer* renderer)
+    SDL_Renderer *renderer)
 {
     auto rect = SDL_Rect{ 20, 24, 120, 16 };
     render_text rt;

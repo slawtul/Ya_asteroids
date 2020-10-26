@@ -7,7 +7,7 @@
 
 struct spaceship2_physics : physics_comp
 {
-    void update(game_object& obj) override
+    void update(game_object &obj) override
     {
         obj.motion.dx += std::cos(obj.motion.angle * constants::DEG_TO_RAD) *
             obj.motion.acceleration;

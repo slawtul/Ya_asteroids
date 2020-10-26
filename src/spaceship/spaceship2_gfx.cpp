@@ -1,6 +1,6 @@
 #include "spaceship2_gfx.h"
 
-void spaceship2_gfx::update(game_object& obj, graphics& graphics)
+void spaceship2_gfx::update(game_object &obj, graphics &graphics)
 {
     obj.rect.x += static_cast<int>(obj.motion.dx);
     obj.rect.y += static_cast<int>(obj.motion.dy);

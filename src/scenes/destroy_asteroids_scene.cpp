@@ -2,8 +2,8 @@
 #include "game_object_utils.h"
 #include <algorithm>
 
-void destroy_asteroids_scene::update(SDL_Event& event, graphics& gfx,
-    std::vector<game_object>& game_objects)
+void destroy_asteroids_scene::update(SDL_Event &event, graphics &gfx,
+    std::vector<game_object> &game_objects)
 {
     SDL_SetRenderDrawColor(gfx.renderer, 0, 0, 0, 255);
     SDL_RenderClear(gfx.renderer);
@@ -41,7 +41,7 @@ void destroy_asteroids_scene::update(SDL_Event& event, graphics& gfx,
 
     const auto not_active = std::remove_if(
         game_objects.begin(), game_objects.end(),
-        [&](const game_object& item_)
+        [&](const game_object &item_)
         {
           return !item_.meta.is_active;
         });

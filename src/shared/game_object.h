@@ -28,5 +28,5 @@ struct game_object
     {
     }
 
-    void update(graphics& graphics_);
+    void update(graphics &graphics_);
 };

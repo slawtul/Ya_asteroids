@@ -5,7 +5,7 @@
 
 struct spaceship1_gfx : gfx_comp
 {
-    void update(game_object& obj, graphics& graphics) override;
+    void update(game_object &obj, graphics &graphics) override;
 };
 
 #endif // SPACESHIP1_GRAPHICS_COMPONENT_H

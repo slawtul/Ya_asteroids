@@ -2,7 +2,7 @@
 
 bool
 gfx_comp::off_screen(int rect_x, int rect_y,
-    const graphics& graphics)
+    const graphics &graphics)
 {
     int screen_width, screen_height;
     SDL_GetRendererOutputSize(
@@ -19,7 +19,7 @@ std::pair<int, int> gfx_comp::recalculate_position(
     int rect_y,
     int rect_w,
     int rect_h,
-    const graphics& graphics)
+    const graphics &graphics)
 {
     int screen_width, screen_height;
     SDL_GetRendererOutputSize(

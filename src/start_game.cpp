@@ -9,7 +9,7 @@
 #include "debug_info/objects_debug_info.h"
 #endif
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
     SDL_LogInfo(0, "Program parameters: argc %d", argc);
     SDL_LogInfo(0, "Program parameters: argv %s", *argv);

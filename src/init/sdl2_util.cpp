@@ -10,8 +10,8 @@ void sdl2_util::init(const uint32_t flags)
     }
 }
 
-SDL_Window* sdl2_util::create_window(
-    const char* title,
+SDL_Window *sdl2_util::create_window(
+    const char *title,
     int screen_width,
     int screen_height,
     uint32_t flags)
@@ -31,7 +31,7 @@ SDL_Window* sdl2_util::create_window(
     return window;
 }
 
-SDL_Renderer* sdl2_util::create_renderer(SDL_Window* window, uint32_t flags)
+SDL_Renderer *sdl2_util::create_renderer(SDL_Window *window, uint32_t flags)
 {
     const auto renderer = SDL_CreateRenderer(window, -1, flags);
     if (renderer == nullptr)

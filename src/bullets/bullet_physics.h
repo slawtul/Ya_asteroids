@@ -5,7 +5,7 @@
 
 struct bullet_physics : physics_comp
 {
-    void update(game_object& obj) override;
+    void update(game_object &obj) override;
 };
 
 #endif // BULLET_PHYSICS_H

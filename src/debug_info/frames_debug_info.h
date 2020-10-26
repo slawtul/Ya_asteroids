@@ -19,12 +19,12 @@ struct frames_debug_info
     double calc_min_frames_per_sec();
 
     void render_frames_per_sec(
-        TTF_Font* font,
+        TTF_Font *font,
         SDL_Color color,
-        SDL_Renderer* renderer);
+        SDL_Renderer *renderer);
 
     void
-    render_min_frames(TTF_Font* font, SDL_Color color, SDL_Renderer* renderer);
+    render_min_frames(TTF_Font *font, SDL_Color color, SDL_Renderer *renderer);
 };
 
 #endif // FRAMES_DEBUG_INFO_H
