@@ -20,11 +20,11 @@ struct game_object
     SDL_Rect rect;
 
     game_object(
-      std::unique_ptr<input_comp> input_,
-      std::unique_ptr<physics_comp> physics_,
-      std::unique_ptr<gfx_comp> graphics_)
-      : input{ std::move(input_) }, physics{ std::move(physics_) },
-        gfx{ std::move(graphics_) }
+        std::unique_ptr<input_comp> input_,
+        std::unique_ptr<physics_comp> physics_,
+        std::unique_ptr<gfx_comp> graphics_)
+        : input{ std::move(input_) }, physics{ std::move(physics_) },
+          gfx{ std::move(graphics_) }
     {
     }
 

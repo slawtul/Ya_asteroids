@@ -11,18 +11,18 @@ void sdl2_util::init(const uint32_t flags)
 }
 
 SDL_Window* sdl2_util::create_window(
-  const char* title,
-  int screen_width,
-  int screen_height,
-  uint32_t flags)
+    const char* title,
+    int screen_width,
+    int screen_height,
+    uint32_t flags)
 {
     const auto window = SDL_CreateWindow(
-      title,
-      SDL_WINDOWPOS_CENTERED,
-      SDL_WINDOWPOS_CENTERED,
-      screen_width,
-      screen_height,
-      flags);
+        title,
+        SDL_WINDOWPOS_CENTERED,
+        SDL_WINDOWPOS_CENTERED,
+        screen_width,
+        screen_height,
+        flags);
     if (window == nullptr)
     {
         SDL_Log("Unable to create a window %s", SDL_GetError());

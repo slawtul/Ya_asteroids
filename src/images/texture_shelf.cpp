@@ -6,8 +6,8 @@ SDL_Texture* texture_shelf::get_texture(const std::string_view& texture_name)
 }
 
 void texture_shelf::add_image(SDL_Renderer* renderer,
-  const std::string_view& texture_name,
-  const std::string_view& file)
+    const std::string_view& texture_name,
+    const std::string_view& file)
 {
     auto surface = load_image(file);
     auto texture = SDL_CreateTextureFromSurface(renderer, surface);
@@ -19,13 +19,13 @@ void texture_shelf::add_image(SDL_Renderer* renderer,
 void texture_shelf::add_init_images(SDL_Renderer* renderer)
 {
     add_image(
-      renderer,
-      "background_01_static",
-      "resources/background_01_static.jpg");
+        renderer,
+        "background_01_static",
+        "resources/background_01_static.jpg");
     add_image(
-      renderer,
-      "bullet_short_single",
-      "resources/bullet_short_single.png");
+        renderer,
+        "bullet_short_single",
+        "resources/bullet_short_single.png");
     add_image(renderer, "DKO-api-X1", "resources/DKO-api-X1.png");
     add_image(renderer, "CX16-X1", "resources/CX16-X1.png");
     add_image(renderer, "WO84-wu-X1", "resources/WO84-wu-X1.png");

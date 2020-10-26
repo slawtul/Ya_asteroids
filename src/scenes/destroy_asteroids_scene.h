@@ -8,6 +8,6 @@
 struct destroy_asteroids_scene
 {
     void update(SDL_Event& event,
-      graphics& gfx,
-      std::vector<game_object>& game_objects);
+        graphics& gfx,
+        std::vector<game_object>& game_objects);
 };

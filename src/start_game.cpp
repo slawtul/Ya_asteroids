@@ -20,14 +20,14 @@ int main(int argc, char* argv[])
     TTF_Init();
 
     const auto window = sdl2.create_window(
-      "YA Asteroids",
-      1920,
-      1080,
-      SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI);
+        "YA Asteroids",
+        1920,
+        1080,
+        SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI);
 
     const auto renderer = sdl2.create_renderer(
-      window,
-      SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+        window,
+        SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
     graphics_debug_info gdi{};
     gdi.log_screen_size(renderer);
@@ -78,10 +78,9 @@ int main(int argc, char* argv[])
     // end: game loop
 
     #ifdef DEBUG
-    SDL_LogInfo(
-      0,
-      "Max objects qty: %d",
-      static_cast<int>(odi.max_objs_on_screen));
+    SDL_LogInfo(0,
+        "Max objects qty: %d",
+        static_cast<int>(odi.max_objs_on_screen));
     SDL_LogInfo(0, "Avg FPS: %.2f", fdi.frames_per_sec);
     SDL_LogInfo(0, "Stop game");
     TTF_CloseFont(font);

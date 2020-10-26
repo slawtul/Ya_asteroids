@@ -12,11 +12,11 @@ void bullet_gfx::update(game_object& obj, graphics& graphics)
     }
 
     SDL_RenderCopyEx(
-      graphics.renderer,
-      graphics.tex_shelf.get_texture("bullet_short_single"),
-      nullptr,
-      &obj.rect,
-      obj.motion.angle + 90,
-      nullptr,
-      SDL_FLIP_NONE);
+        graphics.renderer,
+        graphics.tex_shelf.get_texture("bullet_short_single"),
+        nullptr,
+        &obj.rect,
+        obj.motion.angle + 90,
+        nullptr,
+        SDL_FLIP_NONE);
 }

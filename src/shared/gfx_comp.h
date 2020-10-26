@@ -13,9 +13,9 @@ struct gfx_comp
 
     // If object crosses screen edge it appears on the opposite edge
     static std::pair<int, int> recalculate_position(
-      int rect_x,
-      int rect_y,
-      int rect_w,
-      int rect_h,
-      const graphics& graphics);
+        int rect_x,
+        int rect_y,
+        int rect_w,
+        int rect_h,
+        const graphics& graphics);
 };

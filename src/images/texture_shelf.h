@@ -13,9 +13,9 @@ struct texture_shelf
     SDL_Texture* get_texture(const std::string_view& texture_name);
 
     void add_image(
-      SDL_Renderer* renderer,
-      const std::string_view& texture_name,
-      const std::string_view& file);
+        SDL_Renderer* renderer,
+        const std::string_view& texture_name,
+        const std::string_view& file);
 
     void add_init_images(SDL_Renderer* renderer);
     void destroy_textures();
