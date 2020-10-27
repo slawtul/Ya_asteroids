@@ -75,3 +75,5 @@ You can use this software freely in any free or commercial project except files 
     1. Around 20% more objects with std::variant against runtime inheritance
     2. Around 33% more FPS with std::variant against runtime inheritance
     
+    Fantastic results!
+    
