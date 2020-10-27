@@ -65,7 +65,7 @@ You can use this software freely in any free or commercial project except files 
     Inheritance implementation is faster. Maybe because of compiler optimization
     or my implementation of std:variant sucks.
     
-    [Edit] Yes... it was bad implementation, current awesome result...
+    [Edit] Yes... it was bad implementation, current awesome results...
     
     # Without runtime inheritance (std-variant branch)
     1. Avg ~60 FPS with 11800 objects on the screen
