@@ -19,7 +19,10 @@ struct texture_shelf
 
     void add_init_images(SDL_Renderer *renderer);
     void destroy_textures();
+
+    [[nodiscard]]
     SDL_Surface *load_image(const std::string_view &file) const;
 };
 
 #endif // TEXTURE_SHELF_H
+

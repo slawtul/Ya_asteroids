@@ -1,6 +1,6 @@
 #pragma once
 
-struct game_object_motion
+struct obj_motion
 {
     double max_speed;
     double angle;

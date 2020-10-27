@@ -1,15 +1,16 @@
-#include "gfx_comp.h"
+#include "gfx_helpers.h"
 
-bool gfx_comp::off_screen(int rect_x, int rect_y, const graphics &graphics)
+
+bool gfx_helpers::is_off_screen(int rect_x, int rect_y, SDL_Renderer *renderer)
 {
     int screen_width{}, screen_height{};
-    SDL_GetRendererOutputSize(graphics.renderer, &screen_width, &screen_height);
+    SDL_GetRendererOutputSize(renderer, &screen_width, &screen_height);
 
     return (rect_x < 0 || rect_y < 0) ||
         (rect_x > screen_width || rect_y > screen_height);
 }
 
-std::pair<int, int> gfx_comp::recalculate_position(
+std::pair<int, int> gfx_helpers::opposite_edge_position(
     int rect_x,
     int rect_y,
     int rect_w,

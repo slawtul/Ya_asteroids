@@ -15,7 +15,7 @@ game_object game_object_utils::create_spaceship1()
         std::make_unique<spaceship1_input>(),
         std::make_unique<spaceship1_physics>(),
         std::make_unique<spaceship1_gfx>() };
-    go.meta.name = object_name::SPACESHIP1;
+    go.meta.name = obj_name::SPACESHIP1;
     go.motion.max_speed = 8.0;
     go.rect = { 0, 0, 64, 64 };
     return go;
@@ -27,7 +27,7 @@ game_object game_object_utils::create_spaceship2()
         std::make_unique<spaceship2_input>(),
         std::make_unique<spaceship2_physics>(),
         std::make_unique<spaceship2_gfx>() };
-    go.meta.name = object_name::SPACESHIP2;
+    go.meta.name = obj_name::SPACESHIP2;
     go.motion.max_speed = 8.0;
     go.rect = { 256, 1000, 64, 64 };
     return go;
@@ -39,7 +39,7 @@ game_object game_object_utils::create_bullet()
         std::make_unique<bullet_input>(),
         std::make_unique<bullet_physics>(),
         std::make_unique<bullet_gfx>() };
-    go.meta.name = object_name::BULLET;
+    go.meta.name = obj_name::BULLET;
     go.motion.acceleration = 32;
     go.rect = { 0, 0, 4, 20 };
     return go;

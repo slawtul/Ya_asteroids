@@ -1,12 +1,18 @@
 #pragma once
 
+
 #include <SDL.h>
 #include <vector>
-#include "game_object.h"
-#include "graphics.h"
+#include <images/texture_shelf.h>
+#include <variant>
+#include <game_object.h>
+
 
 struct destroy_asteroids_scene
 {
-    void
-    update(SDL_Event &event, graphics &gfx, std::vector<game_object> &game_objects);
+    void update(
+        SDL_Event &event,
+        SDL_Renderer *renderer,
+        texture_shelf &ts,
+        std::vector<std::variant> &game_objects);
 };

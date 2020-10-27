@@ -34,26 +34,13 @@ add_executable(asteroids
         src/bullets/bullet_input.cpp
         src/bullets/bullet_physics.cpp
         src/images/texture_shelf.h
-        src/scenes/avoid_asteroids_scene.h
-        src/scenes/control_spaceships_scene.h
         src/scenes/destroy_asteroids_scene.h
-        src/scenes/two_spaceships_scene.h
-        src/scenes/scene.h
         src/shared/game_object.h
-        src/shared/game_object_meta.h
-        src/shared/game_object_motion.h
+        src/shared/obj_meta.h
+        src/shared/obj_motion.h
         src/init/constants.h
-        src/shared/graphics.h
         src/shared/gfx_comp.h
-        src/shared/input_comp.h
-        src/shared/object_name.h
-        src/shared/physics_comp.h
-        src/spaceship/spaceship1_gfx.h
-        src/spaceship/spaceship1_input.h
-        src/spaceship/spaceship1_physics.h
-        src/spaceship/spaceship2_gfx.h
-        src/spaceship/spaceship2_input.h
-        src/spaceship/spaceship2_physics.h
+        src/shared/obj_name.h
         src/init/sdl2_util.h
         src/text/render_text.h
         src/shared/game_object_utils.h
@@ -69,11 +56,8 @@ add_executable(asteroids
         src/shared/game_object.cpp
         src/shared/game_object_utils.cpp
         src/shared/gfx_comp.cpp
-        src/shared/physics_comp.cpp
         src/text/render_text.cpp
-        src/spaceship/spaceship1_gfx.cpp
-        src/spaceship/spaceship2_gfx.cpp
-        src/spaceship/spaceship1_input.cpp)
+        src/bullets/bullet.cpp src/bullets/bullet.h src/spaceship/spaceship.cpp src/spaceship/spaceship.h src/shared/gfx_helpers.cpp src/shared/gfx_helpers.h src/shared/physics_helpers.cpp src/shared/physics_helpers.h)
 
 add_compile_options(-Wall -Wextra -Wpedantic -Werror)
 target_link_libraries(asteroids ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY} ${SDL2_TTF_LIBRARY})

@@ -17,5 +17,5 @@ struct gfx_comp
         int rect_y,
         int rect_w,
         int rect_h,
-        const graphics &graphics);
+        SDL_Renderer *renderer);
 };

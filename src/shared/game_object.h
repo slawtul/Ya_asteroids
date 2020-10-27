@@ -3,8 +3,8 @@
 #include <iostream>
 #include <memory>
 
-#include "game_object_meta.h"
-#include "game_object_motion.h"
+#include "obj_meta.h"
+#include "obj_motion.h"
 #include "gfx_comp.h"
 #include "input_comp.h"
 #include "physics_comp.h"
@@ -15,8 +15,8 @@ struct game_object
     std::unique_ptr<physics_comp> physics;
     std::unique_ptr<gfx_comp> gfx;
 
-    game_object_meta meta;
-    game_object_motion motion;
+    obj_meta meta;
+    obj_motion motion;
     SDL_Rect rect;
 
     game_object(
