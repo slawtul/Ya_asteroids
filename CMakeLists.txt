@@ -27,35 +27,23 @@ configure_file(resources/explosion.png ./resources/explosion.png COPYONLY)
 
 add_executable(asteroids
         src/start_game.cpp
-        src/bullets/bullet_gfx.h
-        src/bullets/bullet_input.h
-        src/bullets/bullet_physics.h
-        src/bullets/bullet_gfx.cpp
-        src/bullets/bullet_input.cpp
-        src/bullets/bullet_physics.cpp
         src/images/texture_shelf.h
         src/scenes/destroy_asteroids_scene.h
-        src/shared/game_object.h
         src/shared/obj_meta.h
         src/shared/obj_motion.h
         src/init/constants.h
-        src/shared/gfx_comp.h
         src/shared/obj_name.h
         src/init/sdl2_util.h
         src/text/render_text.h
-        src/shared/game_object_utils.h
-        src/debug_info/frames_debug_info.h
-        src/debug_info/graphics_debug_info.h
-        src/debug_info/objects_debug_info.h
-        src/debug_info/frames_debug_info.cpp
-        src/debug_info/graphics_debug_info.cpp
-        src/debug_info/objects_debug_info.cpp
+        src/debug_info/frames_debug.h
+        src/debug_info/graphics_debug.h
+        src/debug_info/objects_debug.h
+        src/debug_info/frames_debug.cpp
+        src/debug_info/graphics_debug.cpp
+        src/debug_info/objects_debug.cpp
         src/images/texture_shelf.cpp
         src/init/sdl2_util.cpp
         src/scenes/destroy_asteroids_scene.cpp
-        src/shared/game_object.cpp
-        src/shared/game_object_utils.cpp
-        src/shared/gfx_comp.cpp
         src/text/render_text.cpp
         src/bullets/bullet.cpp src/bullets/bullet.h src/spaceship/spaceship.cpp src/spaceship/spaceship.h src/shared/gfx_helpers.cpp src/shared/gfx_helpers.h src/shared/physics_helpers.cpp src/shared/physics_helpers.h)
 

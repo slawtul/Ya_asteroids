@@ -1,6 +1,6 @@
-#include "objects_debug_info.h"
+#include "objects_debug.h"
 
-uint16_t objects_debug_info::count_objs()
+uint16_t objects_debug::count_objs()
 {
     if (objs_on_screen > max_objs_on_screen)
     {
@@ -9,7 +9,7 @@ uint16_t objects_debug_info::count_objs()
     return max_objs_on_screen;
 }
 
-void objects_debug_info::render_obj_qty(
+void objects_debug::render_obj_qty(
     TTF_Font *font,
     SDL_Color color,
     SDL_Renderer *renderer) const
@@ -20,7 +20,7 @@ void objects_debug_info::render_obj_qty(
         "Obj_qty: " + std::to_string(objs_on_screen));
 }
 
-void objects_debug_info::render_max_obj_qty(
+void objects_debug::render_max_obj_qty(
     TTF_Font *font,
     SDL_Color color,
     SDL_Renderer *renderer)

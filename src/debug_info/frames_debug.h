@@ -1,10 +1,10 @@
-#ifndef FRAMES_DEBUG_INFO_H
-#define FRAMES_DEBUG_INFO_H
+#ifndef FRAMES_DEBUG_H
+#define FRAMES_DEBUG_H
 
 #include "text/render_text.h"
 #include <SDL_ttf.h>
 
-struct frames_debug_info
+struct frames_debug
 {
     uint32_t current_time;
     uint32_t last_time;
@@ -27,4 +27,4 @@ struct frames_debug_info
     render_min_frames(TTF_Font *font, SDL_Color color, SDL_Renderer *renderer);
 };
 
-#endif // FRAMES_DEBUG_INFO_H
+#endif // FRAMES_DEBUG_H

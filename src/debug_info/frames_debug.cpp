@@ -1,14 +1,14 @@
-#include "frames_debug_info.h"
+#include "frames_debug.h"
 #include <string>
 
-double frames_debug_info::calc_frame_delta_time()
+double frames_debug::calc_frame_delta_time()
 {
     frame_delta_time = current_time - last_time;
     last_time = current_time;
     return frame_delta_time;
 }
 
-double frames_debug_info::calc_min_frames_per_sec()
+double frames_debug::calc_min_frames_per_sec()
 {
     if (min_fps <= 0)
     {
@@ -25,14 +25,14 @@ double frames_debug_info::calc_min_frames_per_sec()
     return min_fps;
 }
 
-double frames_debug_info::calc_frames_per_sec()
+double frames_debug::calc_frames_per_sec()
 {
     frame_time = 0.2 * calc_frame_delta_time() + 0.8 * frame_time;
     frames_per_sec = 1000.0 / frame_time;
     return frames_per_sec;
 }
 
-void frames_debug_info::render_min_frames(
+void frames_debug::render_min_frames(
     TTF_Font *font,
     SDL_Color color,
     SDL_Renderer *renderer)
@@ -47,7 +47,7 @@ void frames_debug_info::render_min_frames(
         "Min_fps: " + std::to_string(calc_min_frames_per_sec()));
 }
 
-void frames_debug_info::render_frames_per_sec(
+void frames_debug::render_frames_per_sec(
     TTF_Font *font,
     SDL_Color color,
     SDL_Renderer *renderer)

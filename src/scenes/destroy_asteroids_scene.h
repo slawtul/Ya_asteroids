@@ -3,9 +3,11 @@
 
 #include <SDL.h>
 #include <vector>
-#include <images/texture_shelf.h>
+#include <algorithm>
 #include <variant>
-#include <game_object.h>
+#include <images/texture_shelf.h>
+#include <bullets/bullet.h>
+#include <spaceship/spaceship.h>
 
 
 struct destroy_asteroids_scene
@@ -14,5 +16,5 @@ struct destroy_asteroids_scene
         SDL_Event &event,
         SDL_Renderer *renderer,
         texture_shelf &ts,
-        std::vector<std::variant> &game_objects);
+        std::vector<std::variant<bullet, spaceship>> &game_objects);
 };

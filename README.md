@@ -51,16 +51,27 @@ You can use this software freely in any free or commercial project except files 
     Operating System: Fedora 32
     Processors: 16 × AMD Ryzen 7 3700X 8-Core Processor
     Memory: 32 GiB of RAM
-    Monitor: LG, screen resolution 4K
+    Monitor: LG, screen resolution 4K (3840 x 2160)
     Graphics card: AMD Radeon RX 5700 XT
 
-    # Using runtime inheritance
+    # Using runtime inheritance (master branch)
     1. Avg ~60 FPS with 9900 objects on the screen
-    2. Avg ~2700 FPS with 3 objects on the screen
+    2. Avg ~2700 FPS with 2 objects on the screen
     
-    # Without runtime inheritance
+    # Without runtime inheritance (no-inheritance branch)
     1. Avg ~60 FPS with 8229 objects on the screen
-    2. Avg ~2700 FPS with 3 objects on the screen
+    2. Avg ~2700 FPS with 2 objects on the screen
     
     Inheritance implementation is faster. Maybe because of compiler optimization
-    or my std:variant implementation sucks.
+    or my implementation of std:variant sucks.
+    
+    [Edit] Yes... it was bad implementation, current awesome result...
+    
+    # Without runtime inheritance (std-variant branch)
+    1. Avg ~60 FPS with 11800 objects on the screen
+    2. Avg ~3600 FPS with 2 objects on the screen
+    
+    Summary
+    1. Around 20% more objects with std::variant against runtime inheritance
+    2. Around 33% more FPS with std::variant against runtime inheritance
+    

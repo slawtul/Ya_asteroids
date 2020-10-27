@@ -15,10 +15,10 @@ struct spaceship
 {
     spaceship(
         SDL_Renderer *renderer,
-        const SDL_Rect &rect,
+        SDL_Rect &rect,
         texture_shelf &ts,
-        const obj_meta &meta,
-        const obj_motion &motion);
+        obj_meta &meta,
+        obj_motion &motion);
 
     void update();
 

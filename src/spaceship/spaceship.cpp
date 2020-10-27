@@ -1,12 +1,13 @@
+#include <iostream>
 #include "spaceship.h"
 
 
 spaceship::spaceship(
     SDL_Renderer *renderer,
-    const SDL_Rect &rect,
+    SDL_Rect &rect,
     texture_shelf &ts,
-    const obj_meta &meta,
-    const obj_motion &motion)
+    obj_meta &meta,
+    obj_motion &motion)
     : renderer{ renderer }, rect{ rect }, ts{ ts }, meta{ meta },
       motion{ motion }
 {
@@ -70,6 +71,8 @@ void spaceship::gfx()
 
     rect.x = x;
     rect.y = y;
+    //std::cout << rect.x << " " << rect.y << "\n";
+    //std::cout << motion.dx << " " << motion.dy << "\n";
 
     SDL_RenderCopyEx(
         renderer,

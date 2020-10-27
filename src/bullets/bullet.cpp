@@ -1,9 +1,10 @@
+#include <iostream>
 #include "bullet.h"
 
 
 bullet::bullet(
     SDL_Renderer *renderer,
-    const SDL_Rect &rect,
+    SDL_Rect &rect,
     texture_shelf &ts,
     obj_meta &meta,
     obj_motion &motion,
