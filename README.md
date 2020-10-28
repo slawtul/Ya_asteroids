@@ -63,7 +63,7 @@ You can use this software freely in any free or commercial project except files 
     2. Avg ~2700 FPS with 2 objects on the screen
     
     Runtime polymorphism implementation is faster. Maybe because of compiler optimization
-    or my implementation of std:variant sucks.
+    or my implementation with std::variant sucks.
     
     [Edit] Yes... it was bad implementation, current awesome results:
     
