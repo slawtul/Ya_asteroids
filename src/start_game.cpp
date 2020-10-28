@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
     obj_motion s_motion{};
     spaceship s{ renderer, s_rect, ts, s_meta, s_motion };
 
-    SDL_Rect b_rect{ 0, 0, 4, 20 };;
+    SDL_Rect b_rect{ 0, 0, 4, 20 };
     obj_meta b_meta{};
     obj_motion b_motion{};
     bullet b{ renderer, b_rect, ts, b_meta, b_motion, s };
