@@ -11,12 +11,14 @@
 #include <spaceship/spaceship.h>
 
 
+using game_object_type = std::variant<bullet, spaceship>;
+
 struct destroy_asteroids_scene
 {
     void update(SDL_Event &event,
         SDL_Renderer *renderer,
         texture_shelf &ts,
-        std::vector<std::variant<bullet, spaceship>> &game_objects);
+        std::vector<game_object_type> &game_objects);
 };
 
 

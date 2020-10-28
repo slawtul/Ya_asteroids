@@ -25,8 +25,7 @@ int main(int argc, char *argv[])
         1080,
         SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI);
 
-    const auto renderer = sdl2.create_renderer(window,
-        SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+    const auto renderer = sdl2.create_renderer(window, SDL_RENDERER_ACCELERATED);
 
     graphics_debug gd{};
     gd.log_screen_size(renderer);
@@ -34,8 +33,8 @@ int main(int argc, char *argv[])
     texture_shelf ts{};
     ts.add_init_images(renderer);
 
-    std::vector<std::variant<bullet, spaceship>> game_objects;
-    game_objects.reserve(600);
+    std::vector<game_object_type> game_objects;
+    game_objects.reserve(20000);
 
     SDL_Rect s_rect{ 0, 100, 64, 64 };
     obj_meta s_meta{};

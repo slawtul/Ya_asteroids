@@ -9,7 +9,7 @@ auto call_update = [](auto &game_obj)
 void destroy_asteroids_scene::update(SDL_Event &event,
     SDL_Renderer *renderer,
     texture_shelf &ts,
-    std::vector<std::variant<bullet, spaceship>> &game_objects)
+    std::vector<game_object_type> &game_objects)
 {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
