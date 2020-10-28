@@ -1,6 +1,7 @@
 #include "frames_debug.h"
 #include <string>
 
+
 double frames_debug::calc_frame_delta_time()
 {
     frame_delta_time = current_time - last_time;
@@ -32,30 +33,26 @@ double frames_debug::calc_frames_per_sec()
     return frames_per_sec;
 }
 
-void frames_debug::render_min_frames(
-    TTF_Font *font,
+void frames_debug::render_min_frames(TTF_Font *font,
     SDL_Color color,
     SDL_Renderer *renderer)
 {
     auto rect = SDL_Rect{ 20, 40, 120, 16 };
     render_text rt{};
-    rt.render(
-        rect,
+    rt.render(rect,
         font,
         color,
         renderer,
         "Min_fps: " + std::to_string(calc_min_frames_per_sec()));
 }
 
-void frames_debug::render_frames_per_sec(
-    TTF_Font *font,
+void frames_debug::render_frames_per_sec(TTF_Font *font,
     SDL_Color color,
     SDL_Renderer *renderer)
 {
     auto rect = SDL_Rect{ 20, 24, 120, 16 };
     render_text rt{};
-    rt.render(
-        rect,
+    rt.render(rect,
         font,
         color,
         renderer,

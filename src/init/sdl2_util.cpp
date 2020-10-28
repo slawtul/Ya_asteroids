@@ -1,5 +1,6 @@
 #include "sdl2_util.h"
 
+
 void sdl2_util::init(const uint32_t flags)
 {
     SDL_LogSetAllPriority(SDL_LOG_PRIORITY_DEBUG);
@@ -10,14 +11,12 @@ void sdl2_util::init(const uint32_t flags)
     }
 }
 
-SDL_Window *sdl2_util::create_window(
-    const char *title,
+SDL_Window *sdl2_util::create_window(const char *title,
     int screen_width,
     int screen_height,
     uint32_t flags)
 {
-    const auto window = SDL_CreateWindow(
-        title,
+    const auto window = SDL_CreateWindow(title,
         SDL_WINDOWPOS_CENTERED,
         SDL_WINDOWPOS_CENTERED,
         screen_width,

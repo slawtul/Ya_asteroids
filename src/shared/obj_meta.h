@@ -1,6 +1,9 @@
-#pragma once
+#ifndef OBJ_META_H
+#define OBJ_META_H
+
 
 #include "obj_name.h"
+
 
 struct obj_meta
 {
@@ -10,3 +13,6 @@ struct obj_meta
     // If game object is not active - it's removed from game objects vector
     bool is_active{ true };
 };
+
+
+#endif // OBJ_META_H

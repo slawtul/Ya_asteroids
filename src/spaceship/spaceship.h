@@ -13,8 +13,7 @@
 
 struct spaceship
 {
-    spaceship(
-        SDL_Renderer *renderer,
+    spaceship(SDL_Renderer *renderer,
         SDL_Rect &rect,
         texture_shelf &ts,
         obj_meta &meta,

@@ -1,8 +1,10 @@
 #ifndef FRAMES_DEBUG_H
 #define FRAMES_DEBUG_H
 
+
 #include "text/render_text.h"
 #include <SDL_ttf.h>
+
 
 struct frames_debug
 {
@@ -18,13 +20,11 @@ struct frames_debug
     double calc_frame_delta_time();
     double calc_min_frames_per_sec();
 
-    void render_frames_per_sec(
-        TTF_Font *font,
-        SDL_Color color,
-        SDL_Renderer *renderer);
-
     void
-    render_min_frames(TTF_Font *font, SDL_Color color, SDL_Renderer *renderer);
+    render_frames_per_sec(TTF_Font *font, SDL_Color color, SDL_Renderer *renderer);
+
+    void render_min_frames(TTF_Font *font, SDL_Color color, SDL_Renderer *renderer);
 };
+
 
 #endif // FRAMES_DEBUG_H

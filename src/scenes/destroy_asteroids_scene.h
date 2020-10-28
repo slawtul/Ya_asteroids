@@ -1,4 +1,5 @@
-#pragma once
+#ifndef DESTROY_ASTEROIDS_SCENE_H
+#define DESTROY_ASTEROIDS_SCENE_H
 
 
 #include <SDL.h>
@@ -12,9 +13,11 @@
 
 struct destroy_asteroids_scene
 {
-    void update(
-        SDL_Event &event,
+    void update(SDL_Event &event,
         SDL_Renderer *renderer,
         texture_shelf &ts,
         std::vector<std::variant<bullet, spaceship>> &game_objects);
 };
+
+
+#endif // DESTROY_ASTEROIDS_SCENE_H

@@ -3,10 +3,12 @@
 #include "scenes/destroy_asteroids_scene.h"
 #include "text/render_text.h"
 
+
 #ifdef DEBUG
 #include "debug_info/frames_debug.h"
 #include "debug_info/objects_debug.h"
 #endif
+
 
 int main(int argc, char *argv[])
 {
@@ -18,15 +20,13 @@ int main(int argc, char *argv[])
     IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG);
     TTF_Init();
 
-    const auto window = sdl2.create_window(
-        "YA Asteroids",
+    const auto window = sdl2.create_window("YA Asteroids",
         1920,
         1080,
         SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI);
 
-    const auto renderer = sdl2.create_renderer(
-        window,
-        SDL_RENDERER_ACCELERATED);
+    const auto renderer = sdl2.create_renderer(window,
+        SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
     graphics_debug gd{};
     gd.log_screen_size(renderer);
@@ -86,9 +86,7 @@ int main(int argc, char *argv[])
     // end: game loop
 
     #ifdef DEBUG
-    SDL_LogInfo(0,
-        "Max objects qty: %d",
-        static_cast<int>(od.max_objs_on_screen));
+    SDL_LogInfo(0, "Max objects qty: %d", static_cast<int>(od.max_objs_on_screen));
     SDL_LogInfo(0, "Avg FPS: %.2f", fd.frames_per_sec);
     SDL_LogInfo(0, "Stop game");
     TTF_CloseFont(font);

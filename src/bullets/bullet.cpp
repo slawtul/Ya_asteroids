@@ -2,8 +2,7 @@
 #include "bullet.h"
 
 
-bullet::bullet(
-    SDL_Renderer *renderer,
+bullet::bullet(SDL_Renderer *renderer,
     SDL_Rect &rect,
     texture_shelf &ts,
     obj_meta &meta,
@@ -27,10 +26,10 @@ void bullet::input()
 
 void bullet::physics()
 {
-    motion.dx += std::cos(motion.angle * constants::DEG_TO_RAD)
-        * motion.acceleration;
-    motion.dy += std::sin(motion.angle * constants::DEG_TO_RAD) *
-        motion.acceleration;
+    motion.dx +=
+        std::cos(motion.angle * constants::DEG_TO_RAD) * motion.acceleration;
+    motion.dy +=
+        std::sin(motion.angle * constants::DEG_TO_RAD) * motion.acceleration;
 
     if (double speed = physics_helpers::current_speed(motion.dx, motion.dy);
         speed > motion.max_speed)
@@ -51,8 +50,7 @@ void bullet::gfx()
         return;
     }
 
-    SDL_RenderCopyEx(
-        renderer,
+    SDL_RenderCopyEx(renderer,
         ts.get_texture("bullet_short_single"),
         nullptr,
         &rect,

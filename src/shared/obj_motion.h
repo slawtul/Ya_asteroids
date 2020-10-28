@@ -1,4 +1,6 @@
-#pragma once
+#ifndef OBJ_MOTION_H
+#define OBJ_MOTION_H
+
 
 struct obj_motion
 {
@@ -8,3 +10,6 @@ struct obj_motion
     double dy;
     double acceleration{ 0.2 };
 };
+
+
+#endif // OBJ_MOTION_H

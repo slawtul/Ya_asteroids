@@ -4,10 +4,11 @@
 
 #include <utility>
 #include <SDL_render.h>
+
+
 struct gfx_helpers
 {
-    static std::pair<int, int> opposite_edge_position(
-        int rect_x,
+    static std::pair<int, int> opposite_edge_position(int rect_x,
         int rect_y,
         int rect_w,
         int rect_h,

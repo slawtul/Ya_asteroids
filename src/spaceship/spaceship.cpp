@@ -1,15 +1,12 @@
-#include <iostream>
 #include "spaceship.h"
 
 
-spaceship::spaceship(
-    SDL_Renderer *renderer,
+spaceship::spaceship(SDL_Renderer *renderer,
     SDL_Rect &rect,
     texture_shelf &ts,
     obj_meta &meta,
     obj_motion &motion)
-    : renderer{ renderer }, rect{ rect }, ts{ ts }, meta{ meta },
-      motion{ motion }
+    : renderer{ renderer }, rect{ rect }, ts{ ts }, meta{ meta }, motion{ motion }
 {
 }
 
@@ -44,10 +41,10 @@ void spaceship::input()
 
 void spaceship::physics()
 {
-    motion.dx += std::cos(motion.angle * constants::DEG_TO_RAD) *
-        motion.acceleration;
-    motion.dy += std::sin(motion.angle * constants::DEG_TO_RAD) *
-        motion.acceleration;
+    motion.dx +=
+        std::cos(motion.angle * constants::DEG_TO_RAD) * motion.acceleration;
+    motion.dy +=
+        std::sin(motion.angle * constants::DEG_TO_RAD) * motion.acceleration;
 
     if (double speed = physics_helpers::current_speed(motion.dx, motion.dy);
         speed > motion.max_speed)
@@ -62,8 +59,7 @@ void spaceship::gfx()
     rect.x += static_cast<int>(motion.dx);
     rect.y += static_cast<int>(motion.dy);
 
-    auto[x, y] = gfx_helpers::opposite_edge_position(
-        rect.x,
+    auto[x, y] = gfx_helpers::opposite_edge_position(rect.x,
         rect.y,
         rect.w,
         rect.h,
@@ -74,8 +70,7 @@ void spaceship::gfx()
     //std::cout << rect.x << " " << rect.y << "\n";
     //std::cout << motion.dx << " " << motion.dy << "\n";
 
-    SDL_RenderCopyEx(
-        renderer,
+    SDL_RenderCopyEx(renderer,
         ts.get_texture("WO84-wu-X1"),
         nullptr,
         &rect,

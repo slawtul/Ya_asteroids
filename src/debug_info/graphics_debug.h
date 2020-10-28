@@ -1,7 +1,9 @@
 #ifndef GRAPHICS_DEBUG_H
 #define GRAPHICS_DEBUG_H
 
+
 #include <SDL.h>
+
 
 struct graphics_debug
 {
