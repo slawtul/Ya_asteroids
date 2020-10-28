@@ -54,26 +54,28 @@ You can use this software freely in any free or commercial project except files 
     Monitor: LG, screen resolution 4K (3840 x 2160)
     Graphics card: AMD Radeon RX 5700 XT
 
-    # Using runtime inheritance (master branch)
+    # Using runtime polymorphism (runtime-polymorphism branch)
     1. Avg ~60 FPS with 9900 objects on the screen
     2. Avg ~2700 FPS with 2 objects on the screen
     
-    # Without runtime inheritance (no-inheritance branch)
+    # Without runtime polymorphism (no-inheritance branch)
     1. Avg ~60 FPS with 8229 objects on the screen
     2. Avg ~2700 FPS with 2 objects on the screen
     
-    Inheritance implementation is faster. Maybe because of compiler optimization
+    Runtime polymorphism implementation is faster. Maybe because of compiler optimization
     or my implementation of std:variant sucks.
     
-    [Edit] Yes... it was bad implementation, current awesome results...
+    [Edit] Yes... it was bad implementation, current awesome results:
     
-    # Without runtime inheritance (std-variant branch)
+    # With std::variant (std-variant branch)
     1. Avg ~60 FPS with 11800 objects on the screen
     2. Avg ~3600 FPS with 2 objects on the screen
     
     Summary
-    1. Around 20% more objects with std::variant against runtime inheritance
-    2. Around 33% more FPS with std::variant against runtime inheritance
+    1. Around 20% more objects with std::variant against runtime polymorphism
+    2. Around 33% more FPS with std::variant against runtime polymorphism
     
     Fantastic results!
+    
+    (I merged std-variant branch into master)
     
