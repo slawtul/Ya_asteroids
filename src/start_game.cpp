@@ -25,7 +25,8 @@ int main(int argc, char *argv[])
         1080, // todo get screen height when game starts
         SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI);
 
-    const auto renderer = sdl2.create_renderer(window, SDL_RENDERER_ACCELERATED);
+    const auto renderer = sdl2.create_renderer(window,
+        SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
     graphics_debug gd{};
     gd.log_screen_size(renderer);

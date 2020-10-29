@@ -10,11 +10,10 @@
 struct bullet
 {
     bullet(SDL_Renderer *renderer,
-        SDL_Rect &rect,
+        SDL_Rect rect,
         texture_shelf &ts,
-        obj_meta &meta,
-        obj_motion &motion,
-        spaceship_a &ship);
+        obj_meta meta,
+        obj_motion motion);
     void update();
 
 private:
@@ -25,9 +24,8 @@ private:
     SDL_Renderer *renderer;
     SDL_Rect rect;
     texture_shelf &ts;
-    obj_meta &meta;
-    obj_motion &motion;
-    spaceship_a &ship;
+    obj_meta meta;
+    obj_motion motion;
 };
 
 

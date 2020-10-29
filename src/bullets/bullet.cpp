@@ -3,12 +3,12 @@
 
 
 bullet::bullet(SDL_Renderer *renderer,
-    SDL_Rect &rect,
+    SDL_Rect rect,
     texture_shelf &ts,
-    obj_meta &meta,
-    obj_motion &motion,
-    spaceship_a &ship)
-    : renderer(renderer), rect(rect), ts(ts), meta(meta), motion(motion), ship(ship)
+    obj_meta meta,
+    obj_motion motion)
+//spaceship_a ship) todo add spaceship posiiton
+    : renderer(renderer), rect(rect), ts(ts), meta(meta), motion(motion)
 {
 }
 
@@ -21,7 +21,7 @@ void bullet::update()
 
 void bullet::input()
 {
-    // no user input for bullet
+    // user fire bullet input is handled in the scene file
 }
 
 void bullet::physics()
@@ -31,7 +31,7 @@ void bullet::physics()
     motion.dy +=
         std::sin(motion.angle * constants::DEG_TO_RAD) * motion.acceleration;
 
-    if (double speed = physics_helpers::current_speed(motion.dx, motion.dy);
+    if (const double speed = physics_helpers::current_speed(motion.dx, motion.dy);
         speed > motion.max_speed)
     {
         motion.dx *= motion.max_speed / speed;
@@ -44,11 +44,11 @@ void bullet::gfx()
     rect.x += static_cast<int>(motion.dx);
     rect.y += static_cast<int>(motion.dy);
 
-    if (gfx_helpers::is_off_screen(rect.x, rect.y, renderer))
-    {
-        meta.is_active = false;
-        return;
-    }
+//    if (gfx_helpers::is_off_screen(rect.x, rect.y, renderer))
+//    {
+//        meta.is_active = false;
+//        return;
+//    }
 
     SDL_RenderCopyEx(renderer,
         ts.get_texture("bullet_short_single.png"),
@@ -58,4 +58,3 @@ void bullet::gfx()
         nullptr,
         SDL_FLIP_NONE);
 }
-
