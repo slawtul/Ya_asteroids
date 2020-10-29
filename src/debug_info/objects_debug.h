@@ -5,7 +5,7 @@
 #include <SDL_image.h>
 #include <SDL_ttf.h>
 #include <string>
-#include <text/render_text.h>
+#include "text/render_text.h"
 
 
 struct objects_debug
@@ -15,11 +15,9 @@ struct objects_debug
 
     uint16_t count_objs();
 
-    void
-    render_obj_qty(TTF_Font *font, SDL_Color color, SDL_Renderer *renderer) const;
+    void render_obj_qty(TTF_Font* font, SDL_Color color, SDL_Renderer* renderer) const;
 
-    void
-    render_max_obj_qty(TTF_Font *font, SDL_Color color, SDL_Renderer *renderer);
+    void render_max_obj_qty(TTF_Font* font, SDL_Color color, SDL_Renderer* renderer);
 };
 
 

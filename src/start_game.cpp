@@ -1,16 +1,16 @@
-#include <init/sdl2_util.h>
-#include <text/render_text.h>
-#include <scenes/destroy_asteroids_scene.h>
-#include <debug_info/graphics_debug.h>
+#include "init/sdl2_util.h"
+#include "text/render_text.h"
+#include "scenes/destroy_asteroids_scene.h"
+#include "debug_info/graphics_debug.h"
 
 
 #ifdef DEBUG
-#include <debug_info/frames_debug.h>
-#include <debug_info/objects_debug.h>
+#include "debug_info/frames_debug.h"
+#include "debug_info/objects_debug.h"
 #endif
 
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     SDL_LogInfo(0, "Program parameters: argc %d", argc);
     SDL_LogInfo(0, "Program parameters: argv %s", *argv);
@@ -20,13 +20,14 @@ int main(int argc, char *argv[])
     IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG);
     TTF_Init();
 
+    // todo get screen width and height when game starts
     const auto window = sdl2.create_window("YA Asteroids",
-        1920, // todo get screen width when game starts
-        1080, // todo get screen height when game starts
-        SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI);
+            1920,
+            1080,
+            SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI);
 
-    const auto renderer = sdl2.create_renderer(window,
-        SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+    const auto renderer =
+            sdl2.create_renderer(window, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
     graphics_debug gd{};
     gd.log_screen_size(renderer);
@@ -53,14 +54,12 @@ int main(int argc, char *argv[])
     // start: game loop
     destroy_asteroids_scene scene{};
     SDL_Event event{};
-    while (true)
-    {
+    while (true) {
         #ifdef DEBUG
         fd.current_time = SDL_GetTicks();
         #endif
 
-        if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_ESCAPE])
-        {
+        if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_ESCAPE]) {
             break;
         }
         scene.update(event, renderer, ts, game_objects);

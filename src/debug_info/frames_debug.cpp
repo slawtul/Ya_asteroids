@@ -1,5 +1,4 @@
 #include "frames_debug.h"
-#include <string>
 
 
 double frames_debug::calc_frame_delta_time()
@@ -11,16 +10,13 @@ double frames_debug::calc_frame_delta_time()
 
 double frames_debug::calc_min_frames_per_sec()
 {
-    if (min_fps <= 0)
-    {
+    if (min_fps <= 0) {
         min_fps = frames_per_sec;
     }
-    if (min_fps > frames_per_sec)
-    {
+    if (min_fps > frames_per_sec) {
         min_fps = frames_per_sec;
     }
-    if (min_fps < frames_per_sec * 85 / 100)
-    {
+    if (min_fps < frames_per_sec * 85 / 100) {
         min_fps = 0;
     }
     return min_fps;
@@ -33,28 +29,16 @@ double frames_debug::calc_frames_per_sec()
     return frames_per_sec;
 }
 
-void frames_debug::render_min_frames(TTF_Font *font,
-    SDL_Color color,
-    SDL_Renderer *renderer)
+void frames_debug::render_min_frames(TTF_Font* font, SDL_Color color, SDL_Renderer* renderer)
 {
     auto rect = SDL_Rect{ 20, 40, 120, 16 };
     render_text rt{};
-    rt.render(rect,
-        font,
-        color,
-        renderer,
-        "Min_fps: " + std::to_string(calc_min_frames_per_sec()));
+    rt.render(rect, font, color, renderer, "Min_fps: " + std::to_string(calc_min_frames_per_sec()));
 }
 
-void frames_debug::render_frames_per_sec(TTF_Font *font,
-    SDL_Color color,
-    SDL_Renderer *renderer)
+void frames_debug::render_frames_per_sec(TTF_Font* font, SDL_Color color, SDL_Renderer* renderer)
 {
     auto rect = SDL_Rect{ 20, 24, 120, 16 };
     render_text rt{};
-    rt.render(rect,
-        font,
-        color,
-        renderer,
-        "Avg_fps: " + std::to_string(calc_frames_per_sec()));
+    rt.render(rect, font, color, renderer, "Avg_fps: " + std::to_string(calc_frames_per_sec()));
 }

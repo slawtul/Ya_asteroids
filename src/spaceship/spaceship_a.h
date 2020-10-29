@@ -3,21 +3,21 @@
 
 
 #include <SDL_render.h>
-#include <images/texture_shelf.h>
-#include <shared/gfx_helpers.h>
-#include <shared/physics_helpers.h>
-#include <shared/obj_meta.h>
-#include <shared/obj_motion.h>
-#include <init/constants.h>
+#include "images/texture_shelf.h"
+#include "shared/gfx_helpers.h"
+#include "shared/physics_helpers.h"
+#include "shared/obj_meta.h"
+#include "shared/obj_motion.h"
+#include "init/constants.h"
 
 
 struct spaceship_a
 {
-    spaceship_a(SDL_Renderer *renderer,
-        SDL_Rect rect,
-        texture_shelf &ts,
-        obj_meta meta,
-        obj_motion motion);
+    spaceship_a(SDL_Renderer* renderer,
+            SDL_Rect rect,
+            texture_shelf& ts,
+            obj_meta meta,
+            obj_motion motion);
 
     void update();
 
@@ -26,9 +26,9 @@ struct spaceship_a
     void gfx();
 
 private:
-    SDL_Renderer *renderer;
+    SDL_Renderer* renderer;
     SDL_Rect rect;
-    texture_shelf &ts;
+    texture_shelf& ts;
     obj_meta meta;
     obj_motion motion;
 };
