@@ -38,6 +38,8 @@ void destroy_asteroids_scene::update(SDL_Event &event,
     // ---
     // reverse iterator used cause bullets should be placed under starships
 
+    spaceship_a ship{ renderer, { 0, 100, 64, 64 }, ts, {}, {}};
+    game_objects.emplace_back(ship);
     for (auto &game_obj : game_objects)
     {
         std::visit(call_update, game_obj);

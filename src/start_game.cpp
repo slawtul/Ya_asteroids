@@ -25,8 +25,7 @@ int main(int argc, char *argv[])
         1080, // todo get screen height when game starts
         SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI);
 
-    const auto renderer = sdl2.create_renderer(window,
-        SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+    const auto renderer = sdl2.create_renderer(window, SDL_RENDERER_ACCELERATED);
 
     graphics_debug gd{};
     gd.log_screen_size(renderer);
@@ -37,11 +36,8 @@ int main(int argc, char *argv[])
     std::vector<variant_game_obj> game_objects;
     game_objects.reserve(20000);
 
-    SDL_Rect rect{ 0, 100, 64, 64 };
-    obj_meta meta{};
-    obj_motion motion{};
-    spaceship_a ship_a{ renderer, rect, ts, meta, motion };
-    spaceship_b ship_b{ renderer, rect, ts, meta, motion };
+    spaceship_a ship_a{ renderer, { 0, 100, 64, 64 }, ts, {}, {}};
+    spaceship_b ship_b{ renderer, { 100, 100, 64, 64 }, ts, {}, {}};
 
     game_objects.emplace_back(ship_a);
     game_objects.emplace_back(ship_b);
