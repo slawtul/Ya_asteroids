@@ -4,7 +4,7 @@
 
 #include <shared/gfx_helpers.h>
 #include <shared/physics_helpers.h>
-#include <spaceship/spaceship.h>
+#include <spaceship/spaceship_a.h>
 
 
 struct bullet
@@ -14,7 +14,7 @@ struct bullet
         texture_shelf &ts,
         obj_meta &meta,
         obj_motion &motion,
-        spaceship &ship);
+        spaceship_a &ship);
     void update();
 
 private:
@@ -27,7 +27,7 @@ private:
     texture_shelf &ts;
     obj_meta &meta;
     obj_motion &motion;
-    spaceship &ship;
+    spaceship_a &ship;
 };
 
 

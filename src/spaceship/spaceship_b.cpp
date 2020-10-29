@@ -1,23 +1,23 @@
-#include "spaceship.h"
+#include "spaceship_b.h"
 
 
-spaceship::spaceship(SDL_Renderer *renderer,
-    SDL_Rect &rect,
+spaceship_b::spaceship_b(SDL_Renderer *renderer,
+    SDL_Rect rect,
     texture_shelf &ts,
-    obj_meta &meta,
-    obj_motion &motion)
+    obj_meta meta,
+    obj_motion motion)
     : renderer{ renderer }, rect{ rect }, ts{ ts }, meta{ meta }, motion{ motion }
 {
 }
 
-void spaceship::update()
+void spaceship_b::update()
 {
     input();
     physics();
     gfx();
 }
 
-void spaceship::input()
+void spaceship_b::input()
 {
     if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_RIGHT])
     {
@@ -39,14 +39,14 @@ void spaceship::input()
     }
 }
 
-void spaceship::physics()
+void spaceship_b::physics()
 {
     motion.dx +=
         std::cos(motion.angle * constants::DEG_TO_RAD) * motion.acceleration;
     motion.dy +=
         std::sin(motion.angle * constants::DEG_TO_RAD) * motion.acceleration;
 
-    if (double speed = physics_helpers::current_speed(motion.dx, motion.dy);
+    if (const double speed = physics_helpers::current_speed(motion.dx, motion.dy);
         speed > motion.max_speed)
     {
         motion.dx *= motion.max_speed / speed;
@@ -54,7 +54,7 @@ void spaceship::physics()
     }
 }
 
-void spaceship::gfx()
+void spaceship_b::gfx()
 {
     rect.x += static_cast<int>(motion.dx);
     rect.y += static_cast<int>(motion.dy);
@@ -67,11 +67,9 @@ void spaceship::gfx()
 
     rect.x = x;
     rect.y = y;
-    //std::cout << rect.x << " " << rect.y << "\n";
-    //std::cout << motion.dx << " " << motion.dy << "\n";
 
     SDL_RenderCopyEx(renderer,
-        ts.get_texture("WO84-wu-X1"),
+        ts.get_texture("DKO-api-X1.png"),
         nullptr,
         &rect,
         motion.angle + 90,

@@ -45,7 +45,16 @@ add_executable(asteroids
         src/init/sdl2_util.cpp
         src/scenes/destroy_asteroids_scene.cpp
         src/text/render_text.cpp
-        src/bullets/bullet.cpp src/bullets/bullet.h src/spaceship/spaceship.cpp src/spaceship/spaceship.h src/shared/gfx_helpers.cpp src/shared/gfx_helpers.h src/shared/physics_helpers.cpp src/shared/physics_helpers.h)
+        src/spaceship/spaceship_b.cpp
+        src/spaceship/spaceship_b.h
+        src/bullets/bullet.cpp
+        src/bullets/bullet.h
+        src/spaceship/spaceship_a.cpp
+        src/spaceship/spaceship_a.h
+        src/shared/gfx_helpers.cpp
+        src/shared/gfx_helpers.h
+        src/shared/physics_helpers.cpp
+        src/shared/physics_helpers.h)
 
 add_compile_options(-Wall -Wextra -Wpedantic -Werror)
 target_link_libraries(asteroids ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY} ${SDL2_TTF_LIBRARY})

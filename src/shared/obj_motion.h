@@ -8,7 +8,7 @@ struct obj_motion
     double angle;
     double dx;
     double dy;
-    double acceleration{ 0.2 };
+    double acceleration;
 };
 
 

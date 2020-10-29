@@ -8,17 +8,18 @@
 #include <variant>
 #include <images/texture_shelf.h>
 #include <bullets/bullet.h>
-#include <spaceship/spaceship.h>
+#include <spaceship/spaceship_a.h>
+#include <spaceship/spaceship_b.h>
 
 
-using game_object_type = std::variant<bullet, spaceship>;
+using variant_game_obj = std::variant<bullet, spaceship_a, spaceship_b>;
 
 struct destroy_asteroids_scene
 {
     void update(SDL_Event &event,
         SDL_Renderer *renderer,
         texture_shelf &ts,
-        std::vector<game_object_type> &game_objects);
+        std::vector<variant_game_obj> &game_objects);
 };
 
 

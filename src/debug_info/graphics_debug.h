@@ -10,4 +10,5 @@ struct graphics_debug
     void log_screen_size(SDL_Renderer *renderer);
 };
 
+
 #endif // GRAPHICS_DEBUG_H

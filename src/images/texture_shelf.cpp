@@ -20,13 +20,15 @@ void texture_shelf::add_image(SDL_Renderer *renderer,
 void texture_shelf::add_init_images(SDL_Renderer *renderer)
 {
     add_image(renderer,
-        "background_01_static",
+        "background_01_static.jpg",
         "resources/background_01_static.jpg");
-    add_image(renderer, "bullet_short_single", "resources/bullet_short_single.png");
-    add_image(renderer, "DKO-api-X1", "resources/DKO-api-X1.png");
-    add_image(renderer, "CX16-X1", "resources/CX16-X1.png");
-    add_image(renderer, "WO84-wu-X1", "resources/WO84-wu-X1.png");
-    add_image(renderer, "explosion", "resources/explosion.png");
+    add_image(renderer,
+        "bullet_short_single.png",
+        "resources/bullet_short_single.png");
+    add_image(renderer, "DKO-api-X1.png", "resources/DKO-api-X1.png");
+    add_image(renderer, "CX16-X1.png", "resources/CX16-X1.png");
+    add_image(renderer, "WO84-wu-X1.png", "resources/WO84-wu-X1.png");
+    add_image(renderer, "explosion.png", "resources/explosion.png");
 }
 
 void texture_shelf::destroy_textures()

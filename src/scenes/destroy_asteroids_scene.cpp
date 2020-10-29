@@ -9,16 +9,22 @@ auto call_update = [](auto &game_obj)
 void destroy_asteroids_scene::update(SDL_Event &event,
     SDL_Renderer *renderer,
     texture_shelf &ts,
-    std::vector<game_object_type> &game_objects)
+    std::vector<variant_game_obj> &game_objects)
 {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
     SDL_RenderCopy(renderer,
-        ts.get_texture("background_01_static"),
+        ts.get_texture("background_01_static.jpg"),
         nullptr,
         nullptr);
 
     SDL_PollEvent(&event);
+//    SDL_Rect b_rect{ 0, 0, 4, 20 };
+//    obj_meta b_meta{};
+//    obj_motion b_motion{};
+//    bullet b{ renderer, b_rect, ts, b_meta, b_motion, s };
+
+
 //    if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_SPACE])
 //    {
 //        game_object_utils gou{};
@@ -31,12 +37,6 @@ void destroy_asteroids_scene::update(SDL_Event &event,
     // main loop which call update() method on each game object
     // ---
     // reverse iterator used cause bullets should be placed under starships
-
-    SDL_Rect s_rect{ 0, 200, 64, 64 };
-    obj_meta s_meta{};
-    obj_motion s_motion{};
-    spaceship s{ renderer, s_rect, ts, s_meta, s_motion };
-    game_objects.emplace_back(s);
 
     for (auto &game_obj : game_objects)
     {

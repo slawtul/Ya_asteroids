@@ -25,5 +25,5 @@ struct texture_shelf
     SDL_Surface *load_image(const std::string_view &file) const;
 };
 
-#endif // TEXTURE_SHELF_H
 
+#endif // TEXTURE_SHELF_H

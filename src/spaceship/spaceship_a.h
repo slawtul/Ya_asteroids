@@ -1,5 +1,5 @@
-#ifndef SPACESHIP_H
-#define SPACESHIP_H
+#ifndef SPACESHIP_A_H
+#define SPACESHIP_A_H
 
 
 #include <SDL_render.h>
@@ -11,13 +11,13 @@
 #include <init/constants.h>
 
 
-struct spaceship
+struct spaceship_a
 {
-    spaceship(SDL_Renderer *renderer,
-        SDL_Rect &rect,
+    spaceship_a(SDL_Renderer *renderer,
+        SDL_Rect rect,
         texture_shelf &ts,
-        obj_meta &meta,
-        obj_motion &motion);
+        obj_meta meta,
+        obj_motion motion);
 
     void update();
 
@@ -34,4 +34,4 @@ private:
 };
 
 
-#endif //SPACESHIP_H
+#endif //SPACESHIP_A_H

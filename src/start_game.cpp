@@ -1,12 +1,12 @@
-#include "debug_info/graphics_debug.h"
-#include "init/sdl2_util.h"
-#include "scenes/destroy_asteroids_scene.h"
-#include "text/render_text.h"
+#include <init/sdl2_util.h>
+#include <text/render_text.h>
+#include <scenes/destroy_asteroids_scene.h>
+#include <debug_info/graphics_debug.h>
 
 
 #ifdef DEBUG
-#include "debug_info/frames_debug.h"
-#include "debug_info/objects_debug.h"
+#include <debug_info/frames_debug.h>
+#include <debug_info/objects_debug.h>
 #endif
 
 
@@ -21,11 +21,12 @@ int main(int argc, char *argv[])
     TTF_Init();
 
     const auto window = sdl2.create_window("YA Asteroids",
-        1920,
-        1080,
+        1920, // todo get screen width when game starts
+        1080, // todo get screen height when game starts
         SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI);
 
-    const auto renderer = sdl2.create_renderer(window, SDL_RENDERER_ACCELERATED);
+    const auto renderer = sdl2.create_renderer(window,
+        SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
     graphics_debug gd{};
     gd.log_screen_size(renderer);
@@ -33,21 +34,17 @@ int main(int argc, char *argv[])
     texture_shelf ts{};
     ts.add_init_images(renderer);
 
-    std::vector<game_object_type> game_objects;
+    std::vector<variant_game_obj> game_objects;
     game_objects.reserve(20000);
 
-    SDL_Rect s_rect{ 0, 100, 64, 64 };
-    obj_meta s_meta{};
-    obj_motion s_motion{};
-    spaceship s{ renderer, s_rect, ts, s_meta, s_motion };
+    SDL_Rect rect{ 0, 100, 64, 64 };
+    obj_meta meta{};
+    obj_motion motion{};
+    spaceship_a ship_a{ renderer, rect, ts, meta, motion };
+    spaceship_b ship_b{ renderer, rect, ts, meta, motion };
 
-    SDL_Rect b_rect{ 0, 0, 4, 20 };
-    obj_meta b_meta{};
-    obj_motion b_motion{};
-    bullet b{ renderer, b_rect, ts, b_meta, b_motion, s };
-
-    game_objects.emplace_back(b);
-    game_objects.emplace_back(s);
+    game_objects.emplace_back(ship_a);
+    game_objects.emplace_back(ship_b);
 
     #ifdef DEBUG
     const auto font = TTF_OpenFont("./resources/terminus.ttf", 16);
