@@ -3,9 +3,9 @@
 
 bullet::bullet(SDL_Renderer* renderer,
         SDL_Rect rect,
-        texture_shelf& ts,
+        texture_shelf* ts,
         obj_meta meta,
-        obj_motion motion) // todo add spaceship position
+        obj_motion motion)
         : renderer(renderer), rect(rect), ts(ts), meta(meta), motion(motion)
 {
 }
@@ -45,7 +45,7 @@ void bullet::gfx()
     }
 
     SDL_RenderCopyEx(renderer,
-            ts.get_texture("bullet_short_single.png"),
+            ts->get_texture("bullet_short_single.png"),
             nullptr,
             &rect,
             motion.angle + 90,

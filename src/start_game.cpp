@@ -38,8 +38,8 @@ int main(int argc, char* argv[])
     std::vector<variant_game_obj> game_objects;
     game_objects.reserve(20000);
 
-    spaceship_a ship_a{ renderer, { 0, 100, 64, 64 }, ts, {}, {}};
-    spaceship_b ship_b{ renderer, { 100, 100, 64, 64 }, ts, {}, {}};
+    spaceship_a ship_a{ renderer, { 0, 100, 64, 64 }, &ts, {}, {}};
+    spaceship_b ship_b{ renderer, { 100, 100, 64, 64 }, &ts, {}, {}};
 
     game_objects.emplace_back(ship_a);
     game_objects.emplace_back(ship_b);
@@ -62,7 +62,7 @@ int main(int argc, char* argv[])
         if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_ESCAPE]) {
             break;
         }
-        scene.update(event, renderer, ts, game_objects);
+        scene.update(event, renderer, &ts, game_objects);
 
         #ifdef DEBUG
         fd.render_frames_per_sec(font, white, renderer);

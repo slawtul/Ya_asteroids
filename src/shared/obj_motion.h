@@ -5,10 +5,10 @@
 struct obj_motion
 {
     double max_speed;
+    double acceleration;
     double angle;
     double dx;
     double dy;
-    double acceleration;
 };
 
 

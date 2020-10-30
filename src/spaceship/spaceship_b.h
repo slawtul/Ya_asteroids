@@ -15,20 +15,18 @@ struct spaceship_b
 {
     spaceship_b(SDL_Renderer* renderer,
             SDL_Rect rect,
-            texture_shelf& ts,
+            texture_shelf* ts,
             obj_meta meta,
             obj_motion motion);
-
-    void update();
 
     void input();
     void physics();
     void gfx();
+    void update();
 
-private:
     SDL_Renderer* renderer;
     SDL_Rect rect;
-    texture_shelf& ts;
+    texture_shelf* ts;
     obj_meta meta;
     obj_motion motion;
 };
