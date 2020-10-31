@@ -22,7 +22,6 @@ int main(int argc, char* argv[])
     IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG);
     TTF_Init();
 
-    // todo get screen width and height when game starts
     const auto window = sdl2.create_window("YA Asteroids",
             1920,
             1080,
@@ -53,17 +52,19 @@ int main(int argc, char* argv[])
     objects_debug od{};
     #endif
 
-    // start: game loop
-    destroy_asteroids_scene scene{};
     SDL_Event event{};
+    destroy_asteroids_scene scene{};
+
     while (true) {
-        #ifdef DEBUG
-        fd.current_time = SDL_GetTicks();
-        #endif
 
         if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_ESCAPE]) {
             break;
         }
+
+        #ifdef DEBUG
+        fd.current_time = SDL_GetTicks();
+        #endif
+
         scene.update(event, renderer, &ts, game_objects);
 
         #ifdef DEBUG
@@ -74,10 +75,8 @@ int main(int argc, char* argv[])
         od.render_obj_qty(font, white, renderer);
         #endif
 
-        // render all
         SDL_RenderPresent(renderer);
     }
-    // end: game loop
 
     #ifdef DEBUG
     SDL_LogInfo(0, "Max objects qty: %d", static_cast<int>(od.max_objs_on_screen));

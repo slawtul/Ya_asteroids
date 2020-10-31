@@ -1,4 +1,3 @@
-
 #include "destroy_asteroids_scene.h"
 
 
@@ -20,10 +19,10 @@ void destroy_asteroids_scene::update(SDL_Event& event,
     SDL_RenderCopy(renderer, ts->get_texture("background_01_static.jpg"), nullptr, nullptr);
 
     SDL_PollEvent(&event);
-    bullet_helpers bh{};
 
     if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_SPACE]) {
         auto const spaceship = std::get<spaceship_a>(game_objects[0]);
+        bullet_helpers bh{};
         auto const rect = bh.calc_rect(spaceship.rect);
         auto const motion = bh.calc_motion(spaceship.motion);
         bullet b{ renderer, rect, ts, {}, motion };
@@ -32,6 +31,7 @@ void destroy_asteroids_scene::update(SDL_Event& event,
 
     if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_RETURN]) {
         auto const spaceship = std::get<spaceship_b>(game_objects[1]);
+        bullet_helpers bh{};
         auto const rect = bh.calc_rect(spaceship.rect);
         auto const motion = bh.calc_motion(spaceship.motion);
         bullet b{ renderer, rect, ts, {}, motion };
