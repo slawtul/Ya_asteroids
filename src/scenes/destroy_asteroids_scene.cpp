@@ -21,6 +21,7 @@ void destroy_asteroids_scene::update(SDL_Event& event,
 
     SDL_PollEvent(&event);
     bullet_helpers bh{};
+
     if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_SPACE]) {
         auto const spaceship = std::get<spaceship_a>(game_objects[0]);
         auto const rect = bh.calc_rect(spaceship.rect);
@@ -44,6 +45,7 @@ void destroy_asteroids_scene::update(SDL_Event& event,
         std::visit(call_update, game_obj);
     }
 
+    // before leaving updating scene method remove all inactive game objects
     const auto not_active = std::remove_if(game_objects.begin(), game_objects.end(),
             [](const auto& game_obj) {
                 return !std::visit(is_active, game_obj);
