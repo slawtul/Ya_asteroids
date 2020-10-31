@@ -20,7 +20,9 @@ void game_objects_helpers::remove_not_active(std::vector<variant_game_obj>& game
 
 void game_objects_helpers::call_update_on(std::vector<variant_game_obj>& game_objects)
 {
-    for (auto& game_obj : game_objects) {
-        std::visit(run_update, game_obj);
+    // reverse iterator is used because of bullets should be fired under spaceships
+    for (auto it = game_objects.rbegin(); it != game_objects.rend(); ++it) {
+        std::visit(run_update, *it);
     }
 }
+

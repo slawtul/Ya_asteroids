@@ -2,6 +2,7 @@
 #define GAME_OBJECTS_HELPERS_H
 
 
+#include <ranges>
 #include <scenes/destroy_asteroids_scene.h>
 
 
