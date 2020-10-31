@@ -20,8 +20,11 @@ struct spaceship_a
             obj_motion motion);
 
     void input();
+
     void physics();
+
     void gfx();
+
     void update();
 
     SDL_Renderer* renderer;

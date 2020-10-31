@@ -7,6 +7,8 @@
 #ifdef DEBUG
 #include "debug_info/frames_debug.h"
 #include "debug_info/objects_debug.h"
+
+
 #endif
 
 
@@ -36,7 +38,7 @@ int main(int argc, char* argv[])
     ts.add_init_images(renderer);
 
     std::vector<variant_game_obj> game_objects;
-    game_objects.reserve(20000);
+    game_objects.reserve(1024);
 
     spaceship_a ship_a{ renderer, { 0, 100, 64, 64 }, &ts, {}, {}};
     spaceship_b ship_b{ renderer, { 100, 100, 64, 64 }, &ts, {}, {}};

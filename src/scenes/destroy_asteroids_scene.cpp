@@ -1,3 +1,4 @@
+
 #include "destroy_asteroids_scene.h"
 
 
@@ -19,30 +20,19 @@ void destroy_asteroids_scene::update(SDL_Event& event,
     SDL_RenderCopy(renderer, ts->get_texture("background_01_static.jpg"), nullptr, nullptr);
 
     SDL_PollEvent(&event);
+    bullet_helpers bh{};
     if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_SPACE]) {
-        obj_motion motion{};
-        motion.acceleration = 32;
-        SDL_Rect rect{ 0, 0, 4, 20 };
-        spaceship_a spaceship = std::get<spaceship_a>(game_objects[0]);
-        rect.x = spaceship.rect.x + (spaceship.rect.w - rect.w) / 2;
-        rect.y = spaceship.rect.y + (spaceship.rect.h - rect.h) / 2;
-        motion.angle = spaceship.motion.angle;
-        motion.max_speed = spaceship.motion.max_speed * 4;
-
+        auto const spaceship = std::get<spaceship_a>(game_objects[0]);
+        auto const rect = bh.calc_rect(spaceship.rect);
+        auto const motion = bh.calc_motion(spaceship.motion);
         bullet b{ renderer, rect, ts, {}, motion };
         game_objects.emplace_back(b);
     }
 
     if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_RETURN]) {
-        obj_motion motion{};
-        motion.acceleration = 32;
-        SDL_Rect rect{ 0, 0, 4, 20 };
-        spaceship_b spaceship = std::get<spaceship_b>(game_objects[1]);
-        rect.x = spaceship.rect.x + (spaceship.rect.w - rect.w) / 2;
-        rect.y = spaceship.rect.y + (spaceship.rect.h - rect.h) / 2;
-        motion.angle = spaceship.motion.angle;
-        motion.max_speed = spaceship.motion.max_speed * 4;
-
+        auto const spaceship = std::get<spaceship_b>(game_objects[1]);
+        auto const rect = bh.calc_rect(spaceship.rect);
+        auto const motion = bh.calc_motion(spaceship.motion);
         bullet b{ renderer, rect, ts, {}, motion };
         game_objects.emplace_back(b);
     }
@@ -54,9 +44,7 @@ void destroy_asteroids_scene::update(SDL_Event& event,
         std::visit(call_update, game_obj);
     }
 
-    const auto not_active = std::remove_if(
-            game_objects.begin(),
-            game_objects.end(),
+    const auto not_active = std::remove_if(game_objects.begin(), game_objects.end(),
             [](const auto& game_obj) {
                 return !std::visit(is_active, game_obj);
             });

@@ -19,6 +19,7 @@ struct texture_shelf
             const std::string_view& file);
 
     void add_init_images(SDL_Renderer* renderer);
+
     void destroy_textures();
 
     [[nodiscard]]

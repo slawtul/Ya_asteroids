@@ -8,6 +8,7 @@
 #include <variant>
 #include "images/texture_shelf.h"
 #include "bullets/bullet.h"
+#include "bullets/bullet_helpers.h"
 #include "spaceship/spaceship_a.h"
 #include "spaceship/spaceship_b.h"
 
