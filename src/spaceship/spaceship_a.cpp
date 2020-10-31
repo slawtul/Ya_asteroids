@@ -39,7 +39,8 @@ void spaceship_a::physics()
     motion.dx += std::cos(motion.angle * constants::DEG_TO_RAD) * motion.acceleration;
     motion.dy += std::sin(motion.angle * constants::DEG_TO_RAD) * motion.acceleration;
 
-    if (const double speed = physics_helpers::current_speed(motion.dx, motion.dy);
+    physics_helpers ph{};
+    if (const double speed = ph.current_speed(motion.dx, motion.dy);
             speed > motion.max_speed) {
         motion.dx *= motion.max_speed / speed;
         motion.dy *= motion.max_speed / speed;
@@ -51,7 +52,8 @@ void spaceship_a::gfx()
     rect.x += static_cast<int>(motion.dx);
     rect.y += static_cast<int>(motion.dy);
 
-    auto[x, y] = gfx_helpers::opposite_edge_position(rect.x, rect.y, rect.w, rect.h, renderer);
+    gfx_helpers gh{};
+    auto[x, y] = gh.opposite_edge_position(rect.x, rect.y, rect.w, rect.h, renderer);
 
     rect.x = x;
     rect.y = y;

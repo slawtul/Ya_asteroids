@@ -28,7 +28,7 @@ int main(int argc, char* argv[])
             SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI);
 
     const auto renderer =
-            sdl2.create_renderer(window, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+            sdl2.create_renderer(window, SDL_RENDERER_ACCELERATED);
 
     graphics_debug gd{};
     gd.log_screen_size(renderer);

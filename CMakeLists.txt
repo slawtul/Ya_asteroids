@@ -32,7 +32,6 @@ add_executable(asteroids
         src/shared/obj_meta.h
         src/shared/obj_motion.h
         src/init/constants.h
-        src/shared/obj_name.h
         src/init/sdl2_util.h
         src/text/render_text.h
         src/debug_info/frames_debug.h
@@ -54,7 +53,7 @@ add_executable(asteroids
         src/shared/gfx_helpers.cpp
         src/shared/gfx_helpers.h
         src/shared/physics_helpers.cpp
-        src/shared/physics_helpers.h src/bullets/bullet_helpers.cpp src/bullets/bullet_helpers.h)
+        src/shared/physics_helpers.h src/bullets/bullet_helpers.cpp src/bullets/bullet_helpers.h src/shared/game_objects_helpers.cpp src/shared/game_objects_helpers.h)
 
 add_compile_options(-Wall -Wextra -Wpedantic -Werror)
 target_link_libraries(asteroids ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY} ${SDL2_TTF_LIBRARY})

@@ -7,7 +7,7 @@
 
 struct physics_helpers
 {
-    static double current_speed(double dx, double dy);
+    double current_speed(double dx, double dy);
 };
 
 
