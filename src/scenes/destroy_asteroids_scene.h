@@ -6,6 +6,7 @@
 #include <vector>
 #include <algorithm>
 #include <variant>
+#include <iostream>
 #include "images/texture_shelf.h"
 #include "bullets/bullet.h"
 #include "bullets/bullet_helpers.h"
