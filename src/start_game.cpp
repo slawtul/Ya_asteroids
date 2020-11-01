@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
     const auto window = sdl2.create_window("YA Asteroids",
             1920,
             1080,
-            SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI);
+            SDL_WINDOW_FULLSCREEN_DESKTOP | SDL_WINDOW_ALLOW_HIGHDPI);
 
     const auto renderer =
             sdl2.create_renderer(window, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
