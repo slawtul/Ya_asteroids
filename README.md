@@ -30,6 +30,7 @@ sudo dnf install SDL2-devel SDL2_image-devel SDL2_ttf-devel
 
 #### Current status
 
+- [x] Move from runtime polymorphism to std::variant solution
 - [x] Spaceships (spaceship 1 keys: W, A, D, SPACE and spaceship 2 keys: UP, LEFT, RIGHT, ENTER)
 - [x] Bullets
 - [ ] Collisions
