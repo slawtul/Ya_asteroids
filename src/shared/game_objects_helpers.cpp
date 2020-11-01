@@ -1,10 +1,6 @@
 #include "game_objects_helpers.h"
 
 
-auto run_update = [](auto& game_obj) {
-    return game_obj.update();
-};
-
 auto is_active = [](auto& game_obj) {
     return game_obj.meta.is_active;
 };
@@ -17,6 +13,10 @@ void game_objects_helpers::remove_not_active(std::vector<variant_game_obj>& game
             });
     game_objects.erase(not_active, game_objects.end());
 }
+
+auto run_update = [](auto& game_obj) {
+    return game_obj.update();
+};
 
 void game_objects_helpers::call_update_on(std::vector<variant_game_obj>& game_objects)
 {
