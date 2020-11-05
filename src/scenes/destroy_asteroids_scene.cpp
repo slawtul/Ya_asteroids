@@ -2,9 +2,7 @@
 #include "destroy_asteroids_scene.h"
 
 
-void destroy_asteroids_scene::update(SDL_Event& event,
-        SDL_Renderer* renderer,
-        texture_shelf* ts,
+void destroy_asteroids_scene::update(SDL_Event& event, SDL_Renderer* renderer, texture_shelf* ts,
         std::vector<variant_game_obj>& game_objects)
 {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);

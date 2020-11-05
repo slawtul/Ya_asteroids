@@ -19,9 +19,7 @@ using variant_game_obj = std::variant<spaceship_a, spaceship_b, bullet>;
 struct destroy_asteroids_scene
 {
     void update(SDL_Event& event,
-            SDL_Renderer* renderer,
-            texture_shelf* ts,
-            std::vector<variant_game_obj>& game_objects);
+            SDL_Renderer* renderer, texture_shelf* ts, std::vector<variant_game_obj>& game_objects);
 };
 
 
