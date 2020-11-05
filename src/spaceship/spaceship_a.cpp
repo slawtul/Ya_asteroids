@@ -20,10 +20,10 @@ void spaceship_a::update()
 void spaceship_a::input()
 {
     if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_D]) {
-        motion.angle += 4.0;
+        motion.angle += 6.0;
     }
     if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_A]) {
-        motion.angle -= 4.0;
+        motion.angle -= 6.0;
     }
     if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_W]) {
         motion.acceleration = 0.6;
