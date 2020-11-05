@@ -53,7 +53,7 @@ void spaceship_a::gfx()
     rect.y += static_cast<int>(motion.dy);
 
     gfx_helpers gh{};
-    auto[x, y] = gh.opposite_edge_position(rect.x, rect.y, rect.w, rect.h, renderer);
+    const auto[x, y] = gh.opposite_edge_position(rect.x, rect.y, rect.w, rect.h, renderer);
 
     rect.x = x;
     rect.y = y;
