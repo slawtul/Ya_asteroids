@@ -58,12 +58,7 @@ void spaceship_a::gfx()
     rect.x = x;
     rect.y = y;
 
-    SDL_RenderCopyEx(renderer,
-            ts->get_texture("WO84-wu-X1.png"),
-            nullptr,
-            &rect,
-            motion.angle + 90,
-            nullptr,
-            SDL_FLIP_NONE);
+    SDL_RenderCopyEx(renderer, ts->get_texture("WO84-wu-X1.png"), nullptr, &rect, motion.angle + 90,
+            nullptr, SDL_FLIP_NONE);
 }
 
