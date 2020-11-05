@@ -32,7 +32,7 @@ add_executable(asteroids
         src/shared/obj_meta.h
         src/shared/obj_motion.h
         src/init/constants.h
-        src/init/sdl2_util.h
+        src/init/sdl2_helpers.h
         src/text/render_text.h
         src/debug_info/frames_debug.h
         src/debug_info/graphics_debug.h
@@ -41,7 +41,7 @@ add_executable(asteroids
         src/debug_info/graphics_debug.cpp
         src/debug_info/objects_debug.cpp
         src/images/texture_shelf.cpp
-        src/init/sdl2_util.cpp
+        src/init/sdl2_helpers.cpp
         src/scenes/destroy_asteroids_scene.cpp
         src/text/render_text.cpp
         src/spaceship/spaceship_b.cpp

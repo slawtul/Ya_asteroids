@@ -1,4 +1,4 @@
-#include "init/sdl2_util.h"
+#include "init/sdl2_helpers.h"
 #include "text/render_text.h"
 #include "scenes/destroy_asteroids_scene.h"
 #include "debug_info/graphics_debug.h"
@@ -15,7 +15,7 @@ int main(int argc, char* argv[])
     SDL_LogInfo(0, "Program parameters: argc %d", argc);
     SDL_LogInfo(0, "Program parameters: argv %s", *argv);
 
-    sdl2_util sdl2{};
+    sdl2_helpers sdl2{};
     sdl2.init(SDL_INIT_VIDEO);
     IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG);
     TTF_Init();
