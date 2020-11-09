@@ -6,8 +6,7 @@ SDL_Texture* texture_shelf::get_texture(const std::string_view& texture_name)
     return shelf[texture_name];
 }
 
-void texture_shelf::add_image(SDL_Renderer* renderer,
-        const std::string_view& texture_name,
+void texture_shelf::add_image(SDL_Renderer* renderer, const std::string_view& texture_name,
         const std::string_view& file)
 {
     auto surface = load_image(file);
