@@ -1,10 +1,7 @@
 #include "spaceship_a.h"
 
 
-spaceship_a::spaceship_a(SDL_Renderer* renderer,
-        SDL_Rect rect,
-        texture_shelf* ts,
-        obj_meta meta,
+spaceship_a::spaceship_a(SDL_Renderer* renderer, SDL_Rect rect, texture_shelf* ts, obj_meta meta,
         obj_motion motion)
         : renderer{ renderer }, rect{ rect }, ts{ ts }, meta{ meta }, motion{ motion }
 {
