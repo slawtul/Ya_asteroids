@@ -22,8 +22,10 @@
 
 ### Fedora
 
+(minimum gcc version 10.2.1)
+
 ```bash
-sudo dnf install cmake SDL2-devel SDL2_image-devel SDL2_ttf-devel
+sudo dnf install g++ cmake SDL2-devel SDL2_image-devel SDL2_ttf-devel
 cd Ya_asteroids
 mkdir build
 cd build
