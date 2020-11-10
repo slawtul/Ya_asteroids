@@ -23,7 +23,13 @@
 ### Fedora
 
 ```bash
-sudo dnf install SDL2-devel SDL2_image-devel SDL2_ttf-devel
+sudo dnf install cmake SDL2-devel SDL2_image-devel SDL2_ttf-devel
+cd Ya_asteroids
+mkdir build
+cd build
+cmake ..
+make
+./asteroids
 ```
 
 ---
