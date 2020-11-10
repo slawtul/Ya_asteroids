@@ -65,15 +65,6 @@ You can use this software freely in any free or commercial project except files 
     1. Avg ~60 FPS with 9900 objects on the screen
     2. Avg ~2700 FPS with 2 objects on the screen
     
-    # Without runtime polymorphism (no-inheritance branch)
-    1. Avg ~60 FPS with 8229 objects on the screen
-    2. Avg ~2700 FPS with 2 objects on the screen
-    
-    Runtime polymorphism implementation is faster. Maybe because of compiler optimization
-    or my implementation with std::variant sucks.
-    
-    [Edit] Yes... it was bad implementation, current awesome results:
-    
     # With std::variant (std-variant branch)
     1. Avg ~60 FPS with 11800 objects on the screen
     2. Avg ~3600 FPS with 2 objects on the screen
