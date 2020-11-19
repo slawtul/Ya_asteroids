@@ -15,7 +15,7 @@ void bullet::update()
 
 void bullet::input()
 {
-    // user fire bullet input is handled in the scene file
+    // fire bullet input is handled in the scene file ('space' or 'enter' key)
 }
 
 void bullet::physics()
