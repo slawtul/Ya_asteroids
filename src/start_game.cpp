@@ -23,10 +23,10 @@ int main(int argc, char* argv[])
     const auto WR = SDL_WINDOW_RESIZABLE;
     const auto WHDPI = SDL_WINDOW_ALLOW_HIGHDPI;
     const auto RA = SDL_RENDERER_ACCELERATED;
-    //const auto RVSYNC = SDL_RENDERER_PRESENTVSYNC;
+    const auto RVSYNC = SDL_RENDERER_PRESENTVSYNC;
 
     const auto window = sdl2.create_window("YA Asteroids", 1920, 1080, WR | WHDPI);
-    const auto renderer = sdl2.create_renderer(window, RA);// | RVSYNC);
+    const auto renderer = sdl2.create_renderer(window, RA | RVSYNC);
 
     graphics_debug gd{};
     gd.log_screen_size(renderer);

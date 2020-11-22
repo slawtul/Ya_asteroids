@@ -10,21 +10,21 @@ double frames_debug::rate_frame_delta_time()
 
 double frames_debug::rate_max_frames()
 {
-    if (frames_per_sec > max_fps) {
+    if (frames_per_sec > max_fps || max_fps <= 0) {
         max_fps = frames_per_sec;
+    }
+    if (max_fps > frames_per_sec * 5) {
+        max_fps = 0;
     }
     return max_fps;
 }
 
 double frames_debug::rate_min_frames()
 {
-    if (min_fps > frames_per_sec) {
+    if (min_fps > frames_per_sec || min_fps <= 0) {
         min_fps = frames_per_sec;
     }
-    if (min_fps <= 0) {
-        min_fps = frames_per_sec;
-    }
-    if (min_fps < frames_per_sec * 50 / 100) {
+    if (min_fps < frames_per_sec * 0.5) {
         min_fps = 0;
     }
     return min_fps;
