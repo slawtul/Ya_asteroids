@@ -9,21 +9,26 @@
 
 struct frames_debug
 {
+    double frame_time;
+    double frames_per_sec;
+    double max_fps;
+    double min_fps;
+
     uint32_t current_time;
     uint32_t last_time;
     uint32_t frame_delta_time;
 
-    double frame_time;
-    double frames_per_sec;
-    double min_fps;
+    double rate_frames_per_sec();
 
-    double calc_frames_per_sec();
+    double rate_frame_delta_time();
 
-    double calc_frame_delta_time();
+    double rate_max_frames();
 
-    double calc_min_frames_per_sec();
+    double rate_min_frames();
 
     void render_frames_per_sec(TTF_Font* font, SDL_Color color, SDL_Renderer* renderer);
+
+    void render_max_frames(TTF_Font* font, SDL_Color color, SDL_Renderer* renderer);
 
     void render_min_frames(TTF_Font* font, SDL_Color color, SDL_Renderer* renderer);
 };

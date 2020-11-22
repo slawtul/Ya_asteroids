@@ -23,10 +23,10 @@ int main(int argc, char* argv[])
     const auto WR = SDL_WINDOW_RESIZABLE;
     const auto WHDPI = SDL_WINDOW_ALLOW_HIGHDPI;
     const auto RA = SDL_RENDERER_ACCELERATED;
-    const auto RVSYNC = SDL_RENDERER_PRESENTVSYNC;
+    //const auto RVSYNC = SDL_RENDERER_PRESENTVSYNC;
 
     const auto window = sdl2.create_window("YA Asteroids", 1920, 1080, WR | WHDPI);
-    const auto renderer = sdl2.create_renderer(window, RA | RVSYNC);
+    const auto renderer = sdl2.create_renderer(window, RA);// | RVSYNC);
 
     graphics_debug gd{};
     gd.log_screen_size(renderer);
@@ -67,6 +67,7 @@ int main(int argc, char* argv[])
 
         #ifdef DEBUG
         fd.render_frames_per_sec(font, white, renderer);
+        fd.render_max_frames(font, white, renderer);
         fd.render_min_frames(font, white, renderer);
         od.objs_on_screen = game_objects.size();
         od.render_max_obj_qty(font, white, renderer);
@@ -79,6 +80,8 @@ int main(int argc, char* argv[])
     #ifdef DEBUG
     SDL_LogInfo(0, "Max objects qty: %d", static_cast<int>(od.max_objs_on_screen));
     SDL_LogInfo(0, "Avg FPS: %.2f", fd.frames_per_sec);
+    SDL_LogInfo(0, "Max FPS: %.2f", fd.max_fps);
+    SDL_LogInfo(0, "Min FPS: %.2f", fd.min_fps);
     SDL_LogInfo(0, "Stop game");
     TTF_CloseFont(font);
     #endif
