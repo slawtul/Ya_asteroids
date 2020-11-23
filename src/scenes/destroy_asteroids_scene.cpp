@@ -15,7 +15,7 @@ void destroy_asteroids_scene::update(SDL_Event& event, SDL_Renderer* renderer, t
 
     if (SDL_HasIntersection(&spaceship_A.rect, &spaceship_B.rect)) {
         SDL_LogInfo(0, "intersection");
-    };
+    }
 
     if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_SPACE]) {
         bullet_helpers bh{};

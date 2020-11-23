@@ -25,4 +25,3 @@ void game_objects_helpers::call_update_on(std::vector<variant_game_obj>& game_ob
         std::visit(run_update, *it);
     }
 }
-
