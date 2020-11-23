@@ -1,7 +1,7 @@
 #include "bullet_helpers.h"
 
 
-obj_motion bullet_helpers::calc_motion(const obj_motion& spaceship_motion)
+obj_motion bullet_helpers::rate_motion(const obj_motion& spaceship_motion)
 {
     obj_motion motion{};
     motion.acceleration = 32;
@@ -10,7 +10,7 @@ obj_motion bullet_helpers::calc_motion(const obj_motion& spaceship_motion)
     return motion;
 }
 
-SDL_Rect bullet_helpers::calc_rect(const SDL_Rect& spaceship_rect)
+SDL_Rect bullet_helpers::rate_rect(const SDL_Rect& spaceship_rect)
 {
     SDL_Rect rect{ 0, 0, 4, 20 };
     rect.x = spaceship_rect.x + (spaceship_rect.w - rect.w) / 2;

@@ -19,16 +19,16 @@ void destroy_asteroids_scene::update(SDL_Event& event, SDL_Renderer* renderer, t
 
     if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_SPACE]) {
         bullet_helpers bh{};
-        auto const rect_a = bh.calc_rect(spaceship_A.rect);
-        auto const motion = bh.calc_motion(spaceship_A.motion);
-        bullet b{ renderer, rect_a, ts, {}, motion };
+        auto const rect = bh.rate_rect(spaceship_A.rect);
+        auto const motion = bh.rate_motion(spaceship_A.motion);
+        bullet b{ renderer, rect, ts, {}, motion };
         game_objects.emplace_back(b);
     }
 
     if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_RETURN]) {
         bullet_helpers bh{};
-        auto const rect_b = bh.calc_rect(spaceship_B.rect);
-        auto const motion = bh.calc_motion(spaceship_B.motion);
+        auto const rect_b = bh.rate_rect(spaceship_B.rect);
+        auto const motion = bh.rate_motion(spaceship_B.motion);
         bullet b{ renderer, rect_b, ts, {}, motion };
         game_objects.emplace_back(b);
     }
