@@ -7,7 +7,7 @@ void destroy_asteroids_scene::update(SDL_Event& event, SDL_Renderer* renderer, t
 {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
-    SDL_RenderCopy(renderer, ts->get_texture("background_01_static.jpg"), nullptr, nullptr);
+    SDL_RenderCopy(renderer, ts->get_texture("background_04_static.jpg"), nullptr, nullptr);
     SDL_PollEvent(&event);
 
     auto const spaceship_A = std::get<spaceship_a>(game_objects[0]);

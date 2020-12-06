@@ -19,6 +19,9 @@ void texture_shelf::add_image(SDL_Renderer* renderer, const std::string_view& te
 void texture_shelf::add_init_images(SDL_Renderer* renderer)
 {
     add_image(renderer, "background_01_static.jpg", "resources/background_01_static.jpg");
+    add_image(renderer, "background_02_static.jpg", "resources/background_02_static.jpg");
+    add_image(renderer, "background_03_static.jpg", "resources/background_03_static.jpg");
+    add_image(renderer, "background_04_static.jpg", "resources/background_04_static.jpg");
     add_image(renderer, "bullet_short_single.png", "resources/bullet_short_single.png");
     add_image(renderer, "DKO-api-X1.png", "resources/DKO-api-X1.png");
     add_image(renderer, "CX16-X1.png", "resources/CX16-X1.png");
