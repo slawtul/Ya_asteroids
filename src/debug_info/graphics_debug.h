@@ -7,7 +7,7 @@
 
 struct graphics_debug
 {
-    void log_screen_size(SDL_Renderer* renderer);
+    void log_screen_size(SDL_Renderer *renderer);
 };
 
 

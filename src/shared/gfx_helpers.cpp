@@ -1,7 +1,7 @@
 #include "gfx_helpers.h"
 
 
-bool gfx_helpers::is_off_screen(int rect_x, int rect_y, SDL_Renderer* renderer)
+bool gfx_helpers::is_off_screen(int rect_x, int rect_y, SDL_Renderer *renderer)
 {
     int screen_width{}, screen_height{};
     SDL_GetRendererOutputSize(renderer, &screen_width, &screen_height);
@@ -10,7 +10,7 @@ bool gfx_helpers::is_off_screen(int rect_x, int rect_y, SDL_Renderer* renderer)
 }
 
 std::pair<int, int> gfx_helpers::opposite_edge_position(int rect_x, int rect_y, int rect_w, int rect_h,
-        SDL_Renderer* renderer)
+                                                        SDL_Renderer *renderer)
 {
     int screen_width{}, screen_height{};
     SDL_GetRendererOutputSize(renderer, &screen_width, &screen_height);
