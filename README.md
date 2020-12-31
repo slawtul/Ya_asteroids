@@ -22,7 +22,7 @@
 
 ### Fedora
 
-(minimum gcc version 10.2.1)
+**(minimum g++ version 10.2.1)**
 
 ```bash
 sudo dnf install g++ cmake SDL2-devel SDL2_image-devel SDL2_ttf-devel
@@ -36,8 +36,16 @@ make
 
 ### Debian based distros (eg. Ubuntu, elementary os)
 
+**(minimum g++ version 10.2.1)**
+
 ```bash
-sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libsdl2-gfx-dev
+sudo apt install g++ cmake libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libsdl2-gfx-dev
+cd Ya_asteroids
+mkdir build
+cd build
+cmake ..
+make
+./asteroids
 ```
 
 ---
