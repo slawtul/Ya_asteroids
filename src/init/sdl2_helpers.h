@@ -5,8 +5,7 @@
 #include <SDL.h>
 
 
-struct sdl2_helpers
-{
+struct sdl2_helpers {
     void init(uint32_t flags);
 
     SDL_Window *create_window(const char *title, int screen_width, int screen_height, uint32_t flags);

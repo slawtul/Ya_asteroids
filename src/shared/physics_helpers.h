@@ -5,8 +5,7 @@
 #include <cmath>
 
 
-struct physics_helpers
-{
+struct physics_helpers {
     double current_speed(double dx, double dy);
 };
 

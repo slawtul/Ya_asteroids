@@ -11,8 +11,7 @@
 #include "init/constants.h"
 
 
-struct spaceship_a
-{
+struct spaceship_a {
     spaceship_a(SDL_Renderer *renderer, SDL_Rect rect, texture_shelf *ts, obj_meta meta, obj_motion motion);
 
     void input();

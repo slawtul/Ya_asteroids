@@ -2,11 +2,10 @@
 #define OBJ_META_H
 
 
-struct obj_meta
-{
+struct obj_meta {
     // you can do physics and gfx calculations on 'active' object only
     // if game object is not active - it's removed from game objects vector
-    bool is_active{ true };
+    bool is_active{true};
 };
 
 

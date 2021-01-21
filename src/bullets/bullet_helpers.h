@@ -5,8 +5,7 @@
 #include "bullet.h"
 
 
-struct bullet_helpers
-{
+struct bullet_helpers {
     // calculates bullet motion from spaceship motion
     obj_motion rate_motion(const obj_motion &spaceship_motion);
 

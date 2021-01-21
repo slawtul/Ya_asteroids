@@ -7,8 +7,7 @@
 #include "text/render_text.h"
 
 
-struct frames_debug
-{
+struct frames_debug {
     double frame_time;
     double frames_per_sec;
     double max_fps;

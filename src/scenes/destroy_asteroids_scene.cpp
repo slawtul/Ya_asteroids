@@ -3,8 +3,7 @@
 
 
 void destroy_asteroids_scene::update(SDL_Event &event, SDL_Renderer *renderer, texture_shelf *ts,
-                                     std::vector<variant_game_obj> &game_objects)
-{
+                                     std::vector<variant_game_obj> &game_objects) {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
     SDL_RenderCopy(renderer, ts->get_texture("background_04_static.jpg"), nullptr, nullptr);
@@ -21,7 +20,7 @@ void destroy_asteroids_scene::update(SDL_Event &event, SDL_Renderer *renderer, t
         bullet_helpers bh{};
         auto const rect = bh.rate_rect(spaceship_A.rect);
         auto const motion = bh.rate_motion(spaceship_A.motion);
-        bullet b{ renderer, rect, ts, {}, motion };
+        bullet b{renderer, rect, ts, {}, motion};
         game_objects.emplace_back(b);
     }
 
@@ -29,7 +28,7 @@ void destroy_asteroids_scene::update(SDL_Event &event, SDL_Renderer *renderer, t
         bullet_helpers bh{};
         auto const rect_b = bh.rate_rect(spaceship_B.rect);
         auto const motion = bh.rate_motion(spaceship_B.motion);
-        bullet b{ renderer, rect_b, ts, {}, motion };
+        bullet b{renderer, rect_b, ts, {}, motion};
         game_objects.emplace_back(b);
     }
 

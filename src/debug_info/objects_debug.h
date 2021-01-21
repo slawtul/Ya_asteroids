@@ -8,8 +8,7 @@
 #include "text/render_text.h"
 
 
-struct objects_debug
-{
+struct objects_debug {
     uint16_t objs_on_screen;
     uint16_t max_objs_on_screen;
 

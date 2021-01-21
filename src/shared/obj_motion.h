@@ -2,8 +2,7 @@
 #define OBJ_MOTION_H
 
 
-struct obj_motion
-{
+struct obj_motion {
     double max_speed;
     double acceleration;
     double angle;

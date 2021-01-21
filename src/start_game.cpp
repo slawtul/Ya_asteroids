@@ -5,13 +5,14 @@
 
 
 #ifdef DEBUG
+
 #include "debug_info/frames_debug.h"
 #include "debug_info/objects_debug.h"
+
 #endif
 
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     SDL_LogInfo(0, "Program parameters: argc %d", argc);
     SDL_LogInfo(0, "Program parameters: argv %s", *argv);
 
@@ -37,18 +38,18 @@ int main(int argc, char *argv[])
     std::vector<variant_game_obj> game_objects;
     game_objects.reserve(1024);
 
-    spaceship_a ship_a{ renderer, { 0, 100, 64, 64 }, &ts, {}, {}};
-    spaceship_b ship_b{ renderer, { 100, 100, 64, 64 }, &ts, {}, {}};
+    spaceship_a ship_a{renderer, {0, 100, 64, 64}, &ts, {}, {}};
+    spaceship_b ship_b{renderer, {100, 100, 64, 64}, &ts, {}, {}};
 
     game_objects.emplace_back(ship_a);
     game_objects.emplace_back(ship_b);
 
-    #ifdef DEBUG
+#ifdef DEBUG
     const auto font = TTF_OpenFont("./resources/terminus.ttf", 16);
-    const auto white = SDL_Color{ 255, 255, 255, 127 };
+    const auto white = SDL_Color{255, 255, 255, 127};
     frames_debug fd{};
     objects_debug od{};
-    #endif
+#endif
 
     SDL_Event event{};
     destroy_asteroids_scene scene{};
@@ -59,32 +60,32 @@ int main(int argc, char *argv[])
             break;
         }
 
-        #ifdef DEBUG
+#ifdef DEBUG
         fd.current_time = SDL_GetTicks();
-        #endif
+#endif
 
         scene.update(event, renderer, &ts, game_objects);
 
-        #ifdef DEBUG
+#ifdef DEBUG
         fd.render_frames_per_sec(font, white, renderer);
         fd.render_max_frames(font, white, renderer);
         fd.render_min_frames(font, white, renderer);
         od.objs_on_screen = game_objects.size();
         od.render_max_obj_qty(font, white, renderer);
         od.render_obj_qty(font, white, renderer);
-        #endif
+#endif
 
         SDL_RenderPresent(renderer);
     }
 
-    #ifdef DEBUG
+#ifdef DEBUG
     SDL_LogInfo(0, "Max objects qty: %d", static_cast<int>(od.max_objs_on_screen));
     SDL_LogInfo(0, "Avg FPS: %.2f", fd.frames_per_sec);
     SDL_LogInfo(0, "Max FPS: %.2f", fd.max_fps);
     SDL_LogInfo(0, "Min FPS: %.2f", fd.min_fps);
     SDL_LogInfo(0, "Stop game");
     TTF_CloseFont(font);
-    #endif
+#endif
 
     // free memory
     game_objects.clear();
