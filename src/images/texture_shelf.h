@@ -1,14 +1,13 @@
 #ifndef TEXTURE_SHELF_H
 #define TEXTURE_SHELF_H
 
-
 #include <SDL.h>
 #include <SDL_image.h>
 #include <map>
 #include <string>
 
-
-struct texture_shelf {
+struct texture_shelf
+{
     std::map<std::string_view, SDL_Texture *> shelf;
 
     SDL_Texture *get_texture(const std::string_view &texture_name);
@@ -22,6 +21,5 @@ struct texture_shelf {
     [[nodiscard]]
     SDL_Surface *load_image(const std::string_view &file) const;
 };
-
 
 #endif // TEXTURE_SHELF_H

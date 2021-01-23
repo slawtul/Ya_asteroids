@@ -1,13 +1,12 @@
 #ifndef FRAMES_DEBUG_H
 #define FRAMES_DEBUG_H
 
-
 #include <string>
 #include <SDL_ttf.h>
 #include "text/render_text.h"
 
-
-struct frames_debug {
+struct frames_debug
+{
     double frame_time;
     double frames_per_sec;
     double max_fps;
@@ -31,6 +30,5 @@ struct frames_debug {
 
     void render_min_frames(TTF_Font *font, SDL_Color color, SDL_Renderer *renderer);
 };
-
 
 #endif // FRAMES_DEBUG_H
